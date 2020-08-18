@@ -15,6 +15,13 @@
                 align-items: center;
     }
     #objective{
+        margin-bottom: 0px;
         background-image: linear-gradient(to right,#add0e6, #4e86b5, white);
     }
 }
+.content{
+    font-size: 18px;
+}
+#activities .icon-block{
+    padding: 0 0;
+} 
