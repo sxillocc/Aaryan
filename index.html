@@ -9,7 +9,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <!-- Social Media Icons CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Main-Css -->
   <link href="css/main.css" type="text/css" rel="stylesheet"/>
+  
 </head>
 <body>
 
@@ -20,12 +26,14 @@
         <li><a href="./index.html">Home</a></li>
         <li><a href="#festival">Festivals</a></li>
         <li><a href="#activity">Activities</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="./index.html">Home</a></li>
         <li><a href="#festival">Festivals</a></li>
         <li><a href="#activity">Activities</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -55,7 +63,7 @@
     <div class="parallax-container">
       <div class="parallax"><img src="assets/images/gmvp.jpg"></div>
     </div>
-    <div id="festival" class="section black scrollspy">
+    <div id="festival" class="section scrollspy" style="background-color: #1e88e5;"> <!--Blue-600-->
       <div class="container">
         <h1 class="header center white-text">Sri Vyasa Puja</h1>
         <img width="100%" height="auto" src="./assets/images/gmvp.jpg" />
@@ -74,13 +82,12 @@
         <center>
           <a class="waves-effect white black-text waves-purple btn-large">Register</a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="waves-effect pink darken-4 waves-light btn-large">Know More</a>
+          <a class="waves-effect darken-4 waves-light btn-large" style="background-color: #002171">Know More</a> <!--Blue 900 Dark-->
         </center>
       </div>
       <br><br><br>
     </div>
     <!-- Festival Section Ended -->
-        
     <!-- TODO Sections:-
       1. Activities ---- DONE
       2. Tarang Festival DONE
@@ -99,7 +106,7 @@
   <div id="bg-color">
     <div id="activity" class="activity-container scrollspy">
       <div class="section">
-        <h1 class="header left-align" style="color: #000051; padding-left: 20px;">Activities</h1>
+        <h1 class="header left-align" id="activity-heading" >Activities</h1> <!--Indigo 900 Dark-->
         <!-- Row 1 started -->
         <div class="row">
           <div class="full-size col s12 m12 l4">
@@ -143,8 +150,38 @@
   </div>
   <!-- Activities Ended -->
 
+  <!-- Contact Us Section Started -->
+  <div id="contact" class="scrollspy" style="background-color: #1a237e;"> <!--Cyan 900-->
+    <div class="container"> 
+      <div class="section">
+        <center><h2 class="header white-text"> Contact Us </h2></center>
+        <p class="content" style="color:white;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime sunt aperiam explicabo, nam error cumque laborum ipsam eaque non molestias aliquid sapiente modi eligendi hic tenetur accusamus quidem, facilis delectus.</p>
+        <ul class="collapsible">
+          <li class="active">
+            <div class="collapsible-header"><i class="fa fa-whatsapp"></i>Contact Number</div>
+            <div class="collapsible-body white"><span>Connect with our volunteer with this number 99999-99999. (Whatsapp Available)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">email</i>Email</div>
+            <div class="collapsible-body white"><span>Our Email is xyz.thearyan@gmail.com</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="fa fa-instagram"></i>Instagram</div>
+            <div class="collapsible-body white"><span>Our Instagram-Id is @abcdefg </span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">facebook</i>Facebook</div>
+            <div class="collapsible-body white"><span>Username of our Facebook page is @abcdefg</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  <!-- Contact Us Section Ended -->
+
   <!-- Footer Started -->
-  <footer class="page-footer  light-blue darken-4">
+  <footer class="page-footer" style="background-color: #102027;"> <!--BlueGrey800Dark-->
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -173,7 +210,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright  indigo darken-4">
+    <div class="footer-copyright" style="background-color: #29434e;"><!--BlueGrey600Dark-->
       <div class="container">
       Made with &nbsp;&nbsp;&nbsp;<i class="material-icons tiny">favorite</i>&nbsp;&nbsp;&nbsp; for Srila Prabhupada
       </div>
