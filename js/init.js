@@ -15,8 +15,15 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.carousel').carousel();
+  $('.carousel').carousel({
+    indicators: true
+  });
+  window.setInterval(function(){$('.carousel').carousel('next')},3000)
 });
 $(document).ready(function(){
   $('.collapsible').collapsible();
+});
+$('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: true
 });
