@@ -22,6 +22,29 @@
 .content{
     font-size: 18px;
 }
-#activities .icon-block{
-    padding: 0 0;
-} 
+
+/* Activities Section */
+.activity-container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 601px) {
+  .activity-container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .activity-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .full-size{
+        padding: 0 0 0 0 !important;
+        margin: 0 0 0 0;
+    }
+}
