@@ -14,7 +14,7 @@
   max-width: 1280px;
   width: 100%;
 }
-#activity-heading{
+#activity{
     color: white;
     padding-left: 20px;
 }
@@ -35,7 +35,7 @@
   #bg-color{
     background-color:white;
   }
-  #activity-heading{
+  #activity{
     color: #000051;
   }
 }
