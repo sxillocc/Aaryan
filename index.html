@@ -19,8 +19,9 @@
 </head>
 <body>
 
+  <a name="top" class="scrollspy"></a>
   <!-- Navbar-started -->
-  <nav style="background-color: #000051;" role="navigation"><!--Blue-600-Dark-->
+  <nav style="background-color: #000051;" role="navigation"><!--Indigo-900-->
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="font-size: 1.8rem">The Aryan</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="./index.html">Home</a></li>
@@ -31,9 +32,9 @@
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="#festival">Festivals</a></li>
-        <li><a href="#activity">Activities</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#festival" class="sidenav-close">Festivals</a></li>
+        <li><a href="#activity" class="sidenav-close">Activities</a></li>
+        <li><a href="#contact" class="sidenav-close">Contact Us</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -42,7 +43,7 @@
 
 
   <!-- Introduction Section Started -->
-  <div id="introCarousel" class="carousel carousel-slider center">
+  <div id="introCarousel" class="carousel carousel-slider center scrollspy">
     <div class="bigger-height carousel-item red white-text" href="#one!">
       <h2>First Panel</h2>
       <p class="white-text">This is your first panel</p>
@@ -180,6 +181,13 @@
   </div>
   <!-- Contact Us Section Ended -->
 
+  <!-- Floating Action Button -->
+  <div class="fixed-action-btn">
+    <a href="#top" class="btn-floating btn" style="background-color: #000051;"><!--Indigo-900-->
+      <i style="size: 15rem;" class="material-icons">arrow_circle_up</i>
+    </a>
+  </div>
+
   <!-- Footer Started -->
   <footer class="page-footer" style="background-color: #102027;"> <!--BlueGrey800Dark-->
     <div class="container">
@@ -222,6 +230,6 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+  <script src="js/main.js"></script>
   </body>
 </html>
