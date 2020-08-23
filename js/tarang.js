@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $('.tarang-prllx').parallax();
+    $('.parallax').parallax();
 });
