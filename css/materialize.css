@@ -3,6 +3,16 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ *{
+  font-family: 'Martel', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+.on{
+  font-weight: 900;
+}
+
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -4342,7 +4352,7 @@ nav .brand-logo.center {
 
 @media only screen and (max-width: 992px) {
   nav .brand-logo {
-    left: 25%;
+    left: 30%;
     -webkit-transform: translateX(-25%);
             transform: translateX(-25%);
   }
