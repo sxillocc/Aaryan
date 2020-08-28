@@ -13,6 +13,20 @@
   background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(30,136,229,0.2) 60%);
 }
 
+/*Our Fest*/
+@media only screen and (min-width: 601px) {
+  .valign-center{  
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+}
+
 /* Activities Section */
 .activity-container {
   margin: 0 auto;
@@ -52,4 +66,14 @@
   }
 }
 
+.activity-content{
+  font-size: 26px;
+  padding-left: 20px;
 
+}
+
+@media only screen and (max-width: 992px) {
+  .activity-content {
+    font-size: 20px;
+  }
+}
