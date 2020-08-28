@@ -1,3 +1,7 @@
+body{
+    scroll-behavior: smooth;
+}
+
 .responsive-img{
     max-width: 50%;
     height: auto;

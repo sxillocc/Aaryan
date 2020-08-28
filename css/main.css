@@ -66,6 +66,14 @@
   }
 }
 
+.carousel{
+  height: 500px;
+}
+
+.carousel .carousel-item{
+  height: 424.28px;
+}
+
 .activity-content{
   font-size: 26px;
   padding-left: 20px;
@@ -76,4 +84,11 @@
   .activity-content {
     font-size: 20px;
   }
+}
+
+#logo-container{
+  display: flex;
+  height: 100%;
+  align-items:center;/*Vertical align*/
+  /* justify-content:center; */
 }
