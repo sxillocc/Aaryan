@@ -6,11 +6,12 @@
 .bigger-height{
   height: 450px !important;
 }
-
-.my-img{
-  max-width: 1200px !important;
+.gradient{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(30,136,229,0.2) 60%);
 }
-
 
 /* Activities Section */
 .activity-container {

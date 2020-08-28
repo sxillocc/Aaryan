@@ -26,7 +26,7 @@ $(document).ready(function(){
   $('#introCarousel').hover(stop, run);
 });
 $(document).ready(function(){
-  var carousel_interval = 2000;
+  var carousel_interval = 10000000;
   $('#moduleCarousel').carousel();
   var int;
   function run(){
