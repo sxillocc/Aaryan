@@ -30,6 +30,9 @@ nav ul a{
   align-items:center;/*Vertical align*/
   /* justify-content:center; */
 }
+.dropdown-content{
+  top: 64px !important;
+}
 
 .on{
   font-weight: 900;

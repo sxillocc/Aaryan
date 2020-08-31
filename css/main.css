@@ -42,6 +42,11 @@
   }
 }
 
+.hidder{
+  height: 250px;
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 600px) {
     .full-size{
         padding: 0 0 0 0 !important;

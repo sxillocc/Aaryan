@@ -1,9 +1,0 @@
-$(document).ready(function(){
-    $('.parallax').parallax();
-});
-$(document).ready(function(){
-    $('.scrollspy').modal();
-});
-$(document).ready(function(){
-    $('#modal1').modal();
-});
