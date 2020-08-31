@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 2000;
+  var carousel_interval = 20000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,

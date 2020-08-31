@@ -12,9 +12,7 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <!--Fonts CSS-->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Arimo&family=Martel&family=Playfair+Display:wght@700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <!-- Social Media Icons CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,41 +24,51 @@
 
 <body>
 
-  <a name="top" class="scrollspy"></a>
   <!-- Navbar-started -->
-  <nav style="background-color: #000051;" role="navigation">
-    <!--Indigo-900-->
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo" style="font-size: 1.6rem">
-          <img src="./assets/images/logo.svg" width="100px"/>
-        </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="on" href="./index.html">Home</a></li>
-        <li><a href="./lets-make-it-better.html">New Program</a></li>
-        <li><a href="./registration.html">Registration</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./lets-make-it-better.html">New Program</a></li>
-        <li><a href="./registration.html">Registration</a></li>
-        <li><a href="#contact" class="sidenav-close">Contact Us</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <ul id="nav-mobile" class="sidenav">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./lets-make-it-better.html">Latest Events</a></li>
+    <li><a href="#" class="sidenav-close">Articles</a></li>
+    <li><a href="./registration.html">Registration</a></li>
+    <li><a href="#" class="sidenav-close">FAQ</a></li>
+    <li><a href="#" class="sidenav-close">About Us</a></li>
+    <li><a href="#contact" class="sidenav-close">Contact</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav style="background-color: white;" role="navigation">
+      <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo" style="font-size: 1.6rem">
+            <img src="./assets/images/logo-big.png" />
+          </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="on" href="./index.html">Home</a></li>
+          <li><a href="./lets-make-it-better.html">Latest Events</a></li>
+          <li><a href="#" class="sidenav-close">Articles</a></li>
+          <li><a href="./registration.html">Registration</a></li>
+          <li><a href="#" class="sidenav-close">FAQ</a></li>
+          <li><a href="#" class="sidenav-close">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
   <!-- Navbar Ended -->
 
 
   <!-- Introduction Section Started -->
   <div id="introCarousel" class="bigger-height carousel carousel-slider center scrollspy">
-    <div style="background-color: #1e88e5; position: relative;" class="valign-wrapper bigger-height carousel-item white-text" href="#one!">
-          <picture style="margin: auto auto;">
-            <source media="(max-width:900px)" srcset="assets/images/banner-mobile.jpg">
-            <img src="assets/images/banner.png" alt="" style="max-width: 90%;">
-          </picture>
-          <div class="gradient"></div>
+    <div style=" position: relative;" class="valign-wrapper bigger-height carousel-item white-text" href="#one!">
+          <div class="img-center">
+            <picture>
+              <source media="(max-width:600px)" srcset="assets/images/aryan-banner-600.jpg">
+              <source media="(max-width:992px)" srcset="assets/images/aryan-banner-992.jpg">
+              <source media="(max-width:1200px)" srcset="assets/images/aryan-banner-1200.jpg">
+              <source media="(max-width:1920px)" srcset="assets/images/aryan-banner-1920.jpg">
+              <img src="assets/images/banner1920.jpg" alt="">
+            </picture>
+            <div class="gradient-bottom"></div>
+          </div>
     </div>
     <div class="bigger-height carousel-item amber white-text" href="#one!">
       <h2>Second Panel</h2>
@@ -73,24 +81,24 @@
   <!-- <div class="parallax-container">
     <div class="parallax"><img src="assets/images/gmvp.jpg"></div>
   </div> -->
-  <div class="section" style="background-color: #005cb2;">
+  <div class="section white">
     <!--Blue-600-Dark-->
     <div class="container">
       <div class="row">
         <div class="col l2"></div>
         <div class="col s12 l8">
-          <h1 id="festival" class="header center white-text scrollspy">Our Upcoming Program</h1>
+          <h1 id="festival" class="header center black-text scrollspy">Upcoming Events</h1>
         </div>
       </div>
       <div class="row">
         <div class="valign-center">
           <div class="col l1"></div>
           <div style="margin:0 0;" class="col s12 m6 l5">
-            <img width="100%" height="auto" src="./assets/images/letsMakeItBetter.jpg" />
+            <img class="shadow" width="100%" height="auto" src="./assets/images/letsMakeItBetter.jpg" />
           </div>
           <div style="margin:0 0;" class="col s12 m6 l7">
-            <h3 class="white-text">Let's Make it Better</h3>
-            <h6 class="white-text"> Todo:- Add the poster of lets-make-it-better, Change the Title and Descriptions. Esse eligendi deserunt
+            <h3>Let's Make it Better</h3>
+            <h6> Todo:- Add the poster of lets-make-it-better, Change the Title and Descriptions. Esse eligendi deserunt
               perspiciatis itaque? Accusantium iste odio esse, vero quas illo! Adipisci in laborum maiores, totam dolores
               quibusdam dolore magni nesciunt?</h6>
           </div>
@@ -99,7 +107,7 @@
       </div>
       <br>
       <center>
-        <h3 class="white-text">Modules</h3>
+        <h3>Modules</h3>
       </center>
       <div id="moduleCarousel" class="carousel">
         <a class="carousel-item" href="#one!"><img src="./assets/images/incredibleIndia.jpg"></a>
@@ -110,7 +118,7 @@
       </div>
       <br><br>
       <center>
-        <a class="waves-effect white black-text waves-purple btn modal-trigger" href="#modal1">Register</a>
+        <a class="waves-effect waves-purple sb-color btn modal-trigger" href="#modal1">Register</a>
         <!-- Modal Structure -->
         <div id="modal1" style="outline: none;" class="modal bottom-sheet">
           <div class="modal-content">
@@ -126,8 +134,7 @@
           </div>
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="waves-effect darken-4 waves-light btn" href="./lets-make-it-better.html" style="background-color: #002171">Know
-          More</a>
+        <a class="waves-effect pb-color waves-light btn" href="./lets-make-it-better.html">Know More</a>
         <!--Blue 900 Dark-->
       </center>
     </div>
@@ -148,40 +155,66 @@
          6. Change Poster
          7. Add Logo
          -->
-  <div class="container">
+  <!-- <div class="container">
     <div class="section calendar">
       <div class="row">
 
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- Activities Started -->
-  <div id="bg-color">
+  <div class="pink-50">
     <div class="activity-container">
       <div class="section">
-        <h3 id="activity" class="header left-align scrollspy">We Care for You</h3>
-        <p class="activity-content">“We care for you, therefore we provide you several more additional gifts...” </p>
+        <h3 id="activity" class="header black-text left-align scrollspy">Activities</h3>
         <!--Indigo 900 Dark-->
         <!-- Row 1 started -->
         <div class="row">
           <div class="full-size col s12 m6 l4">
-            <img height="250px" width="100%" src="./assets/images/mentor.jpg" />
-            <h5 class="center">1. Personal Guidance</h5>
-            <p class="activity-content"> Our Mentors are always ready for helping you. </p>
+            <img height="250px" width="100%" src="./assets/images/camp.jpg" />
+            <h5 class="center">Seminars</h5>
             <br>
           </div>
           <div class="full-size col s12 m6 l4">
             <img height="250px" width="100%" src="./assets/images/camp.jpg" />
-            <h5 class="center">2. Camps</h5>
-            <p class="activity-content"> We organise various camps throughout the year and you're invited to join them. </p>
+            <h5 class="center">Workshops</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/camp.jpg" />
+            <h5 class="center">Camps</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/mentor.jpg" />
+            <h5 class="center">School Programs</h5>
             <br>
           </div>
           <div class="full-size col s12 m6 l4">
             <img height="250px" width="100%" src="./assets/images/gd.jpeg" />
-            <h5 class="center">3. Good Association</h5>
-            <p class="activity-content"> As we know that one bad apple can spoil whole basket. So, join our group and grow together. </p>
+            <h5 class="center">Coporate Programs</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/gd.jpeg" />
+            <h5 class="center">Village Programs</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/gd.jpeg" />
+            <h5 class="center">Youth Fest</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/gd.jpeg" />
+            <h5 class="center">Jail Programs</h5>
+            <br>
+          </div>
+          <div class="full-size col s12 m6 l4">
+            <img height="250px" width="100%" src="./assets/images/gd.jpeg" />
+            <h5 class="center">Personal Guidance</h5>
             <br>
           </div>
         </div>
@@ -193,14 +226,14 @@
   <!-- Activities Ended -->
 
   <!-- Contact Us Section Started -->
-  <div style="background-color: #1a237e;">
+  <div class="white">
     <!--Cyan 900-->
     <div class="container">
       <div class="section">
         <center>
-          <h2 id="contact" class="header white-text scrollspy"> Contact Us </h2>
+          <h2 id="contact" class="header scrollspy"> Contact </h2>
         </center>
-        <p class="content" style="color:white;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime sunt
+        <p class="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime sunt
           aperiam explicabo, nam error cumque laborum ipsam eaque non molestias aliquid sapiente modi eligendi hic
           tenetur accusamus quidem, facilis delectus.</p>
         <ul class="collapsible">
@@ -227,14 +260,6 @@
     <br><br>
   </div>
   <!-- Contact Us Section Ended -->
-
-  <!-- Floating Action Button -->
-  <div class="fixed-action-btn">
-    <a href="#top" class="btn-floating btn" style="background-color: #000051;">
-      <!--Indigo-900-->
-      <i style="size: 15rem;" class="material-icons">arrow_circle_up</i>
-    </a>
-  </div>
 
   <!-- Footer Started -->
   <footer class="page-footer" style="background-color: #102027;">

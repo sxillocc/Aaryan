@@ -29,52 +29,65 @@
         font-size: 20px;
       }
     }
+    .module-card{
+      cursor: pointer;
+    }
   </style>
 </head>
-<body style="background-color: #007ac1;" class="white-text">
+<body>
 
   <a name="top" class="scrollspy"></a>
   <!-- Navbar-started -->
-  <nav style="background-color: #000051;" role="navigation"><!--Indigo-900-->
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="font-size: 1.6rem">The Aryans Club</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="./index.html">Home</a></li>
-        <li><a class="on" href="./lets-make-it-better.html">New Program</a></li>
-        <li><a href="./registration.html">Registration</a></li>
-        <li><a href="./index.html#contact">Contact Us</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./lets-make-it-better.html">New Program</a></li>
-        <li><a href="./registration.html">Registration</a></li>
-        <li><a href="./index.html#contact" class="sidenav-close">Contact Us</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <ul id="nav-mobile" class="sidenav">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./lets-make-it-better.html">Latest Events</a></li>
+    <li><a href="#" class="sidenav-close">Articles</a></li>
+    <li><a href="./registration.html">Registration</a></li>
+    <li><a href="#" class="sidenav-close">FAQ</a></li>
+    <li><a href="#" class="sidenav-close">About Us</a></li>
+    <li><a href="#contact" class="sidenav-close">Contact</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav style="background-color: white;" role="navigation">
+      <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo" style="font-size: 1.6rem">
+            <img src="./assets/images/logo-big.png" />
+          </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./index.html">Home</a></li>
+          <li><a class="on" href="./lets-make-it-better.html">Latest Events</a></li>
+          <li><a href="#" class="sidenav-close">Articles</a></li>
+          <li><a href="./registration.html">Registration</a></li>
+          <li><a href="#" class="sidenav-close">FAQ</a></li>
+          <li><a href="#" class="sidenav-close">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
   <!-- Navbar Ended -->
   
   <!-- lets-make-it-better Description Started -->
   <!-- <div class="parallax-container">
     <div class="parallax"><img style="max-width:100%;" src="assets/images/letsMakeItBetter.jpg"></div>
   </div> -->
-  <div class="section" style="background-color: #1e88e5;">
+  <div class="section">
     <!--Blue-600-->
     <div class="container">
       <div class="row">
         <div class="valign-center">
           <div class="col s12 m4">
-            <img width="100%" height="auto" src="./assets/images/letsMakeItBetter.jpg" />
+            <img class="shadow" width="100%" height="auto" src="./assets/images/letsMakeItBetter.jpg" />
           </div>
           <div class="col s12 m8">
-            <h3 style="margin-top: 10px;" class="white-text">Let's Make it Better</h3>
+            <h3 style="margin-top: 10px;">Let's Make it Better</h3>
             <p class="writeup"> Todo:- Add the poster of lets-make-it-better, Change the Title and Descriptions. Esse eligendi deserunt
               perspiciatis itaque? Accusantium iste odio esse, vero quas illo! Adipisci in laborum maiores, totam dolores
               quibusdam dolore magni nesciunt?</p>
             <p class="writeup">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime ad quod eligendi distinctio iure aperiam reprehenderit, beatae ipsam incidunt hic at, amet ut quae cupiditate perspiciatis adipisci? Dolor, minus?</p>
             <p class="writeup"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex quos pariatur nulla, quaerat deleniti minus, porro suscipit maiores eos sapiente modi! Et distinctio ut at deserunt ab magni laudantium quo!</p>
-            <a class="waves-effect white-text waves-purple btn modal-trigger" style="background-color: #003c8f;" href="#modal1">Register</a>
+            <a class="pb-color waves-effect waves-purple btn modal-trigger" href="#modal1">Register</a>
             <!-- Modal Structure -->
             <div id="modal1" style="outline: none;" class="modal bottom-sheet black-text">
               <div class="modal-content">
@@ -88,8 +101,6 @@
                 <a href="#" class="modal-close waves-effect waves-green blue btn">Proceed</a>
               </div>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="waves-effect darken-4 waves-light btn" href="./lets-make-it-better.html#module1" style="background-color: #000051">Modules</a>
           </div>
         </div>
       </div> 
@@ -105,34 +116,27 @@
       <!-- Module 1 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 1</h4>
+          <h4 >Module 1</h4>
         </center>
-        <div class="card sticky-action">
-          <div class="card-image waves-effect waves-block waves-light">
+        <div class="card sticky-action module-card" onclick="window.location.href = './module1.html';">
+          <div class="card-image">
             <img class="activator" src="assets/images/overcomingAddiction.jpg"
               alt="Real Happiness or Fake Happiness" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Overcoming Addiction
-              <i class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Overcoming Addiction</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: rgb(0, 37, 26);" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Overcoming Addiction
-              <i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
-      
       <!-- Module 2 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 2</h4>
+          <h4 >Module 2</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
@@ -140,18 +144,12 @@
               alt="Real Happiness or Fake Happiness" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Healthy Lifestyle Management
-              <i class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Healthy Lifestyle Management</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: rgb(135, 0, 0);" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Healthy Lifestyle Management
-              <i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
@@ -159,24 +157,19 @@
       <!-- Module 3 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 3</h4>
+          <h4 >Module 3</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="assets/images/incredibleIndia.jpg" alt="Who Am I?" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Incredible India<i
-                class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Incredible India</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: #000051" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Incredible India<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
@@ -188,7 +181,7 @@
       <!-- Module 4 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 4</h4>
+          <h4 >Module 4</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
@@ -196,18 +189,12 @@
               alt="Real Happiness or Fake Happiness" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Religion V/s Spirituality<i
-                class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Religion V/s Spirituality</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: rgb(0, 37, 26);" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Religion V/s Spirituality<i
-                class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
@@ -215,7 +202,7 @@
       <!-- Module 5 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 5</h4>
+          <h4 >Module 5</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
@@ -223,18 +210,13 @@
               alt="Real Happiness or Fake Happiness" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Don't take life Seriously<i
-                class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4">Don't take life Seriously</span>
             <!-- <p><a href="#">This is a link</a></p> -->
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: rgb(135, 0, 0);" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Don't take life Seriously<i
-                class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
@@ -242,24 +224,19 @@
       <!-- Module 6 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 6</h4>
+          <h4 >Module 6</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="assets/images/learningfromlockdown.jpg" alt="Who Am I?" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Learning from Lockdown<i
-                class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Learning from Lockdown</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: #000051" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Learning from Lockdown<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>
@@ -273,7 +250,7 @@
       <!-- Module 7 -->
       <div class="col s12 m12 l4">
         <center>
-          <h4 style="color: white;">Module 7</h4>
+          <h4 >Module 7</h4>
         </center>
         <div class="card sticky-action">
           <div class="card-image waves-effect waves-block waves-light">
@@ -281,18 +258,12 @@
               alt="Real Happiness or Fake Happiness" width="100%">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Depress the Depression<i
-                class="material-icons right">more_vert</i></span>
-            <!-- <p><a href="#">This is a link</a></p> -->
+            <span class="card-title activator grey-text text-darken-4">Depress the Depression</span>
           </div>
           <div class="card-action">
-            <a href="#" style="background-color: rgb(135, 0, 0);" class="waves-effect waves-light btn">Register Now</a>
-            &nbsp; &nbsp;<a class="black-text" href="./module1.html">More</a>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Depress the Depression<i
-                class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a href="#" class="waves-effect sb-color waves-light btn">Register</a>
+            &nbsp;&nbsp;
+            <a class="waves-effect pb-color waves-light btn" href="./module1.html">More</a>
           </div>
         </div>
       </div>

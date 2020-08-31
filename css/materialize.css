@@ -3,12 +3,34 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
- *{
-  font-family: 'Martel', serif;
+ .shadow{
+  box-shadow: 1px 1px 40px grey;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+ .pink-50{
+  background-color: #fce4ec;
 }
+.pb-color{
+  background-color: #8c0032 !important;
+  color: white !important;
+}
+.sb-color{
+  background-color: #ffffff !important;
+  color: black !important;
+}
+nav ul a{
+  color: black !important;
+}
+.brand-logo img{
+  width: 120px !important;
+  height: auto !important;
+}
+#logo-container{
+  display: flex;
+  height: 100%;
+  align-items:center;/*Vertical align*/
+  /* justify-content:center; */
+}
+
 .on{
   font-weight: 900;
 }

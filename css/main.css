@@ -1,31 +1,20 @@
-.content{
-    font-size: 18px;
+.img-center{
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Introduction Section */
 .bigger-height{
-  height: 450px !important;
+  height: 500px !important;
 }
-.gradient{
+.gradient-bottom{
   position: absolute;
   width: 100%;
-  height:100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(30,136,229,0.2) 60%);
+  height: 100px;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(239,231,231,0) 0%, rgba(0,0,0,0.5) 100%);;
 }
-
 /*Our Fest*/
-@media only screen and (min-width: 601px) {
-  .valign-center{  
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-    }
-}
 
 /* Activities Section */
 .activity-container {
@@ -84,11 +73,4 @@
   .activity-content {
     font-size: 20px;
   }
-}
-
-#logo-container{
-  display: flex;
-  height: 100%;
-  align-items:center;/*Vertical align*/
-  /* justify-content:center; */
 }
