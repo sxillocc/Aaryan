@@ -4,7 +4,7 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
  .shadow{
-  box-shadow: 1px 1px 40px grey;
+  box-shadow: 1px 1px 5px grey;
 }
  .pink-50{
   background-color: #fce4ec;
