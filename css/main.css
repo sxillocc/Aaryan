@@ -24,7 +24,6 @@
 }
 #activity{
     color: #000051;
-    padding-left: 20px;
 }
 #bg-color{
     background-color:white;/*Blue-100-A*/
@@ -45,6 +44,8 @@
 .hidder{
   height: 250px;
   overflow: hidden;
+  max-width: 400px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -77,5 +78,13 @@
 @media only screen and (max-width: 992px) {
   .activity-content {
     font-size: 20px;
+  }
+}
+.on-laptops{
+  display: none !important;
+}
+@media only screen and (min-width: 992px) {
+  .on-laptops{
+    display: block !important;
   }
 }

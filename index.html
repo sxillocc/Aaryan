@@ -52,8 +52,8 @@
         <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
         <ul id="aboutus" class="dropdown-content">
           <li><a href="./aboutus.html">About Us</a></li>
-          <li><a href="./aboutus.html#srila-prabhupada">Srila Prabhupada</a></li>
-          <li><a href="./aboutus.html#iskcon">ISKCON</a></li>
+          <li><a href="./srila-prabhupada.html">Srila Prabhupada</a></li>
+          <li><a href="./iskcon.html">ISKCON</a></li>
         </ul>
       </div>
     </nav>
@@ -63,17 +63,25 @@
 
   <!-- Introduction Section Started -->
   <div id="introCarousel" class="bigger-height carousel carousel-slider center scrollspy">
+    <div class="carousel-fixed-item on-laptops" style="position: absolute; top: 40%;">
+      <div class="movePrevCarousel left valign-wrapper" style="cursor: pointer;background-color: rgba(0,0,0,0.5); border-radius:200px;">
+        <i style="font-size: 64px;" class="white-text material-icons">keyboard_arrow_left</i>
+      </div>
+      <div class="moveNextCarousel right valign-wrapper" style="cursor: pointer;background-color: rgba(0,0,0,0.5); border-radius:200px;">
+        <i style="font-size: 64px;" class="white-text material-icons">keyboard_arrow_right</i>
+      </div>
+    </div>
     <div style=" position: relative;" class="valign-wrapper bigger-height carousel-item white-text" href="#one!">
-          <div class="img-center">
-            <picture>
-              <source media="(max-width:600px)" srcset="assets/images/aryan-banner-600.jpg">
-              <source media="(max-width:992px)" srcset="assets/images/aryan-banner-992.jpg">
-              <source media="(max-width:1200px)" srcset="assets/images/aryan-banner-1200.jpg">
-              <source media="(max-width:1920px)" srcset="assets/images/aryan-banner-1920.jpg">
-              <img src="assets/images/banner1920.jpg" alt="">
-            </picture>
-            <div class="gradient-bottom"></div>
-          </div>
+      <div class="img-center">
+        <picture>
+          <source media="(max-width:600px)" srcset="assets/images/aryan-banner-600.jpg">
+          <source media="(max-width:992px)" srcset="assets/images/aryan-banner-992.jpg">
+          <source media="(max-width:1200px)" srcset="assets/images/aryan-banner-1200.jpg">
+          <source media="(max-width:1920px)" srcset="assets/images/aryan-banner-1920.jpg">
+          <img src="assets/images/banner1920.jpg" alt="">
+          </picture>
+        <div class="gradient-bottom"></div>
+      </div>
     </div>
     <div class="bigger-height carousel-item amber white-text" href="#one!">
       <h2>Second Panel</h2>
@@ -116,11 +124,17 @@
         <h3>Modules</h3>
       </center>
       <div id="moduleCarousel" class="carousel">
+        <div class="prevModule left valign-wrapper on-laptops" style="margin-top: 218px;cursor: pointer;background-color: rgba(0,0,0,0.5); border-radius:200px;">
+            <i style="font-size: 64px;" class="white-text material-icons">keyboard_arrow_left</i>
+        </div>
         <a class="carousel-item" href="#one!"><img src="./assets/images/incredibleIndia.jpg"></a>
         <a class="carousel-item" href="#two!"><img src="./assets/images/healthylifestyle.jpg"></a>
         <a class="carousel-item" href="#three!"><img src="./assets/images/learningfromlockdown.jpg"></a>
         <a class="carousel-item" href="#four!"><img src="./assets/images/overcomingAddiction.jpg"></a>
         <a class="carousel-item" href="#five!"><img src="./assets/images/Who Am I.png"></a>
+        <div class="nextModule right valign-wrapper on-laptops" style="margin-top: 218px;cursor: pointer;background-color: rgba(0,0,0,0.5); border-radius:200px;">
+          <i style="font-size: 64px;" class="white-text material-icons">keyboard_arrow_right</i>
+        </div>
       </div>
       <br><br>
       <center>
@@ -174,27 +188,27 @@
   <div id="activity" class="pink-50 scrollspy">
     <div class="activity-container">
       <div class="section">
-        <h3 class="header black-text left-align scrollspy">Activities</h3>
+        <h3 style="padding-left: 20px;" class="header black-text left-align scrollspy">Activities</h3>
         <!--Indigo 900 Dark-->
         <!-- Row 1 started -->
         <div class="row">
           <div class="full-size col s12 m6 l4">
             <div class="hidder">
-              <img height="auto" width="100%" src="./assets/images/seminars.jpg" />
+              <img height="100%" width="auto" src="./assets/images/seminars.jpg" />
             </div>
             <h5 class="center">Seminars</h5>
             <br>
           </div>  
           <div class="full-size col s12 m6 l4">
             <div class="hidder">
-              <img height="auto" width="100%" src="./assets/images/camp.jpg" />
+              <img height="100%" width="auto" src="./assets/images/camp.jpg" />
             </div>
             <h5 class="center">Camps</h5>
             <br>
           </div>
           <div class="full-size col s12 m6 l4">
             <div class="hidder">
-              <img height="auto" width="100%" src="./assets/images/mentor.jpg" />
+              <img height="100%" width="auto" src="./assets/images/school-programs.jpg" />
             </div>
             <h5 class="center">School Programs</h5>
             <br>
@@ -208,14 +222,14 @@
           </div>
           <div class="full-size col s12 m6 l4">
             <div class="hidder">
-              <img height="auto" width="100%" src="./assets/images/gd.jpeg" />
+              <img height="100%" width="auto" src="./assets/images/youth-fest.jpeg" />
             </div>
             <h5 class="center">Youth Fest</h5>
             <br>
           </div>
           <div class="full-size col s12 m6 l4">
             <div class="hidder">
-              <img height="auto" width="100%" src="./assets/images/gd.jpeg" />
+              <img height="100%" width="auto" src="./assets/images/mentor.jpg" />
             </div>
             <h5 class="center">Personal Guidance</h5>
             <br>

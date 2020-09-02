@@ -21,9 +21,21 @@ $(document).ready(function(){
       }, carousel_interval);
   }
   function stop(){
-  clearInterval(int);
+    clearInterval(int);
   }
   $('#introCarousel').hover(stop, run);
+  $('.moveNextCarousel').click(function (e) {
+    // print("next");
+    e.preventDefault();
+    e.stopPropagation();
+    $('#introCarousel').carousel('next');
+  });
+  $('.movePrevCarousel').click(function (e) {
+    // print("next");
+    e.preventDefault();
+    e.stopPropagation();
+    $('#introCarousel').carousel('prev');
+  });
 });
 $(document).ready(function(){
   var carousel_interval = 10000000;
@@ -39,6 +51,18 @@ $(document).ready(function(){
   clearInterval(int);
   }
   $('#moduleCarousel').hover(stop, run);
+  $('.nextModule').click(function (e) {
+    // print("next");
+    e.preventDefault();
+    e.stopPropagation();
+    $('#moduleCarousel').carousel('next');
+  });
+  $('.prevModule').click(function (e) {
+    // print("next");
+    e.preventDefault();
+    e.stopPropagation();
+    $('#moduleCarousel').carousel('prev');
+  });
 });
 $(document).ready(function(){
   $('.collapsible').collapsible();
@@ -49,3 +73,4 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.modal').modal();
 });
+
