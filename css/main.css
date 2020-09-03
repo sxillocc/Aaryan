@@ -8,7 +8,7 @@
 /* Introduction Section */
 .bigger-height{
   height: 500px !important;
-  width: 100vw !important;
+  /* width: 100vw !important; */
 }
 .gradient-bottom{
   position: absolute;

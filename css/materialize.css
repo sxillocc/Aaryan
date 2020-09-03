@@ -37,6 +37,19 @@ nav ul a{
   top: 64px !important;
 }
 
+.facebook:hover{
+  color: #3b5998;
+}
+.instagram:hover{
+  color: #d6249f;
+}
+.youtube:hover{
+  color: #ff0000;
+}
+.mail:hover{
+  color: #e0e0e0;
+}
+
 .on{
   font-weight: 900;
 }

@@ -1,7 +1,9 @@
 body{
     scroll-behavior: smooth;
 }
-
+.writeup{
+    font-size: 18px;
+}
 .responsive-img{
     max-width: 50%;
     height: auto;
