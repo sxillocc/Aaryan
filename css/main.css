@@ -1,11 +1,14 @@
 .img-center{
-  margin-left: 50%;
+  position: absolute;
+  left: 50%;
+  /* overflow: hidden; */
   transform: translateX(-50%);
 }
 
 /* Introduction Section */
 .bigger-height{
   height: 500px !important;
+  width: 100vw !important;
 }
 .gradient-bottom{
   position: absolute;
