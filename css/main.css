@@ -14,6 +14,22 @@
   bottom: 0;
   background: linear-gradient(180deg, rgba(239,231,231,0) 0%, rgba(0,0,0,0.5) 100%);;
 }
+.on-laptops{
+  display: none !important;
+}
+@media only screen and (min-width: 992px) {
+  .on-laptops{
+    display: block !important;
+  }
+}
+
+/* Upcoming Events Section */
+.carousel{
+  height: 500px;
+}
+.carousel .carousel-item{
+  height: 424.28px;
+}
 
 /* Activities Section */
 .activity-container {
@@ -42,33 +58,4 @@
         padding: 0 0 0 0 !important;
         margin: 0 0 0 0;
     }
-}
-
-
-.carousel{
-  height: 500px;
-}
-
-.carousel .carousel-item{
-  height: 424.28px;
-}
-
-.activity-content{
-  font-size: 26px;
-  padding-left: 20px;
-
-}
-
-@media only screen and (max-width: 992px) {
-  .activity-content {
-    font-size: 20px;
-  }
-}
-.on-laptops{
-  display: none !important;
-}
-@media only screen and (min-width: 992px) {
-  .on-laptops{
-    display: block !important;
-  }
 }

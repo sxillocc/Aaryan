@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  $('.parallax').parallax();
-});
-
-$(document).ready(function(){
   $('.scrollspy').scrollSpy();
 });
 
@@ -63,14 +59,5 @@ $(document).ready(function(){
     e.stopPropagation();
     $('#moduleCarousel').carousel('prev');
   });
-});
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});
-$(document).ready(function(){
-  $('.fixed-action-btn').floatingActionButton();
-});
-$(document).ready(function(){
-  $('.modal').modal();
 });
 
