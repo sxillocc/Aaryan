@@ -7,20 +7,14 @@ module.exports = function(grunt) {
           engine: 'im',
           sizes: [{
               name: 'l',
-              width: '600px',
-              suffix: '-600',
-              quality: 50
-            },
-            {
-              name: 'm',
               width: '400px',
               suffix: '-400',
               quality: 50
             },
             {
-              name: 's',
-              width: '500px',
-              suffix: '-500',
+              name: 'm',
+              width: '600px',
+              suffix: '-600',
               quality: 50
             },
           ]
@@ -28,7 +22,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['**.{jpeg,jpg}'],
-          cwd: './images/original-posters',
+          cwd: './images',
           dest: './modified_images'
         }]
       }
