@@ -1,7 +1,7 @@
 {
-  "name": "aryans",
+  "name": "thearyansclub",
   "version": "1.0.0",
-  "description": "a cool website",
+  "description": "The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.",
   "main": "index.js",
   "dependencies": {
     "http-server": "^0.12.3"
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/sxillocc/Aaryan.git"
   },
-  "author": "Mohit, Shaktiraj",
+  "author": "Shaktiraj, Mohit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sxillocc/Aaryan/issues"

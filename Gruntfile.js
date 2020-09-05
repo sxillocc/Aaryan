@@ -6,22 +6,16 @@ module.exports = function(grunt) {
         options: {
           engine: 'im',
           sizes: [{
-              name: 'l',
-              width: '400px',
-              suffix: '-400',
-              quality: 50
-            },
-            {
-              name: 'm',
-              width: '600px',
-              suffix: '-600',
-              quality: 50
+              name: 'x',
+              width: '20px',
+              suffix: 'small',
+              quality: 100
             },
           ]
         },
         files: [{
           expand: true,
-          src: ['**.{jpeg,jpg}'],
+          src: ['*.{png,jpg}'],
           cwd: './images',
           dest: './modified_images'
         }]
