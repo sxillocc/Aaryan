@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 20000;
+  var carousel_interval = 5000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
@@ -16,25 +16,24 @@ $(document).ready(function(){
           $('#introCarousel').carousel('next');
       }, carousel_interval);
   }
-  function stop(){
-    clearInterval(int);
-  }
-  $('#introCarousel').hover(stop, run);
+  // function stop(){
+  //   clearInterval(int);
+  // }
+  run();
+  // $('#introCarousel').hover(stop, run);
   $('.moveNextCarousel').click(function (e) {
-    // print("next");
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('next');
   });
   $('.movePrevCarousel').click(function (e) {
-    // print("next");
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('prev');
   });
 });
 $(document).ready(function(){
-  var carousel_interval = 10000000;
+  var carousel_interval = 3000;
   $('#moduleCarousel').carousel();
   var int;
   function run(){
@@ -43,20 +42,11 @@ $(document).ready(function(){
           $('#moduleCarousel').carousel('next');
       }, carousel_interval);
   }
-  function stop(){
-  clearInterval(int);
-  }
-  $('#moduleCarousel').hover(stop, run);
+  run();
   $('.nextModule').click(function (e) {
-    // print("next");
-    e.preventDefault();
-    e.stopPropagation();
     $('#moduleCarousel').carousel('next');
   });
   $('.prevModule').click(function (e) {
-    // print("next");
-    e.preventDefault();
-    e.stopPropagation();
     $('#moduleCarousel').carousel('prev');
   });
 });
