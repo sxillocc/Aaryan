@@ -6,10 +6,18 @@
  .shadow{
   box-shadow: 1px 1px 5px grey;
 }
+.red-800{
+  background-color: #c62828;
+}
+.red-900-dark{
+  background-color: #7f0000;
+}
  .pink-50{
+   /* Red 500 */
   background-color: #f44336;
 }
 .p-color{
+  /* Pink 700 Dark */
   color: #8c0032 !important;
 }
 .pb-color{
@@ -52,6 +60,7 @@ nav ul a{
 
 .on{
   font-weight: 900;
+  color: #8c0032 !important;
 }
 
 .materialize-red {
