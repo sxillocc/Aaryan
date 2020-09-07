@@ -115,8 +115,8 @@
     <div class="carousel-item bigger-height blue">
       <div class="row">
         <div class="padding-0 col s12 l6">
-          <div style="background-image: radial-gradient(circle, rgba(56,112,178,0.3) 64%, rgba(0,212,255,0) 97%),url(./assets/images/education.jpg);
-                      background-size: cover;" class="card-container">
+          <div style="background-image: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.6) 40%),url(./assets/images/education.jpg);
+                        background-size: cover;" class="card-container">
             <div class="card-content">
               <div class="myCard">
                 <div class="card-heading">EDUCATE</div>
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="padding-0 col s12 l6">
-          <div style="background-image: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(127,22,22,0.7) 100%),url(./assets/images/empowerment.jpg.jpg);
+          <div style="background-image: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.6) 40%),url(./assets/images/empowerment.jpg.jpg);
                         background-size: cover;" class="card-container">
             <div class="card-content">
               <div class="myCard">
@@ -147,9 +147,8 @@
     <div class="carousel-item bigger-height red">
       <div class="row">
         <div class="padding-0 col s12 l6">
-          <div style="background-image: linear-gradient(0deg, rgba(107,255,49,0.3) 0%, rgba(0,0,0,0.7) 100%),url(./assets/images/environment.jpg);
-                      background-position: center;
-                      background-size: cover;" class="card-container">
+          <div style="background-image: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.6) 40%),url(./assets/images/environment.jpg);
+                        background-size: cover; background-position: center;" class="card-container">
             <div class="card-content">
               <div class="myCard">
                 <div class="card-heading">ENVIRONMENT</div>
@@ -159,7 +158,7 @@
           </div>
         </div>
         <div class="padding-0 col s12 l6">
-          <div style="background-image: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.7) 60%),url(./assets/images/excursion.jpg);
+          <div style="background-image: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.6) 40%),url(./assets/images/excursion.jpg);
                         background-size: cover;" class="card-container">
             <div class="card-content">
               <div class="myCard">
@@ -186,21 +185,23 @@
           <h1 id="festival" class="header center black-text scrollspy">Upcoming Events</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12">
           <div class="card">
-            <div class="card-image">
-              <a href="./lets-make-it-better.html">
-              <picture>
-                <source media="(min-width:993px)" srcset="./assets/images/aryan-event-2.jpg">
-                <!-- <source media="(min-width:601px)" srcset="./assets/images/aryan-event-m-992.jpg"> -->
-                <img src="./assets/images/aryan-event-s-600.jpg" alt="">
-              </picture>
-              </a>
+            <div class="row">
+              <div class="col s12 m8 padding-0">
+                <picture>
+                  <source media="(min-width:993px)" srcset="./assets/images/aryan-event-2.jpg">
+                  <!-- <source media="(min-width:601px)" srcset="./assets/images/aryan-event-m-992.jpg"> -->
+                  <img src="./assets/images/aryan-event-s-600.jpg" width="100%" alt="">
+                </picture>
+              </div>
+              <div class="col s12 m4 padding-0">
+                <h5>Not Completed</h5>
+                <!-- <h2 class="center-align" style="color: #34515e;font-weight: 600;">LIFE TRANSFORMING</h2>
+                <h4 class="center-align" style="color: black;font-weight: 600;">ONLINE WORKSHOP</h4>
+                <h5 class="center-align ">7 <a style="font-weight: 600;">Modules</a> - 3 Days Each</h5> -->
+              </div>
             </div>
           </div>
-        </div>
-      </div>
       <br>
       <div id="moduleCarousel" class="carousel">
         <!-- <div class="prevModule left valign-wrapper on-laptops"
@@ -287,13 +288,13 @@
     </div>
   </div>
   <!-- Activities Ended -->
-  <!-- Footer Started Red 800-->
+  <!-- Footer Started-->
   <footer class="page-footer" style="background-color: #241c1c;">
     <div class="container">
       <div class="section">
         <div class="row">
           <div class="col s12 l6">
-            <h2>Contact Us</h2>
+            <h4>Contact Us</h4>
             <div class="divider"></div>
             <h5 class="thin-font">ISKCON Juhu, Juhu Road </br>
             Mumbai, Maharashtra - 400049</br>
@@ -306,7 +307,7 @@
             </h5>
           </div>
           <div class="col s12 l6">
-            <h2>Useful Links</h2>
+            <h4>Useful Links</h4>
             <div class="divider"></div>
             <a href="./" class="white-text"><h5 class="thin-font footer-link">Home</h5></a>
             <a href="./lets-make-it-better.html" class="white-text"><h5 class="thin-font footer-link">Latest Events</h5></a>
@@ -339,35 +340,6 @@
         Made with &nbsp;&nbsp;&nbsp;<i class="material-icons tiny">favorite</i>&nbsp;&nbsp;&nbsp; for Srila Prabhupada
       </h6>
     </div>
-    <!-- <div class="footer-social-icon">
-      <h5 class="white-text">GET IN TOUCH</h5>
-      <ul>
-        <li><a class="white-text" href="https://www.instagram.com/thearyansclub/?igshid=1i5xvwjzugpw7"><i
-              class="facebook fa fa-facebook"></i></a></li>
-        <li><a class="white-text" href="mailto:team.thearyan@gmail.com"><i class="mail fa fa-envelope"></i></a></li>
-        <li><a class="white-text" href="https://www.youtube.com/chakravartidas"><i
-              class="youtube fa fa-youtube"></i></a></li>
-        <li><a class="white-text" href="https://www.facebook.com/thearyansclub/"><i
-              class="instagram fa fa-instagram"></i></a></li>
-      </ul>
-
-      <i class="fa fa-whatsapp"> / <i class="fa fa-telegram"> : 90820-43865, 90742-30903
-      <h6 class="white-text"> Contact No. : 9082043865, 9074230903</h6>
-    </div>
-    <br>
-    <div class="container divider"></div>
-    <div class="footer-main-div">
-      <ul>
-        <li> <a style="color: white" href="./index.html"> Home</a></li>
-        <li> <a style="color: white" href="./lets-make-it-better.html"> Latest Events</a></li>
-        <li> <a style="color: white" href="#"> Appreciation</a></li>
-        <li> <a style="color: white" href="./index.html#activity"> Activities</a></li>
-      </ul>
-
-    </div>
-    <div class="container"></div>
-    
-    </div> -->
   </footer>
   <!-- Footer Ended -->
 
