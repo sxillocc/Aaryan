@@ -1,55 +1,119 @@
-/* Banner Section */
-.banner-logo-container{
-  max-width: 300px;
+/*New Banner Section*/
+.card-container{
+  height: 500px;
+  position: relative;
 }
-.banner-tagline-container{
-  max-width: 320px; 
-  padding: 5px; 
+.padding-0{
+  padding: 0 !important;
+}
+.card-content{
+  width: 100%; 
+  position: absolute; 
+  bottom: 50%;
+  transform: translateY(50%); 
+}
+.card-heading{
   font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+.card-writeup{
+  text-align: justify;
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+}
+.myCard{
+  max-width: 300px;
+  margin: auto;
+}
+.banner-main-heading{
+  font-size: 26px;
+  color: white;
+  width: 100%;
+  font-weight: bolder;
+}
+@media only screen and (min-width:601px){
+  .banner-main-heading{
+    font-size: 32px;
+  }
+  .myCard{
+    max-width: 600px;
+  }
+  .card-heading{
+    font-size: 22px;
+  }
+  .card-writeup{
+    font-size: 20px;
+  } 
+}
+@media only screen and (min-width: 993px){
+  .banner-main-heading{
+    font-size: 54px;
+  }
+  .myCard{
+    max-width: 500px;
+    padding: 32px;
+  }
+  .card-heading{
+    font-size: 32px;
+  }
+  .card-writeup{
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  .card-container{
+    height: 250px;
+  }
+}
+
+.banner-tagline-container{
+  max-width: 360px; 
+  padding: 25px 5px; 
+  font-size: 36px;
+  font-weight: bolder;
+  color: white;
 }
 .banner-brand{
-  max-width: 320px; 
-  padding: 3px; 
-  font-size: 30px;
+  max-width: 360px; 
+  padding: 25px 3px; 
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
 }
 @media only screen and (min-width: 601px){
   .banner-tagline-container{
     max-width: 500px;
     padding: 25px 5px;
-    font-size: 24px;
-  }
-  .banner-logo-container{
-    max-width: 350px;
+    font-size: 40px;
   }
   .banner-brand{
-    max-width: 500px;
+    max-width: 700px;
     padding: 0px 5px;
-    font-size: 32px;
-  }
-}
-@media only screen and (min-width: 993px){
-  .banner-logo-container{
-    max-width: 400px;
-  }
-  .banner-tagline-container{
-    max-width: 800px;
-    padding: 25px;
-    font-size: 26px;
-  }
-  .banner-brand{
-    max-width: 800px;
-    padding: 20px;
     font-size: 48px;
   }
 }
-
-.banner-main-heading{
-  font-size: 22px;
-  max-width: 250px;
-  padding: 5px; 
-  margin: auto;
+@media only screen and (min-width: 993px){
+  .banner-tagline-container{
+    max-width: 900px;
+    padding: 10px;
+    font-size: 52px;
+  }
+  .banner-brand{
+    max-width: 1024px;
+    padding: 20px;
+    font-size: 66px;
+  }
 }
-.banner-text-container{ 
+.banner-cards-centralizer{
+  position:absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 100%;
+}
+/* .banner-text-container{ 
   max-width: 300px;
   padding: 10px;
   margin: 10px auto;
@@ -114,12 +178,7 @@
     max-width: 100%;
   }
 }
-.banner-cards-centralizer{
-  position:absolute; 
-  top: 50%; 
-  transform: translateY(-50%); 
-  width: 100%;
-}
+ */
 
 
 /* Introduction Section */

@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 5000;
+  var carousel_interval = 2000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
