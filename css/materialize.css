@@ -3,6 +3,10 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
  .shadow{
   box-shadow: 1px 1px 5px grey;
 }
