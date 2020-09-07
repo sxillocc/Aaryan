@@ -59,6 +59,9 @@ nav ul a{
 .instagram:hover{
   color: #d6249f;
 }
+.whatsapp:hover{
+  color: #4FCE5D;
+}
 .youtube:hover{
   color: #ff0000;
 }
@@ -69,6 +72,12 @@ nav ul a{
 .on{
   font-weight: 900;
   color: #c5331c !important;
+}
+.thin-font{
+  font-weight: 100;
+}
+.footer-link:hover{
+  font-weight: 600 !important; 
 }
 
 .materialize-red {

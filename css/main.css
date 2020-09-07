@@ -23,9 +23,7 @@
   color: white;
   font-size: 16px;
 }
-.thin-font{
-  font-weight: 100;
-}
+
 .myCard{
   max-width: 300px;
   margin: auto;
@@ -76,7 +74,7 @@
   max-width: 360px; 
   padding: 25px 5px; 
   font-size: 36px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   color: white;
 }
 .banner-brand{
