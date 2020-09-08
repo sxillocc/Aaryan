@@ -43,6 +43,15 @@ nav ul a{
   width: 120px !important;
   height: auto !important;
 }
+.footer-heading{
+  font-size: 22px !important;
+}
+.footer-subheading{
+  font-size: 20px !important;
+}
+.footer-link{
+  font-size: 20px !important;
+}
 #logo-container{
   display: flex;
   height: 100%;
