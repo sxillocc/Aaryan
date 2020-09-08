@@ -1,4 +1,4 @@
-/*New Banner Section*/
+/*Banner Section*/
 .card-container{
   height: 500px;
   position: relative;
@@ -114,53 +114,42 @@
   transform: translateY(-50%); 
   width: 100%;
 }
-/* .banner-text-container{ 
-  max-width: 300px;
-  padding: 10px;
-  margin: 10px auto;
+.bigger-height{
+  height: 500px !important;
+} 
+
+/* Upcoming Events Section */
+.img-heading{
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  margin: 5px;
 }
-.banner-text-heading{
+.img-subheading{
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 100;
+  text-align: center;
+  margin: 5px;
 }
-.banner-text-content{
+.img-links{
   font-size: 16px;
-  text-align: justify;
+  font-weight: bolder;
+  text-align: center;
+  margin: 5px;
 }
-@media only screen and (min-width: 601px){
-  .banner-main-heading{
-    font-size: 24px;
-    max-width: 600px;
-    padding: 25px;
-  }
-  .banner-text-heading{
-    font-size: 20px;
-  }
-  .banner-text-content{
-    font-size: 18px;
-  }
-  .banner-text-container{
-    max-width: 600px;
-    padding: 16px;
-    margin: 16px auto;
-  }
+.mrgn{
+  margin: 0px 20px;
+  overflow: hidden;
 }
 @media only screen and (min-width: 993px){
-  .banner-main-heading{
-    font-size: 48px;
-    padding: 10px;
-    max-width: 100%;
+  .img-heading{
+    font-size: 32px;
   }
-  .banner-text-heading{
-    font-size: 24px;
+  .img-subheading{
+    font-size: 26px;
   }
-  .banner-text-content{
-    font-size: 22px;
-  }
-  .banner-text-container{
-    max-width: 300px;
-    padding: 10px;
-    margin: auto auto;
+  .img-links{
+    font-size: 20px;
   }
   .valign-center{
     display: -webkit-box;
@@ -173,41 +162,21 @@
             align-items: center;
   }
 }
-@media only screen and (min-width: 1919px){
-  .banner-main-heading{
-    font-size: 64px;
-    max-width: 100%;
+@media only screen and (min-width: 1400px){
+  .img-heading{
+    font-size: 40px;
+  }
+  .img-subheading{
+    font-size: 34px;
+  }
+  .img-links{
+    font-size: 28px;
   }
 }
- */
-
-
-/* Introduction Section */
-.img-center{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.card-box{
+  margin: auto;
+  max-width: 1600px;
 }
-.bigger-height{
-  height: 500px !important;
-} 
-.gradient-bottom{
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(239,231,231,0) 0%, rgba(0,0,0,0.5) 100%);;
-}
-.on-laptops{
-  display: none !important;
-}
-@media only screen and (min-width: 992px) {
-  .on-laptops{
-    display: block !important;
-  }
-}
-
-/* Upcoming Events Section */
 .carousel{
   height: 500px;
 }

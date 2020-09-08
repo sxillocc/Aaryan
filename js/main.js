@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 5000000000;
+  var carousel_interval = 3000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
@@ -16,9 +16,17 @@ $(document).ready(function(){
           $('#introCarousel').carousel('next');
       }, carousel_interval);
   }
-  // function stop(){
-  //   clearInterval(int);
-  // }
+  function stop(){
+    clearInterval(int);
+  }
+  $('#introCarousel').on( 'mousedown', function(e) {
+    stop();
+  });
+  $('#introCarousel').on( 'mouseup', function(e) {
+    run();
+  });
+
+  // $('#introCarousel').click(stop);
   run();
   // $('#introCarousel').hover(stop, run);
   $('.moveNextCarousel').click(function (e) {
@@ -42,7 +50,16 @@ $(document).ready(function(){
           $('#moduleCarousel').carousel('next');
       }, carousel_interval);
   }
+  function stop(){
+    clearInterval(int);
+  }
   run();
+  $('#moduleCarousel').on( 'mousedown', function(e) {
+    stop();
+  });
+  $('#moduleCarousel').on( 'mouseup', function(e) {
+    run();
+  });
   $('.nextModule').click(function (e) {
     $('#moduleCarousel').carousel('next');
   });
