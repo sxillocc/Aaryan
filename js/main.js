@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 3000;
+  var carousel_interval = 10000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
@@ -41,7 +41,7 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function(){
-  var carousel_interval = 3000;
+  var carousel_interval = 5000;
   $('#moduleCarousel').carousel();
   var int;
   function run(){

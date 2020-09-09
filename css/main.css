@@ -1,4 +1,11 @@
 /*Banner Section*/
+.img-center{
+  position: absolute;
+  left: 50%;
+  /* width: 100vw; */
+  transform: translateX(-50%);
+}
+
 .card-container{
   height: 500px;
   position: relative;
