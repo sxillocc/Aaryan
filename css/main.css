@@ -5,32 +5,99 @@
   /* width: 100vw; */
   transform: translateX(-50%);
 }
-
-.scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+.tagline-container{
+  position: absolute; 
+  left: calc(50% - 104.5px);
+  min-width: 209px;
+  bottom: -450px; 
+  color:white;
+}
+.invisible{
+  opacity: 0;
+}
+.visible{
+  opacity: 1;
+}
+.welcome-container{
+  position: absolute; 
+  left: calc(50% - 103.2px);
+  max-width: 206.4px;
+  top: 20px;
+  color: yellow;
+  font-weight: bold;
+  font-size: 24px;
+}
+.tagline-container .line1{
+  font-size: 24px;
+}
+.tagline-container .line2{
+  font-size: 29.04px;
+}
+@media only screen and (min-width: 601px){
+  .tagline-container{
+    left: 50px; 
+  }
+  .welcome-container{
+    left: 50px;
+    max-width: 500px;
+    text-align: left;
+    top: 40px;
+    font-size: 24px;
+  }
+  .tagline-container .line1{
+    font-size: 28px;
+  }
+  .tagline-container .line2{
+    font-size: 33.88px;
+  }  
+}
+@media only screen and (min-width: 1400px){
+  .tagline-container{
+    left: 150px; 
+  }
+  .welcome-container{
+    left: 150px;
+    max-width: 800px;
+    font-size: 32px;
+  }
+  .tagline-container .line1{
+    font-size: 42px;
+  }
+  .tagline-container .line2{
+    font-size: 50.83px;
+  }  
 }
 
-@-webkit-keyframes scale-up-center {
+.slide-in-left {
+	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-left {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
-@keyframes scale-up-center {
+@keyframes slide-in-left {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
+
 
 
 .card-container{

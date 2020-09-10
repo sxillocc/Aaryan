@@ -14,10 +14,21 @@ $(document).ready(function(){
       if($(ele).children().hasClass("i1")){
         var e = $(ele).children()[0];
         var req = $(e).children()[1];
-        $(req).addClass("scale-up-center");
+        var req2 = $(e).children()[2];
+        $(req).removeClass("visible");
+        $(req).addClass("invisible");
+        $(req2).addClass("slide-in-left");
         setTimeout(function() {
-            $(req).removeClass("scale-up-center");
-        }, 2000)
+            $(req2).removeClass("slide-in-left");
+        }, 2000);
+        setTimeout(function(){
+          $(req2).removeClass("invisible");
+          $(req).addClass("visible");
+          $(req).addClass("slide-in-left");
+        }, 500);
+        setTimeout(function(){
+          $(req).removeClass("slide-in-left");
+        }, 2000);
       }
     }
   });
