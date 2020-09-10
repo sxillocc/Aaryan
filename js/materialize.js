@@ -10661,40 +10661,40 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_handleCarouselDrag",
       value: function _handleCarouselDrag(e) {
-        var x = void 0,
-            y = void 0,
-            delta = void 0,
-            deltaY = void 0;
-        if (this.pressed) {
-          x = this._xpos(e);
-          y = this._ypos(e);
-          delta = this.reference - x;
-          deltaY = Math.abs(this.referenceY - y);
-          if (deltaY < 25 && !this.verticalDragged) {
-            // console.log(deltaY);
-            // If vertical scrolling don't allow dragging.
-            if (delta > 2 || delta < -2) {
-              this.dragged = true;
-              this.reference = x;
-              this._scroll(this.offset + delta);
-            }
-          } else if (this.dragged) {
-            // If dragging don't allow vertical scroll.
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          } else {
-            // Vertical scrolling.
-            this.verticalDragged = true;
-          }
-        }
+        // var x = void 0,
+        //     y = void 0,
+        //     delta = void 0,
+        //     deltaY = void 0;
+        // if (this.pressed) {
+        //   x = this._xpos(e);
+        //   y = this._ypos(e);
+        //   delta = this.reference - x;
+        //   deltaY = Math.abs(this.referenceY - y);
+        //   if (deltaY < 25 && !this.verticalDragged) {
+        //     // console.log(deltaY);
+        //     // If vertical scrolling don't allow dragging.
+        //     if (delta > 2 || delta < -2) {
+        //       this.dragged = true;
+        //       this.reference = x;
+        //       this._scroll(this.offset + delta);
+        //     }
+        //   } else if (this.dragged) {
+        //     // If dragging don't allow vertical scroll.
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     return false;
+        //   } else {
+        //     // Vertical scrolling.
+        //     this.verticalDragged = true;
+        //   }
+        // }
 
-        if (this.dragged) {
-          // If dragging don't allow vertical scroll.
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
+        // if (this.dragged) {
+        //   // If dragging don't allow vertical scroll.
+        //   e.preventDefault();
+        //   e.stopPropagation();
+        //   return false;
+        // }
       }
 
       /**

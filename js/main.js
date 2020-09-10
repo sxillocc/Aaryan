@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 1000000;
+  var carousel_interval = 10000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
@@ -39,25 +39,7 @@ $(document).ready(function(){
           $('#introCarousel').carousel('next');
       }, carousel_interval);
   }
-  function stop(){
-    clearInterval(int);
-  }
-  $('#introCarousel').on("tap",function(event) {
-    if (event.originalEvent !== undefined && _.touchObject.swipeLength > 4 && event.cancelable) { event.preventDefault(); }
-  //   if (e.type === 'mousedown') {
-  //     e.preventDefault();
-  //   }
-  });
-  // $('#introCarousel').on( 'mousedown', function(e) {
-  //   stop();
-  // });
-  // $('#introCarousel').on( 'mouseup', function(e) {
-  //   run();
-  // });
-
-  // $('#introCarousel').click(stop);
   run();
-  // $('#introCarousel').hover(stop, run);
   $('.moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -69,6 +51,8 @@ $(document).ready(function(){
     $('#introCarousel').carousel('prev');
   });
 });
+
+
 $(document).ready(function(){
   var carousel_interval = 5000;
   $('#moduleCarousel').carousel();
@@ -79,29 +63,17 @@ $(document).ready(function(){
           $('#moduleCarousel').carousel('next');
       }, carousel_interval);
   }
-  function stop(){
-    clearInterval(int);
-  }
   run();
-  $('#moduleCarousel').on("tap",function(e) {
-    if (e.type === 'mousedown') {
-      e.preventDefault();
-    }
-    if (e.type === 'mouseup') {
-      e.preventDefault();
-    }
-  });
-  $('#moduleCarousel').on( 'mousedown', function(e) {
-    stop();
-  });
-  $('#moduleCarousel').on( 'mouseup', function(e) {
-    run();
-  });
-  $('.nextModule').click(function (e) {
-    $('#moduleCarousel').carousel('next');
-  });
-  $('.prevModule').click(function (e) {
-    $('#moduleCarousel').carousel('prev');
-  });
+});
+
+$('#next-module').click(function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  $('#moduleCarousel').carousel('next');
+});
+$('#prev-module').click(function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  $('#moduleCarousel').carousel('prev');
 });
 

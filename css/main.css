@@ -33,7 +33,13 @@
 .tagline-container .line2{
   font-size: 29.04px;
 }
+.module-buttons{
+  font-size: 32px;
+}
 @media only screen and (min-width: 601px){
+  .module-buttons{
+    font-size: 48px;
+  }
   .tagline-container{
     left: 50px; 
   }
@@ -51,6 +57,7 @@
     font-size: 33.88px;
   }  
 }
+
 @media only screen and (min-width: 1400px){
   .tagline-container{
     left: 150px; 
@@ -243,6 +250,9 @@
   overflow: hidden;
 }
 @media only screen and (min-width: 993px){
+  .module-buttons{
+    font-size: 56px;
+  }
   .img-heading{
     font-size: 32px;
   }
