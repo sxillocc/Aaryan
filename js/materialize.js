@@ -10670,7 +10670,8 @@ $jscomp.polyfill = function (e, r, p, m) {
           y = this._ypos(e);
           delta = this.reference - x;
           deltaY = Math.abs(this.referenceY - y);
-          if (deltaY < 30 && !this.verticalDragged) {
+          if (deltaY < 25 && !this.verticalDragged) {
+            // console.log(deltaY);
             // If vertical scrolling don't allow dragging.
             if (delta > 2 || delta < -2) {
               this.dragged = true;
