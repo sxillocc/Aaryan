@@ -3,11 +3,23 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 10000;
+  var carousel_interval = 1000000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
-    indicators: true
+    indicators: true,
+    onCycleTo: function (ele) {
+      console.log(ele);
+      console.log($(ele).index()); // the slide's index
+      if($(ele).children().hasClass("i1")){
+        var e = $(ele).children()[0];
+        var req = $(e).children()[1];
+        $(req).addClass("scale-up-center");
+        setTimeout(function() {
+            $(req).removeClass("scale-up-center");
+        }, 2000)
+      }
+    }
   });
   var int;
   function run(){

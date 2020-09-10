@@ -10455,7 +10455,7 @@ $jscomp.polyfill = function (e, r, p, m) {
   var Carousel = function (_Component18) {
     _inherits(Carousel, _Component18);
 
-    /**
+    /**.carousel-item
      * Construct Carousel instance
      * @constructor
      * @param {Element} el
