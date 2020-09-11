@@ -1,14 +1,22 @@
+# 1 "/home/gauranga/sxillocc.github.io/article.html"
+# 1 "/home/gauranga/sxillocc.github.io//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "/home/gauranga/sxillocc.github.io/article.html"
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Module 1 | The Aryans</title>
+  <title>Articles | The Aryans</title>
 
   <meta property="description" content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.">
   <meta property="keywords" content="The Aryans Club, The Aryans Club ISKCON Mumbai, The Aryans Club ISKCON Juhu, Youth Wing of ISKCON Juhu, Youth Wing of ISKCON Mumbai, ISKCON Youth Forum Juhu, IYF Juhu,The Aryans Club Juhu, The Aryans, Aryans, Vedic Education, Bhagavad Gita Classes, Scripture Learning, Bhagavad Gita, Bhagavatam, Srimad Bhagavatam Learning, Srimad Bhagavatam" />
   <meta property="image" content="https://thearyansclub.com/assets/images/logo-big.png">
-  
+
   <meta property="og:title" content="The Aryans Club | ISKCON Juhu" />
   <meta property="og:headline" content="The Aryans Club: Official Website" />
   <meta property="og:description"
@@ -24,53 +32,20 @@
   <meta property="author" content="ISKCON®">
   <link rel="canonical" href="https://www.thearyansclub.com">
 
-  <!-- CSS  -->
+  <!-- CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  
+  <link href="css/article.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
   <!-- Social Media Icons CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="icon" href="./assets/images/logo-small.png" type="image/png" sizes="16x16">
   <style>
-    .writeup{
-        font-size: 18px;
-        text-align:justify;
+    *{
+      outline: none;
     }
-    .responsive-img{
-        max-width: 50%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 25px;
-    }
-    
-
-
-    @media screen and (max-width: 370){
-      .discription-block{ font-size: 20px; background-color: 
-      green;}
-      .image-block{
-        width:100px;
-        height: 100%;
-      }
-
-    }
-
-    @media screen and (min-width: 370){
-      .discription-block {font-size: 32px; background-color:black;}
-      .image-block{
-        width:188px;
-        height: 100%;
-      }
-    }
-
-
-  </style>  
+  </style>
 </head>
-
-<!---------320-600 mobile; 601-992: tablet ; 993-1920 : large type destop ; 1921-- large desktop -->
-<!-----sometimes 1400 will be there -->
-
 <body>
 
   <a name="top" class="scrollspy"></a>
@@ -78,7 +53,7 @@
   <ul id="nav-mobile" class="sidenav">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./lets-make-it-better.html">Latest Events</a></li>
-    <li><a href="./article.html">Articles</a></li>
+    <li><a href="./article.html" class="sidenav-close">Articles</a></li>
     <li><a href="./index.html#activities" class="sidenav-close">Activities</a></li>
     <li><a href="./index.html#contacts" class="sidenav-close">Contact</a></li>
     <li><div class="divider"></div></li>
@@ -96,7 +71,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./lets-make-it-better.html">Latest Events</a></li>
-          <li><a href="./article.html" class="sidenav-close">Articles</a></li>
+          <li><a class="on" href="./article.html" class="sidenav-close">Articles</a></li>
           <li><a href="./index.html#activities" class="sidenav-close">Activities</a></li>
           <li><a class="dropdown-trigger" href="./aboutus.html" data-target="aboutus">About Us<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a href="./index.html#contacts" class="sidenav-close">Contact</a></li>
@@ -110,12 +85,6 @@
       <li><a href="./iskcon.html">ISKCON</a></li>
     </ul>
   </div>
-  <!-- Navbar Ended -->
-
-
-
-
-
 
 
 <div class="container">
@@ -124,85 +93,79 @@
   <div class="divider"></div>
 
   <br>
-  <div class="row valign-wrapper">
-      
-    <div class="col s4 m3 l2" >
-      <img src="new-images/morality-.jpg" style="width: 100%;">
-      
-    </div>
-    <div class="col s8 m9 l10" style="padding-top: 0%;">
-      <h5>Problem faced by youth of india</h5>
-      <a> 01/01/2020</a>
-    </div>
-</div>
+  <p>
+    <img src="new-images/Artboard-1.jpg" style="width: 140px; float: left; padding-left: 10px ;margin-right: 10px;">
+    <p style="margin-left: 50px">
+      <h5>Insearch of the Lost history of India</h5>
+    <a> 01/01/2020</a>
+    </p>
+  </p>
+  <div class="divider"></div>
+  <p>
+    <img src="new-images/morality-.jpg" style="width: 140px; float: left; padding-left: 10px ;margin-right: 10px;">
+    <h5>Problem faced by youth of India</h5>
+    <a> 01/01/2020</a>
+  </p>
 
-<div class="divider"></div>
-<br>
+
+
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+  <div class="card-panel white z-depth-0"></div>
     <div class="row valign-wrapper">
-      
-        <div class="col s4 m3 l2" >
-          <img src="new-images/morality-.jpg" style="width: 100%;">
-          
-        </div>
-        <div class="col s8 m9 l10" style="padding-top: 0%;">
-          <h5>Problem faced by youth of india</h5>
-          <a> 01/01/2020</a>
-        </div>
-    </div>
-    
-
-</div>
-
-
-
-
-
-
-
-
-  <!-- Footer Started -->
-  <footer class="page-footer" style="background-color: #102027;">
-    <!--BlueGrey800Dark-->
-    <div class="footer-social-icon">
-      <h5 class="white-text">GET IN TOUCH</h5>
-      <ul>
-        <li><a class="white-text" href="https://www.instagram.com/thearyansclub/?igshid=1i5xvwjzugpw7"><i
-              class="facebook fa fa-facebook"></i></a></li>
-        <li><a class="white-text" href="mailto:team.thearyan@gmail.com"><i class="mail fa fa-envelope"></i></a></li>
-        <li><a class="white-text" href="https://www.youtube.com/chakravartidas"><i
-              class="youtube fa fa-youtube"></i></a></li>
-        <li><a class="white-text" href="https://www.facebook.com/thearyansclub/"><i
-              class="instagram fa fa-instagram"></i></a></li>
-      </ul>
-
-      <h6 class="white-text"> Whatsapp No. / Telegram No. : 90820-43865, 90742-30903</h6>
-      <h6 class="white-text"> Contact No. : 9082043865, 9074230903</h6>
-    </div>
-    <br>
-    <div class="container divider"></div>
-    <div class="footer-main-div">
-      <ul>
-        <li> <a style="color: white" href="./index.html"> Home</a></li>
-        <li> <a style="color: white" href="./lets-make-it-better.html"> Latest Events</a></li>
-        <li> <a style="color: white" href="#"> Appreciation</a></li>
-        <li> <a style="color: white" href="./index.html#activity"> Activities</a></li>
-      </ul>
-
-    </div>
-    <div class="container"></div>
-    <div class="footer-copyright" style="background-color: #29434e;">
-      <!--BlueGrey600Dark-->
-      <div class="container">
-        Made with &nbsp;&nbsp;&nbsp;<i class="material-icons tiny">favorite</i>&nbsp;&nbsp;&nbsp; for Srila Prabhupada
+      <div class="col s2">
+        <img src="new-images/morality-.jpg" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+      </div>
+      <div class="col s10">
+        <span class="black-text">
+          This is a square image. Add the "circle" class to it to make it appear circular.
+        </span>
       </div>
     </div>
+  </div>
+</div>
+
+</div>
+# 134 "/home/gauranga/sxillocc.github.io/article.html"
+  <!-- Footer Started -->
+  <footer class="page-footer" style="background-color: #102027;"> <!--BlueGrey800Dark-->
+    <div class="footer-social-icon">
+      <h5 class="white-text">GET IN TOUCH</h5>
+        <ul>
+          <li><a class="white-text" href="#!"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="white-text" href="#!"><i class="fa fa-whatsapp"></i></a></li>
+          <li><a class="white-text" href="mailto:team.thearyan@gmail.com"><i class="fa fa-google"></i></a></li>
+          <li><a class="white-text" href="#!"><i class="fa fa-youtube"></i></a></li>
+          <li><a class="white-text" href="#!"><i class="fa fa-instagram"></i></a></li>
+          <li><a class="white-text" href="#!"><i class="fa fa-telegram"></i></a></li>
+        </ul>
+
+        <h6 class="white-text"> Contact US : 99999-99999</h6>
+      </div>
+      <br>
+      <div class="container divider"></div>
+      <div class="footer-main-div">
+          <ul>
+            <li> <a style ="color: white" href="#"> Home</a></li>
+            <li> <a style ="color: white" href="#"> Latest Events</a></li>
+            <li> <a style ="color: white" href="#"> Appreciation</a></li>
+            <li> <a style ="color: white" href="#"> Activities</a></li>
+          </ul>
+
+      </div>
+      <div class="container"></div>
+      <div class="footer-copyright" style="background-color: #29434e;"><!--BlueGrey600Dark-->
+        <div class="container">
+        Made with &nbsp;&nbsp;&nbsp;<i class="material-icons tiny">favorite</i>&nbsp;&nbsp;&nbsp; for Srila Prabhupada
+        </div>
+      </div>
     </div>
   </footer>
   <!-- Footer Ended -->
 
-  <!--  Scripts-->
+  <!-- Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="js/init.js"></script>
-  </body>
+</body>
 </html>
