@@ -30,10 +30,11 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
   <!-- Social Media Icons CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="icon" href="./assets/images/logo-small.png" type="image/png" sizes="16x16">
 
   <!-- Font Style -->
@@ -42,18 +43,28 @@
   <style>
     * {
       outline: none;
+    } 
+    .article-content .heading{
+      font-size: 18px;
     }
-  </style>
+    .article-content .description{
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    @media screen and (min-width: 600px){
+      .article-content .heading{
+        font-size: 26px;
+      }  
+    }
+  </style>  
 </head>
-
 <body>
-
-  <a name="top" class="scrollspy"></a>
   <!-- Navbar-started -->
   <ul id="nav-mobile" class="sidenav">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./lets-make-it-better.html">Latest Events</a></li>
-    <li><a href="./article.html" class="sidenav-close">Articles</a></li>
+    <li><a href="./article.html">Articles</a></li>
     <li><a href="./index.html#activities" class="sidenav-close">Activities</a></li>
     <li><a href="./index.html#contacts" class="sidenav-close">Contact</a></li>
     <li>
@@ -88,9 +99,38 @@
       <li><a href="./iskcon.html">ISKCON</a></li>
     </ul>
   </div>
-  <center>
-    <h1>Articles</h1>
-  </center>
+  <!-- Navbar Ended -->
+<div class="container">
+
+  <h2 id="article-heading"> Articles</h2>
+  <div class="divider"></div>
+
+  <br>
+  <div class="row valign-wrapper" href="article2.html">
+    <div class="col s4 m3 l2"  >
+      <div style="overflow: hidden;">
+        <img src="new-images/morality-.jpg" style="height: 100px; margin-left: 50%; transform: translateX(-50%);">
+      </div>
+    </div>
+    <div class="col s8 m9 l10 article-content" style="padding-top: 0%;">
+      <h5 class="heading">5 Benefits of Mantra Meditation</h5>
+      <p class="description">Very often, people question” India has proven its mettle by.........</p>
+    </div>
+  </div>
+
+<div class="divider"></div>
+<br>
+<div class="row valign-wrapper" href="article1.html">
+  <div class="col s4 m3 l2"  >
+    <div style="overflow: hidden;">
+      <img src="assets/images/article2.jpg" style="height: 100px; margin-left: 50%; transform: translateX(-50%);">
+    </div>
+  </div>
+  <div class="col s8 m9 l10 article-content" style="padding-top: 0%;">
+    <h5 class="heading">A query about enquiry</h5>
+    <p class="description">The controversy after the questions of a young girl to a young spiritual.......</p>
+  </div>
+</div>
 
   <!-- Footer Started-->
   <footer class="page-footer" style="background-color: #c5331c;">
@@ -146,12 +186,11 @@
       </div>
     </div>
   </footer>
-  <!-- Footer Ended -->
+  <!-- Footer Ender -->
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-</body>
-
+  </body>
 </html>
