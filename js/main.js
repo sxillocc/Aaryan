@@ -45,16 +45,12 @@ $(document).ready(function(){
   $('.moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
-    stop();
     $('#introCarousel').carousel('next');
-    run();
   });
   $('.movePrevCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
-    stop();
     $('#introCarousel').carousel('prev');
-    run();
   });
 });
 
