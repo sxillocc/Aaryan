@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 100000;
+  var carousel_interval = 8000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
@@ -32,7 +32,6 @@ $(document).ready(function(){
       }
     }
   });
-  var int;
   function run(){
       int = setInterval(function()
       { 
@@ -40,25 +39,29 @@ $(document).ready(function(){
       }, carousel_interval);
   }
   run();
+  function stop(){
+    clearInterval(int);
+  }
   $('.moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#introCarousel').carousel('next');
-    carousel_interval = 10000;
+    run();
   });
   $('.movePrevCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#introCarousel').carousel('prev');
-    carousel_interval = 10000;
+    run();
   });
 });
 
 
 $(document).ready(function(){
-  var carousel_interval = 5000;
+  var carousel_interval = 3000;
   $('#moduleCarousel').carousel();
-  var int;
   function run(){
       int = setInterval(function()
       { 
@@ -66,16 +69,21 @@ $(document).ready(function(){
       }, carousel_interval);
   }
   run();
+  function stop(){
+    clearInterval(int);
+  }
   $('#next-module').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#moduleCarousel').carousel('next');
-    carousel_interval = 5000;
+    run();
   });
   $('#prev-module').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#moduleCarousel').carousel('prev');
-    carousel_interval = 5000;
+    run();
   });
 });
