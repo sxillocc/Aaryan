@@ -1,4 +1,112 @@
-/*New Banner Section*/
+/*Banner Section*/
+.img-center{
+  position: absolute;
+  left: 50%;
+  /* width: 100vw; */
+  transform: translateX(-50%);
+}
+.tagline-container{
+  position: absolute; 
+  left: calc(50% - 104.5px);
+  min-width: 209px;
+  bottom: -450px; 
+  color:white;
+}
+.invisible{
+  opacity: 0;
+}
+.visible{
+  opacity: 1;
+}
+.welcome-container{
+  position: absolute; 
+  left: calc(50% - 103.2px);
+  max-width: 206.4px;
+  top: 20px;
+  color: yellow;
+  font-weight: bold;
+  font-size: 24px;
+}
+.tagline-container .line1{
+  font-size: 24px;
+}
+.tagline-container .line2{
+  font-size: 29.04px;
+}
+.module-buttons{
+  font-size: 32px;
+}
+@media only screen and (min-width: 601px){
+  .module-buttons{
+    font-size: 48px;
+  }
+  .tagline-container{
+    left: 50px; 
+  }
+  .welcome-container{
+    left: 50px;
+    max-width: 500px;
+    text-align: left;
+    top: 40px;
+    font-size: 24px;
+  }
+  .tagline-container .line1{
+    font-size: 28px;
+  }
+  .tagline-container .line2{
+    font-size: 33.88px;
+  }  
+}
+
+@media only screen and (min-width: 1400px){
+  .tagline-container{
+    left: 150px; 
+  }
+  .welcome-container{
+    left: 150px;
+    max-width: 800px;
+    font-size: 32px;
+  }
+  .tagline-container .line1{
+    font-size: 42px;
+  }
+  .tagline-container .line2{
+    font-size: 50.83px;
+  }  
+}
+
+.slide-in-left {
+	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 .card-container{
   height: 500px;
   position: relative;
@@ -15,15 +123,17 @@
 .card-heading{
   font-size: 18px;
   color: white;
-  font-weight: bolder;
+  font-weight: 600;
 }
 .card-writeup{
   text-align: justify;
-  font-weight: 600;
+  font-weight: 100;
   color: white;
   font-size: 16px;
 }
+
 .myCard{
+  background: linear-gradient(0deg, rgba(255,243,49,0) 0%, rgba(0,0,0,0.6) 40%);
   max-width: 300px;
   margin: auto;
 }
@@ -73,7 +183,7 @@
   max-width: 360px; 
   padding: 25px 5px; 
   font-size: 36px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   color: white;
 }
 .banner-brand{
@@ -113,53 +223,45 @@
   transform: translateY(-50%); 
   width: 100%;
 }
-/* .banner-text-container{ 
-  max-width: 300px;
-  padding: 10px;
-  margin: 10px auto;
+.bigger-height{
+  height: 500px !important;
+} 
+
+/* Upcoming Events Section */
+.img-heading{
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  margin: 5px;
 }
-.banner-text-heading{
+.img-subheading{
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 100;
+  text-align: center;
+  margin: 5px;
 }
-.banner-text-content{
+.img-links{
   font-size: 16px;
-  text-align: justify;
+  font-weight: bolder;
+  text-align: center;
+  margin: 5px;
 }
-@media only screen and (min-width: 601px){
-  .banner-main-heading{
-    font-size: 24px;
-    max-width: 600px;
-    padding: 25px;
-  }
-  .banner-text-heading{
-    font-size: 20px;
-  }
-  .banner-text-content{
-    font-size: 18px;
-  }
-  .banner-text-container{
-    max-width: 600px;
-    padding: 16px;
-    margin: 16px auto;
-  }
+.mrgn{
+  margin: 0px 20px;
+  overflow: hidden;
 }
 @media only screen and (min-width: 993px){
-  .banner-main-heading{
-    font-size: 48px;
-    padding: 10px;
-    max-width: 100%;
+  .module-buttons{
+    font-size: 56px;
   }
-  .banner-text-heading{
-    font-size: 24px;
+  .img-heading{
+    font-size: 32px;
   }
-  .banner-text-content{
-    font-size: 22px;
+  .img-subheading{
+    font-size: 26px;
   }
-  .banner-text-container{
-    max-width: 300px;
-    padding: 10px;
-    margin: auto auto;
+  .img-links{
+    font-size: 20px;
   }
   .valign-center{
     display: -webkit-box;
@@ -172,41 +274,21 @@
             align-items: center;
   }
 }
-@media only screen and (min-width: 1919px){
-  .banner-main-heading{
-    font-size: 64px;
-    max-width: 100%;
+@media only screen and (min-width: 1400px){
+  .img-heading{
+    font-size: 40px;
+  }
+  .img-subheading{
+    font-size: 34px;
+  }
+  .img-links{
+    font-size: 28px;
   }
 }
- */
-
-
-/* Introduction Section */
-.img-center{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.card-box{
+  margin: auto;
+  max-width: 1600px;
 }
-.bigger-height{
-  height: 500px !important;
-} 
-.gradient-bottom{
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(239,231,231,0) 0%, rgba(0,0,0,0.5) 100%);;
-}
-.on-laptops{
-  display: none !important;
-}
-@media only screen and (min-width: 992px) {
-  .on-laptops{
-    display: block !important;
-  }
-}
-
-/* Upcoming Events Section */
 .carousel{
   height: 500px;
 }
@@ -241,4 +323,12 @@
         padding: 0 0 0 0 !important;
         margin: 0 0 0 0;
     }
+}
+.on-laptops{
+  display: none;
+}
+@media only screen and (min-width: 993px) {
+  .on-laptops{
+    display: block;
+  }   
 }

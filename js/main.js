@@ -3,11 +3,34 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 5000;
+  var carousel_interval = 100000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
-    indicators: true
+    indicators: true,
+    onCycleTo: function (ele) {
+      console.log(ele);
+      console.log($(ele).index()); // the slide's index
+      if($(ele).children().hasClass("i1")){
+        var e = $(ele).children()[0];
+        var req = $(e).children()[1];
+        var req2 = $(e).children()[2];
+        $(req).removeClass("visible");
+        $(req).addClass("invisible");
+        $(req2).addClass("slide-in-left");
+        setTimeout(function() {
+            $(req2).removeClass("slide-in-left");
+        }, 2000);
+        setTimeout(function(){
+          $(req2).removeClass("invisible");
+          $(req).addClass("visible");
+          $(req).addClass("slide-in-left");
+        }, 500);
+        setTimeout(function(){
+          $(req).removeClass("slide-in-left");
+        }, 2000);
+      }
+    }
   });
   var int;
   function run(){
@@ -16,24 +39,24 @@ $(document).ready(function(){
           $('#introCarousel').carousel('next');
       }, carousel_interval);
   }
-  // function stop(){
-  //   clearInterval(int);
-  // }
   run();
-  // $('#introCarousel').hover(stop, run);
   $('.moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('next');
+    carousel_interval = 10000;
   });
   $('.movePrevCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('prev');
+    carousel_interval = 10000;
   });
 });
+
+
 $(document).ready(function(){
-  var carousel_interval = 3000;
+  var carousel_interval = 5000;
   $('#moduleCarousel').carousel();
   var int;
   function run(){
@@ -43,11 +66,16 @@ $(document).ready(function(){
       }, carousel_interval);
   }
   run();
-  $('.nextModule').click(function (e) {
+  $('#next-module').click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
     $('#moduleCarousel').carousel('next');
+    carousel_interval = 5000;
   });
-  $('.prevModule').click(function (e) {
+  $('#prev-module').click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
     $('#moduleCarousel').carousel('prev');
+    carousel_interval = 5000;
   });
 });
-
