@@ -42,12 +42,12 @@ $(document).ready(function(){
   function stop(){
     clearInterval(int);
   }
-  $('.moveNextCarousel').click(function (e) {
+  $('#moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('next');
   });
-  $('.movePrevCarousel').click(function (e) {
+  $('#movePrevCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     $('#introCarousel').carousel('prev');
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-  var carousel_interval = 3000;
+  var carousel_interval = 8000;
   $('#moduleCarousel').carousel();
   function run(){
       int = setInterval(function()
