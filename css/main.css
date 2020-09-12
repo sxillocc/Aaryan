@@ -124,24 +124,30 @@
 .card-content{
   width: 100%; 
   position: absolute; 
-  bottom: 50%;
-  transform: translateY(50%); 
+  /* bottom: 50%; */
+  /* transform: translateY(50%);  */
 }
 .card-heading{
   font-size: 18px;
-  color: white;
+  /* color: white; */
   font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px black;
 }
 .card-writeup{
   text-align: justify;
+  font-weight: bold;
   /* font-weight: 300; */
   color: white;
   font-size: 16px;
+  text-shadow: 2px 2px black;
 }
 
 .myCard{
-  background-color: rgba(0,0,0,0.4);
-  max-width: 300px;
+  padding: 0px 10px;
+  /* background-color: rgba(0,0,0,0.4); */
+  /* max-width: 300px; */
+  width: 100%;
   margin: auto;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -162,7 +168,7 @@
     font-size: 32px;
   }
   .myCard{
-    max-width: 600px;
+    /* max-width: 600px; */
   }
   .card-heading{
     font-size: 22px;
@@ -176,14 +182,14 @@
     font-size: 54px;
   }
   .myCard{
-    max-width: 500px;
-    padding: 32px;
+    /* max-width: 500px; */
+    padding: 0px 50px;
   }
   .card-heading{
-    font-size: 32px;
+    font-size: 28px;
   }
   .card-writeup{
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
