@@ -7,3 +7,7 @@
 })(jQuery); // end of jQuery name space
 
 $(".dropdown-trigger").dropdown();
+
+$(document).ready(function(){
+  $('.modal').modal();
+});

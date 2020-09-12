@@ -32,28 +32,33 @@ $(document).ready(function(){
       }
     }
   });
+  var runner;
   function run(){
-      int = setInterval(function()
-      { 
-          $('#introCarousel').carousel('next');
-      }, carousel_interval);
+    runner = setInterval(function(){
+        console.log("Started"); 
+        $('#introCarousel').carousel('next');
+    }, carousel_interval);
   }
   run();
   function stop(){
-    clearInterval(int);
+    console.log("Stopped");
+    clearInterval(runner);
   }
   $('#moveNextCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#introCarousel').carousel('next');
+    run();
   });
   $('#movePrevCarousel').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    stop();
     $('#introCarousel').carousel('prev');
+    run();
   });
 });
-
 
 $(document).ready(function(){
   var carousel_interval = 8000;
