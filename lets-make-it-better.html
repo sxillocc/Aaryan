@@ -50,12 +50,52 @@
 
     .writeup {
       font-size: 16px;
+      margin: 3px 0px;
       text-align: justify;
     }
 
     .font-22 {
       font-size: 22px;
       text-align: justify;
+    }
+    @media only screen and (min-width: 993px){
+      .valign-center{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+      .borderRight{
+        border-right: 1px solid #455a64;
+      }
+      .margin-top{
+        margin-top: 0px;
+      }
+    }
+    .margin-top{
+      margin-top: 10px;
+    }
+    .event-box{
+      padding: 0px 10px;
+    }
+    .event-box .items{
+      font-size: 16px;
+      font-weight: bold;
+      color: #455a64;
+      margin: 5px 0px;
+    }
+    .bolderFonts{
+      font-size: 18px;
+      font-weight: bold;
+      color: #455a64;
+      margin: 5px 0px;
+    }
+    .event-box i{
+      margin-right: 10px;
     }
   </style>
 </head>
@@ -114,12 +154,51 @@
     <!--Blue-600-->
     <div class="container">
       <div class="row">
-        <div class="valign-center">
-          <div class="col s12 m4">
+        <!-- <div class="valign-center"> -->
+          <div class="col s12 m8 l5 offset-m2">
             <img class="shadow" width="100%" height="auto" src="./assets/images/lets_make_it_better_w600.jpg" />
           </div>
-          <div class="col s12 m8">
-            <h3 style="margin-top: 10px;">Let's Make it Better</h3>
+          <div class="col s12 m8 l7 offset-m2">
+            <h4 style="font-weight: bold;">Let's Make it Better</h4>
+            <!-- <h5 style="font-weight: bold;">Take the 21 Days Challenge</h5> -->
+            <div class="row">
+              <div class="col l6 margin-top" style="padding: 0px;">
+                <div class="event-box borderRight">
+                  <div class="items" style="color: black;">ABOUT EVENT</div>
+                  <div class="divider" style="width: 80%;"></div>
+                  <div class="valign-wrapper"><i class="material-icons">view_module</i>
+                    <div class="items"> Consist of 7 Modules</div>
+                  </div>
+                  <div class="valign-wrapper"><i class="material-icons">calendar_today</i>
+                    <div class="items">25 September - 15 October</div>
+                  </div>
+                  <div class="valign-wrapper"><i class="material-icons">schedule</i>
+                    <div class="items"> 45 minutes daily</div>
+                  </div>
+                  <div class="valign-wrapper"><i class="material-icons">play_circle_outline</i>
+                    <div class="items"> Live on Zoom</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col l6 margin-top" style="padding: 0px;">
+                <div class="event-box">
+                  <div class="items" style="color: black;">EACH MODULE CONTAINS</div>
+                  <div class="divider" style="width: 80%;"></div>
+                  <div class="valign-wrapper">
+                    <div class="items">2 Days Interactive talk</div>
+                  </div>
+                  <div class="valign-wrapper">
+                    <div class="items">Activities on 3rd day</div>
+                  </div>
+                  <div class="valign-wrapper">
+                    <div class="items">Prizes for winners</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="font-weight: bold; font-size: 18px; margin-top: 5px;">Certificate for Everyone</div>
+            <h5>What's in it for me?</h5>
+            <div class="divider"></div>
             <p class="writeup">Out of so many species in this universe, we, humans, stand a class apart due to our
               higher intelligence. In just one decade we have seen some of the most unimaginable technological
               advancements becoming reality. Despite all the latest innovations at our disposal, there is somewhere a
@@ -128,13 +207,33 @@
               affecting more than 260 million people around the globe. We want to make life better by making things
               better. But statistics reveal that this approach has failed bitterly. "Let's Make It (LIFE) Better" the
               right way.</p>
-            <p class="writeup">This <b>21 days workshop consisting of 7 Modules</b> will definitely help you in making your life better and get
-              connected to the roots of our glorious Vedic culture.</p>
-            <p class="font-22">You can enroll for the entire course in just ₹500. Or you can register for individual
-              modules separately in ₹100 each.</p>
-            <a target="_blank" class="pb-color waves-effect waves-purple btn modal-trigger"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeaXrjnMAwfM0UtmlpXbs62Bu1bq3HmESKsd-k9JowqaZR-8g/viewform?usp=sf_link">Register</a>
           </div>
+        <!-- </div> -->
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="hide-on-small-only">
+            <center class="bolderFonts">Full Ticket Price : 500 Rs ( 7 Modules ) &nbsp;&nbsp;|&nbsp;&nbsp; Individual Module Ticket Price: 100 Rs </center>
+            <center class="bolderFonts" style="color: red; font-size: 22px;">Full Ticket also includes entry for <a class="modal-trigger message" style="text-decoration: underline; color: red;" href="#">our next event</a> worth ₹ 500 </center>
+          </div>
+          <div class="hide-on-med-and-up">
+            <center class="bolderFonts" style="font-size: 16px;">Full Ticket Price: 500 Rs (7 Modules)</center>
+            <center class="bolderFonts" style="font-size: 16px;">Individual Module Ticket Price: 100 Rs</center>
+            <br/>
+            <center class="bolderFonts" style="color: red; font-size: 20px;">Full Ticket also includes entry for <a class="modal-trigger message" style="text-decoration: underline; color: red;" href="#">our next event</a> worth ₹ 500 </center>
+          </div>
+          <br/>
+          <div id="a1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              <h4>Life Lessons from Bhagavad Gita</h4>
+              <center><img alt="Letter, dated 08 August, 2016" style="width: 40%;" src="./assets/images/modiji_appreciation_1.jpg" /></center>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+          <center><a target="_blank" class="pb-color waves-effect waves-purple btn modal-trigger"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeaXrjnMAwfM0UtmlpXbs62Bu1bq3HmESKsd-k9JowqaZR-8g/viewform?usp=sf_link">Register</a></center>
         </div>
       </div>
       <br>
