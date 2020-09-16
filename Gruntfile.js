@@ -5,12 +5,17 @@ module.exports = function(grunt) {
       dev: {
         options: {
           engine: 'im',
-          name: false,
-          rename: false,
           sizes: [{
-              width: '640px',
-              suffix: '',
-              quality: 20
+              name: 'm',
+              width: '992px',
+              suffix: '_w992',
+              quality: 40
+            },
+            {
+              name: 'l',
+              width: '1280px',
+              suffix: '_w1280',
+              quality: 40
             },
           ]
         },
@@ -18,7 +23,7 @@ module.exports = function(grunt) {
           expand: true,
           src: ['*.{png,jpg}'],
           cwd: './images',
-          dest: './new-images'
+          dest: './modified-images'
         }]
       }
     },
