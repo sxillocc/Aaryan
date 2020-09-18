@@ -56,6 +56,7 @@ nav ul a{
   height: auto !important;
 }
 .footer-heading{
+  font-weight: 600 !important;
   font-size: 22px !important;
 }
 .footer-subheading{
