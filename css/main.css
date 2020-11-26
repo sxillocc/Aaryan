@@ -355,3 +355,28 @@
     display: block;
   }   
 }
+@media only screen and (max-width: 600px){
+  .heading-1{
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  .heading-2{
+    font-size: 28px;
+    font-weight: bolder;
+  }
+  .f1{
+    font-size: 32px !important;
+  }
+  .f2{
+    font-size: 20px !important;
+  }
+}
+.heading-1, .heading-2{
+  font-weight: bold;
+}
+.f1{
+  font-size: 72px;
+}
+.f2{
+  font-size: 36px;
+}

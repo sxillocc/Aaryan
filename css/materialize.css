@@ -45,8 +45,11 @@ i.right{
   color: white !important;
 }
 .sb-color{
-  background-color: #ffffff !important;
+  background-color: #f7f7f7 !important;
   color: black !important;
+}
+.sbg-color{
+  background-color: #f7f7f7 !important;
 }
 nav ul a{
   color: black !important;
@@ -101,7 +104,38 @@ nav ul a{
 .footer-link:hover{
   font-weight: 600 !important; 
 }
-
+@media only screen and (max-width: 600px){
+  .heading-1{
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  .heading-2{
+    font-size: 28px;
+    font-weight: bolder;
+  }
+  .heading-3{
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  .content{
+    font-size: 16px;
+  }
+  .no-padding-mob{
+    padding: 0px !important;
+  }
+}
+.content{
+  font-size: 22px;
+}
+.heading-1, .heading-2, .heading-3{
+  font-weight: bold;
+}
+.small-line{
+  width: 10%;
+  height: 5px;
+  background-color: #c5331c;
+}
+/* *************************************** */
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -3539,7 +3573,8 @@ table span.badge {
 
 @media only screen and (min-width: 993px) {
   .container {
-    width: 70%;
+    /* width: 70%; */
+    width: 95%;
   }
 }
 
