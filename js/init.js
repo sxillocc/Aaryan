@@ -12,5 +12,9 @@ $(document).ready(function(){
   $('.modal').modal();
 });
 $(document).ready(function(){
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    minDate: new Date(1955,1,1),
+    maxDate: new Date(2011,1,1),
+    defaultDate: new Date(2000,1,1)
+  });
 });
