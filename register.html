@@ -133,12 +133,13 @@
               <span class="helper-text" data-error="Please fill valid email address."></span>
             </div>
             <div class="input-field col s12 l8 offset-l2">
-              <input placeholder="Ex:- Jan 01, 2000" id="birth_date" type="text" class="datepicker">
+              <input onkeyup="date_keyup()" placeholder="Ex:- 25/12/2000" id="birth_date" type="text">
               <label>Birth Date</label>
+              <span class="helper-text">Format: dd/mm/yyyy</span>
               <!-- <span class="helper-text" data-error="Please fill Birth Date"></span> -->
             </div>
             <div class="input-field col s12 l8 offset-l2">
-              <input onkeydown="date()" id="phone" type="number" class="validate" required="" aria-required="true">
+              <input id="phone" type="number" class="validate" required="" aria-required="true">
               <label for="phone">Phone No.</label>
               <span class="helper-text" data-error="Please fill Phone No."></span>
             </div>
