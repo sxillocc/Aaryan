@@ -133,15 +133,40 @@
               <span class="helper-text" data-error="Please fill valid email address."></span>
             </div>
             <div class="input-field col s12 l8 offset-l2">
-              <input onkeyup="date_keyup()" placeholder="Ex:- 25/12/2000" id="birth_date" type="text">
+              <input placeholder="Ex:- 25/12/2000" id="birth_date" type="text">
               <label>Birth Date</label>
               <span class="helper-text">Format: dd/mm/yyyy</span>
               <!-- <span class="helper-text" data-error="Please fill Birth Date"></span> -->
             </div>
+            <div class="input-field col s3 l1 offset-l2">
+              <input id="ph_code" type="text" placeholder="Country Code" class="validate right-align"  required="" aria-required="true">
+              <label for="phone"></label>
+              <span class="helper-text" data-error="Country Code is required. For India:- +91"></span>
+            </div>
+            <div class="input-field col s9 l7">
+              <input id="ph_no" type="number" placeholder="Ex:- 9999999999" class="validate" required="" aria-required="true">
+              <label for="phone">Phone</label>
+              <span class="helper-text" data-error="Please fill valid email address"></span>
+            </div>
+            <div class="col s12 l8 offset-l2" style="margin-bottom: 20px;">
+              <div style="font-size: 20;">Gender</div>
+              <span>
+                <label>
+                  <input name="gender" value="Male" id="male_bttn" type="radio" checked />
+                  <span>Male</span>
+                </label>
+              </span>
+              <span>
+                <label>
+                  <input name="gender" value="Female" id="female_bttn" type="radio" />
+                  <span>Female</span>
+                </label>
+              </span>
+            </div>
             <div class="input-field col s12 l8 offset-l2">
-              <input id="phone" type="number" class="validate" required="" aria-required="true">
-              <label for="phone">Phone No.</label>
-              <span class="helper-text" data-error="Please fill Phone No."></span>
+              <input id="location" type="text" placeholder="Ex:- Juhu, Mumbai" class="validate" required="" aria-required="true">
+              <label for="location">Location</label>
+              <span class="helper-text" data-error="Please fill location."></span>
             </div>
           </div>
         </form>
@@ -227,6 +252,7 @@
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
   <!-- <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>   -->
+  <script src="./config.js"></script>
   <script src="js/reg.js"></script>
 </body>
 
