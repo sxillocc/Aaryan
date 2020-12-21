@@ -66,7 +66,7 @@ function writeInDatabase(user, amt){
 
 function getRazorpayTransaction(user, event, amt){
   var options = {
-    "key": razorpayConfig.apiKey,
+    "key": "rzp_live_vcHyFdH171kDbO",
     "amount": amt,
     "currency": "INR",
     "name": "The Aryans Club",
