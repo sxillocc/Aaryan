@@ -14,6 +14,10 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.datepicker').datepicker();
 });
+
+$(document).ready(function(){
+  $('.slider').slider();
+});
 // var $input = $('.datepicker').pickadate()
 
 // // Use the picker object directly.
