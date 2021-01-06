@@ -85,11 +85,15 @@
   <!-- Navbar-started -->
   <ul id="nav-mobile" class="sidenav">
     <li><a href="./index.html">Home</a></li>
-    <li><a href="./courses.html">Courses</a></li>
     <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
-    <li><a href="./index.html#activities" class="sidenav-close">Activities</a></li>
     <li><a href="./appreciation.html">Appreciation</a></li>
     <li><a href="./contact.html" class="sidenav-close">Contact</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Activities</a></li>
+    <li><a href="./courses.html" class="sidenav-close">Online Courses</a></li>
+    <li><a href="./camps.html" class="sidenav-close">Camps</a></li>
     <li>
       <div class="divider"></div>
     </li>
@@ -106,9 +110,9 @@
         </a>
         <ul class="right hide-on-med-and-down">
           <li><a href="./index.html">Home</a></li>
-          <li><a href="./courses.html">Courses</a></li>
           <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
-          <li><a href="./index.html#activities" class="sidenav-close">Activities</a></li>
+          <li><a class="dropdown-trigger" href="#" data-target="activity">Activities<i
+            class="material-icons right">arrow_drop_down</i></a></li>
           <li><a href="./appreciation.html">Appreciation</a></li>
           <li><a class="dropdown-trigger" href="./aboutus.html" data-target="aboutus">About Us<i
                 class="material-icons right">arrow_drop_down</i></a></li>
@@ -121,6 +125,10 @@
       <li><a href="./aboutus.html">About Us</a></li>
       <li><a href="./srila-prabhupada.html">Srila Prabhupada</a></li>
       <li><a href="./iskcon.html">ISKCON</a></li>
+    </ul>
+    <ul id="activity" class="dropdown-content">
+      <li><a href="./courses.html">Online Courses</a></li>
+      <li><a href="./camps.html">Camps</a></li>
     </ul>
   </div>
   <!-- Navbar Ended -->
@@ -178,11 +186,7 @@
               </div>
               <div class="valign-wrapper" style="padding-top: 5px;">
                 <i class="material-icons" style="margin-right: 5px;color: green;">check_circle</i>
-                <div class="items">Disussion under tree</div>
-              </div>
-              <div class="valign-wrapper" style="padding-top: 5px;">
-                <i class="material-icons" style="margin-right: 5px;color: green;">check_circle</i>
-                <div class="items">Swimming</div>
+                <div class="items">Discussion under tree</div>
               </div>
               <div class="valign-wrapper" style="padding-top: 5px;">
                 <i class="material-icons" style="margin-right: 5px;color: green;">check_circle</i>
@@ -215,11 +219,7 @@
         <div class="slider" style="max-width: 750px;">
           <ul class="slides">
             <li>
-              <img src="./assets/images/t1.jpg"> 
-              <!-- <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div> -->
+              <img src="./assets/images/t1.jpg">
             </li>
             <li>
               <img src="./assets/images/t2.jpg"> 
