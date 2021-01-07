@@ -53,7 +53,7 @@
     .zoom {
       position: relative;
       transition: transform .2s;
-      /* cursor: pointer; */
+      cursor: pointer;
       overflow: hidden;
     }
     .zoom:hover {
@@ -223,6 +223,27 @@
   <!-- Banner Section Ended -->
 
   <!--Upcoming Events Section Start-->
+  <div class="section">
+    <div class="container">
+      <h2 class="heading-1">Upcoming Camps</h2>
+      <div class="small-line"></div><br/>
+      <div class="row">
+        <div class="col s12 l8 no-padding-mob">
+          <a href="./camps.html">
+          <!-- <picture> -->
+            <!-- <source media="(min-width:993px)" srcset="./assets/images/happiness_within_w840.jpg">
+            <source media="(min-width:601px)" srcset="./assets/images/happiness_within_w650.jpg"> -->
+            <img src="./assets/images/upcoming-camp.jpg" style="width: 100%;" alt="Upcoming Camps">
+          <!-- </picture> -->
+          </a>
+        </div>
+        <div class="col s12 l4">
+          <p class="content">The Aryans Club is organising two Camps - "Talasari Camp" and "Mayapur Puri Camp" in upcoming months. Don't miss this wonderful and divine opportunity.</p>
+      <a class="waves-effect pb-color waves-light btn" href="./camps.html">More</a><br/><br/>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="section sbg-color">
     <div class="container">
       <h2 class="heading-1">Online Course</h2>
@@ -286,14 +307,14 @@
         <br/>
         <!-- Row 1 started -->
         <div class="row">
-          <div class="full-size col s12 m6 l4 zoom">
+          <div class="full-size col s12 m6 l4 zoom" onclick="window.location.href = './courses.html';" >
             <div class="hidder">
               <img height="100%" width="auto" src="./assets/images/online-event.png"/>
             </div>
             <h5 class="center thin-font">Online Courses</h5>
             <br>
           </div>
-          <div class="full-size col s12 m6 l4 zoom">
+          <div class="full-size col s12 m6 l4 zoom" onclick="window.location.href = './camps.html';">
             <div class="hidder">
               <img height="100%" width="auto" src="./assets/images/camp.jpeg" />
             </div>
