@@ -37,12 +37,19 @@ function save_info(){
   //Step 2: Sign-in and Write User into Database
   //Step 3: Open Payment Gateway after successfully writing data
   //Step 4: Store Payment Id in Database
-  var user = getUser();
-  var amt = "100";
-
+  var m_user = getTestUser();
+  var amt = "1000";
+  var key_id = 'rzp_test_NO41aZV6wcQ7Yo';
+  var key_secret = 'PXwXA5TXFZUT5fVYCg3fTFkE';
+  console.log("We're going to add details in database");
+  console.log(auth_instance);
   auth_instance.signInAnonymously()
   .then(() => {
-    writeInDatabase(user, amt);
+    console.log(m_user);
+    // writeInDatabase("user", "amt");
+    var transaction = getRazorpayTransaction(m_user, course, amt);
+    var payment_gateway = new Razorpay(transaction);
+    payment_gateway.open();
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -57,9 +64,10 @@ function writeInDatabase(user, amt){
     if(error){
       console.log(error);
     } else {
-      var transaction = getRazorpayTransaction(user, course, amt);
-      var payment_gateway = new Razorpay(transaction);
-      payment_gateway.open();
+      console.log("Registered");
+      // var transaction = getRazorpayTransaction(user, course, amt);
+      // var payment_gateway = new Razorpay(transaction);
+      // payment_gateway.open();
     }
   });
 }
@@ -73,10 +81,10 @@ function getRazorpayTransaction(user, event, amt){
     "image": "https://thearyansclub.com/assets/images/a_logo_small.jpg",
     "handler": function (response){
       transaction_ref.push({
-        payment_id: response.razorpay_payment_id,
-        email: user.email,
-        phone: user.phone,
-        name: user.fname+" "+user.lname
+        payment_id: response.razorpay_payment_id//,
+        // email: user.email,
+        // phone: user.phone,
+        // name: user.fname+" "+user.lname
       }, (error)=>{
         if(error){
           console.log(error);
@@ -104,6 +112,21 @@ function getRazorpayTransaction(user, event, amt){
     }
   };
   return options;
+}
+
+function getTestUser(){
+  console.log("We're in Test User Function");
+  var test_fname_field = document.getElementById("first_name");
+  var test_lname_field = document.getElementById("last_name");
+  var test_user = {
+    fname: test_fname_field.value,
+    lname: test_lname_field.value,
+    phone: "7359802004",
+    email: "shaktirajdaudra@gmail.com"
+  };
+  console.log("User has been created Successfully");
+  console.log(test_user);
+  return test_user;
 }
 
 function getUser(){

@@ -90,7 +90,7 @@
     .new-tag{
       position: absolute; 
       top: 4px; 
-      right: 5px; 
+      left: 5px; 
       background-color: red; 
       color: white;
       border-radius: 10px;
@@ -104,6 +104,7 @@
 
   <!-- Navbar-started -->
   <ul id="nav-mobile" class="sidenav">
+    <li class="pb-color"><a style="color: white !important;" href="./learngita.html">Learn Gita</a></li>
     <li><a href="./">Home</a></li>
     <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
     <li><a href="./appreciation.html">Appreciation</a></li>
@@ -130,6 +131,7 @@
           <img src="./assets/images/logo-big.png" />
         </a>
         <ul class="right hide-on-med-and-down">
+          <li class="pb-color"><a style="color: white !important;" href="./learngita.html">Learn Gita</a></li>
           <li><a href="./index.html">Home</a></li>
           <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
           <li><a class="dropdown-trigger" href="#" data-target="activity">Activities<i
@@ -169,43 +171,40 @@
   </div>
 
   <!-- Section-2 -->
+  <!-- Live Course -->
   <div style="background-color: #f7f7f7;">
     <div class="section">
       <div class="container">
         <div class="row">
           <div class="col s12">
-            <h5><b>Online Courses</b></h5>
+            <h5><b>Live Courses</b></h5>
           </div>
-
+          
+          <!-- Card Started -->
           <div class="col s12 m10 l4 offset-m1">
             <div class="card zoom"
-                onclick="window.location.href = './lmib.html';">
+                onclick="window.location.href = './learngita.html';">
               <div class="card-image">
-                <img src="./assets/images/lmib.jpg" />
+                <img src="./assets/images/complete_bg.jpg" />
               </div>
-              <div class="card-content" style="padding: 25px 24px; height: 100%;">
-                <span class="card-title">Let's make it better</span>
-                <div class="event-box borderRight">
+              <div class="new-tag">New</div>
+              <div class="card-content" style="padding: 25px 24px;">
+                <span class="card-title">Learn Bhagavad Gita in 18 Days</span>
+                <div class="event-box">
                   <div class="valign-wrapper">
                     <i class="material-icons">calendar_today</i>
-                    <div class="items">Coming soon again...</div>
-                  </div>
-                  <div class="valign-wrapper">
-                    <i class="material-icons">view_module</i>
-                    <div class="items">
-                      <div>7 Modules</div>
-                    </div>
+                    <div class="items">Starts from 25th Feb</div>
                   </div>
                   <div class="valign-wrapper">
                     <i class="material-icons">schedule</i>
-                    <div class="items">10 Hours 30 Minutes</div>
+                    <div class="items">7:30PM to 08:30PM</div>
                   </div>
                   <div class="valign-wrapper"><i class="material-icons">language</i>
-                    <div class="items">Language: Hindi</div>
+                    <div class="items">Language: English, Hindi and Marathi</div>
                   </div>
-                  <!-- <div class="valign-wrapper"><i class="material-icons">account_balance_wallet</i>
-                    <div class="items">Registration Fees : ₹199</div>
-                  </div> -->
+                  <div class="valign-wrapper"><i class="material-icons">account_balance_wallet</i>
+                    <div class="items red-text"><b>Free</b></div>
+                  </div>
                 </div>
                 <div style="margin-top: 15px; text-align: right;">
                   <i class="material-icons p-color">arrow_forward</i>
@@ -213,8 +212,23 @@
               </div>
             </div>
           </div>
+          <!-- Cards Row Ended -->
 
-          <!-- Card 1 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Online Course -->
+  <div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h5><b>Online Courses</b></h5>
+          </div>
+          
+          <!-- Card Started -->
           <div class="col s12 m10 l4 offset-m1">
             <div class="card zoom"
                 onclick="window.location.href = './bg-life-lessons.html';">
@@ -226,25 +240,15 @@
                 <span class="card-title">Life Lessons from Bhagavad Gita</span>
                 <div class="event-box">
                   <div class="valign-wrapper">
-                    <i class="material-icons">calendar_today</i>
-                    <div class="items">Coming soon again...</div>
-                  </div>
-                  <div class="valign-wrapper">
-                    <i class="material-icons">view_module</i>
-                    <div class="items">
-                      <div>7 Modules</div>
-                    </div>
-                  </div>
-                  <div class="valign-wrapper">
                     <i class="material-icons">schedule</i>
-                    <div class="items">7 Hours</div>
+                    <div class="items">7 Modules in 7 Hours</div>
                   </div>
                   <div class="valign-wrapper"><i class="material-icons">language</i>
                     <div class="items">Language: Hindi</div>
                   </div>
-                  <!-- <div class="valign-wrapper"><i class="material-icons">account_balance_wallet</i>
-                    <div class="items">Registration Fees : ₹299</div>
-                  </div> -->
+                  <div class="valign-wrapper"><i class="material-icons">account_balance_wallet</i>
+                    <div class="items">Registration Fees : ₹199</div>
+                  </div>
                 </div>
                 <div style="margin-top: 15px; text-align: right;">
                   <i class="material-icons p-color">arrow_forward</i>
@@ -253,28 +257,44 @@
             </div>
           </div>
 
+          <!-- New Card Started -->
+          <div class="col s12 m10 l4 offset-m1">
+            <div class="card zoom"
+                onclick="window.location.href = './lmib.html';">
+              <div class="card-image">
+                <img src="./assets/images/lmib.jpg" />
+              </div>
+              <div class="new-tag" style="top: 45px;">Coming soon again...</div>
+              <div class="card-content" style="padding: 25px 24px; height: 100%;">
+                <span class="card-title">Let's make it better</span>
+                <div class="event-box borderRight">
+                  <div class="valign-wrapper">
+                    <i class="material-icons">calendar_today</i>
+                    <div class="items">Coming soon again...</div>
+                  </div>
+                  <div class="valign-wrapper">
+                    <i class="material-icons">schedule</i>
+                    <div class="items">7 Modules in 10 Hours 30 Minutes</div>
+                  </div>
+                  <div class="valign-wrapper"><i class="material-icons">language</i>
+                    <div class="items">Language: Hindi</div>
+                  </div>
+                  <div class="valign-wrapper"><i class="material-icons">account_balance_wallet</i>
+                    <div class="items">Registration Fees : ₹199</div>
+                  </div>
+                </div>
+                <div style="margin-top: 15px; text-align: right;">
+                  <i class="material-icons p-color">arrow_forward</i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cards Row Ended -->
+
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Section-2 -->
-  <!-- <div style="background-color: #ffffff;">
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <h5><b>Online Courses</b></h5>
-          </div>
-
-          <!-- Card 1 -->
-          
-
-        </div>
-      </div>
-    </div>
-  </div> -->
-
 
   <!-- Footer Started-->
   <footer class="page-footer" style="background-color: #c5331c;">
