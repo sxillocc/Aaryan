@@ -281,7 +281,7 @@ jQuery(document).ready(function($){
 });
 
 $(document).ready(function(){
-  var carousel_interval = 8000;
+  var carousel_interval = 1000000000;
   $('#introCarousel').carousel();
   $('#introCarousel').carousel({
     fullWidth: true,
