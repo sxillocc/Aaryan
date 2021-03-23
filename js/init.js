@@ -22,3 +22,4 @@ $(document).ready(function(){
 
 // // Use the picker object directly.
 // var picker = $input.pickadate('picker')
+// $('select').material_select();
