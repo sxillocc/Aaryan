@@ -1,3 +1,14 @@
+//Loader initialized
+var loader = document.getElementById("loader");
+function loaderOn(){
+  document.getElementById("submitbttn").disabled = true;
+  loader.style.display = "block";
+}
+function loaderOff(){
+  document.getElementById("submitbttn").disabled = false;
+  loader.style.display = "none";
+}
+
 // Modal initiation
 const elem = document.getElementById('registered1');
 const instance = M.Modal.init(elem, {dismissible: false});
@@ -108,7 +119,7 @@ function join(batch){
     courseCode: courseCode
   }
   // console.log(user);
-
+  loaderOn();
   auth_instance.signInAnonymously()
   .then(() => {
     // console.log("Signed In");
@@ -119,6 +130,7 @@ function join(batch){
     var errorMessage = error.message;
     // console.log(errorCode);
     console.log(errorMessage);
+    loaderOff();
   })
   // TODO LIST--------------------------
   // Push "user" in firebase at location "courseCode"
@@ -155,6 +167,7 @@ function alreadyRegistered(courseCode){
     i = "wlink" + i.toString();
     // console.log("Reading "+ i);
     // console.log("link == " + courseDetail[i]);
+    loaderOff();
     let wlink1 = document.getElementById("wlink1");
     wlink1.href = courseDetail[i];
     let wlink2 = document.getElementById("wlink2");
@@ -166,6 +179,8 @@ function alreadyRegistered(courseCode){
   }).catch(function(error){
     let errorMessage = error.message;
     let errorCode = error.code;
+    loaderOff();
+    alert("Something wrong, please try again later...");
     console.log(errorCode+" : "+errorMessage);
   })
 }
@@ -208,6 +223,8 @@ function uploadEntry(user, courseCode){
   }).catch(function(error){
     let errorMessage = error.message;
     let errorCode = error.code;
+    loaderOff();
+    alert("Something wrong, please try again later....");
     console.log(errorCode+" : "+errorMessage);
   })
 }
@@ -223,6 +240,7 @@ function updateCount(courseCode, link){
       return count+1;
     }
   }).then(function(){
+    loaderOff();
     let wlink1 = document.getElementById("wlink1");
     wlink1.href = link;
     let wlink2 = document.getElementById("wlink2");

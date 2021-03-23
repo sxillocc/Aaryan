@@ -58,7 +58,7 @@
 </head>
 
 <body>
-
+  <div class="fixed-top" id="loader" style="z-index: 9999;display: none; background-color:white;width: 100%; height: 100%; position:absolute;"><center>Loading please wait...<br/>Hare Krishna Hare Krishna<br/>Krishna Krishna Hare Hare<br/>Hare Rama Hare Rama<br/>Rama Rama Hare Hare</center></div>
   <a name="top" class="scrollspy"></a>
   <!-- Navbar-started -->
   <ul id="nav-mobile" class="sidenav">
@@ -112,7 +112,6 @@
     </ul>
   </div>
   <!-- Navbar Ended -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#registered1">Modal</a>
   <div id="registered1" class="modal">
     <div class="modal-content">
       <center><i class="material-icons large green-text"></i></center>
@@ -471,7 +470,7 @@
             </div>
           </div>
         </div>
-        <button class="pb-color btn waves-effect waves-light" onclick="join('LBG1')">Submit
+        <button id="submitbttn" class="pb-color btn waves-effect waves-light" onclick="join('LBG1')">Submit
         </button>
       </div>
     </div>
