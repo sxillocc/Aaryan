@@ -1,14 +1,20 @@
+//courseInitialzation
+let course = JSON.parse(localStorage.getItem("course"));
+if(course === null){
+  alert("Please select some course");
+  window.location.href = "./courses.html"
+}
+var courseCode = course['courseCode'];
 //Loader initialized
 var loader = document.getElementById("loader");
 function loaderOn(){
-  document.getElementById("submitbttn").disabled = true;
+  document.getElementById("joinbttn").disabled = true;
   loader.style.display = "block";
 }
 function loaderOff(){
-  document.getElementById("submitbttn").disabled = false;
+  document.getElementById("joinbttn").disabled = false;
   loader.style.display = "none";
 }
-
 // Modal initiation
 const elem = document.getElementById('registered1');
 const instance = M.Modal.init(elem, {dismissible: false});
@@ -28,6 +34,14 @@ firebase.initializeApp(firebaseConfig);
 var db_instance = firebase.database();
 var auth_instance = firebase.auth();
 
+//constructor
+function init(){
+  let courseField = document.getElementById("courseField");
+  courseField.innerHTML = course['courseName'];
+}
+init();
+
+//Asking Location, If user is from India
 function togglecountry(element){
   let value = element.options[element.selectedIndex].value;
   let locationbox = document.getElementById("locationbox");
@@ -38,6 +52,7 @@ function togglecountry(element){
   locationbox.style.display = "none";
 }
 
+//Asking College Name, if user is Studying
 function toggle(element){
   let value = element.options[element.selectedIndex].value;
   if(value == "Student"){
@@ -48,15 +63,36 @@ function toggle(element){
   let cnamefield = document.getElementById("colledgename");
   cnamefield.style.display = "none";
 }
-function join(batch){
-  // population greater than age 35 will be non-youth
+
+//Pay now function
+function payNow(user, courseCode, amt){
+  let transaction = getRazorpayTransaction(user, courseCode, amt);
+  let payment_gateway = new Razorpay(transaction);
+  
+  //Update database if payment successfull
+  payment_gateway.open();
+
+  //Update database if payment failed
+  payment_gateway.on('payment.failed', function (response){
+      let errormsg = response.error.code + ": "+response.error.description+", "+response.error.reason;  
+      pstatus = {
+        "status": "Failed",
+        "pid": response.error.metadata.payment_id,
+        "description": errormsg
+      }
+
+      //location--> coursecode/whatsapp/pstatus = pstatus
+      db_instance.ref(courseCode+"/"+user.whatsapp+"/pstatus").set(pstatus);
+  });
+}
+//register page
+function register(){
   var criticalAge = 35;
   
   var fnamefield = document.getElementById("fname");
   var lnamefield = document.getElementById("lname");
   var agefield = document.getElementById("age");
   var genderfield = document.getElementById("gender");
-  var languagefield = document.getElementById("language");
   var countrycodefield = document.getElementById("countrycode");
   var whatsappfield = document.getElementById("whatsapp");
   var professionfield = document.getElementById("profession");
@@ -68,7 +104,7 @@ function join(batch){
   var lname = lnamefield.value;
   var age = agefield.value;
   var gender = genderfield.value;
-  var language = languagefield.value;
+  var language = course['courseLang'];
   var countrycode = countrycodefield.value;
   var whatsapp = whatsappfield.value;
   var profession = professionfield.value;
@@ -77,8 +113,6 @@ function join(batch){
   var city = cityfield.value;
   var location = countrycodefield.options[countrycodefield.selectedIndex].text;
   var isYouth = false;
-  
-  var courseCode = batch;
 
   let isValid = checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cname, state, city);
   if(!isValid)
@@ -93,14 +127,6 @@ function join(batch){
     location = city +", "+state;
   }
   var fullname = fname+" "+lname;
-  if(language == "Hindi"){
-    courseCode = courseCode + "H";
-  }else if(language == "English"){
-    courseCode = courseCode + "E";
-  }else{
-    alert("Something wrong, Please try again later!");
-    return;
-  }
   if(gender == "Male" && age<=criticalAge){
     isYouth = true;
     courseCode = courseCode + "Y";
@@ -158,22 +184,21 @@ function checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cna
   }
   return true;
 }
-function alreadyRegistered(courseCode){
+
+//Invoke when given contact is already registered in the event
+function alreadyRegistered(courseCode, group_num){
   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
-    // console.log("You're already registered, Reading your whatsapp link");
     let courseDetail = snapshot.val();
-    let i = parseInt(courseDetail['count']);
-    i = (Math.floor(i / 240)) + 1;
-    i = "wlink" + i.toString();
-    // console.log("Reading "+ i);
-    // console.log("link == " + courseDetail[i]);
+    let link = courseDetail[group_num];
+    //switching off loader and showing the MODAL
     loaderOff();
     let wlink1 = document.getElementById("wlink1");
-    wlink1.href = courseDetail[i];
+    wlink1.href = link;
     let wlinknote = document.getElementById("wlinknote");
     wlinknote.innerHTML = "You have already Registered, Incase you have not yet joined the Whatsapp group then please join.";
     instance.open();
   }).catch(function(error){
+    //IF SOMETHING WENTS WRONG THEN TRY LATER ALERT
     let errorMessage = error.message;
     let errorCode = error.code;
     loaderOff();
@@ -181,41 +206,29 @@ function alreadyRegistered(courseCode){
     console.log(errorCode+" : "+errorMessage);
   })
 }
-function newEntry(root, user, uid, courseCode){
-  db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
-    // console.log("Registering new user");
-    let courseDetail = snapshot.val();
-    let i = parseInt(courseDetail['count']);
-    i = (Math.floor(i / 240)) + 1;
-    i = "wlink" + i.toString();
-    // console.log("Reading "+ i);
-    // console.log("link == " + courseDetail[i]);
-    root.set(i).then(function(){
-      let userref = db_instance.ref(courseCode+"/"+uid);
-      userref.set(user).then(function(){
-        // console.log("Registered");
-        updateCount(courseCode, courseDetail[i]);
-      });
-    });
-  }).catch(function(error){
-    let errorMessage = error.message;
-    let errorCode = error.code;
-    console.log(errorCode+" : "+errorMessage);
+
+//Invoke when given contact is not registered in the event
+function newEntry(user, uid, courseCode){
+  //write new entry
+  let userref = db_instance.ref(courseCode + "/" + uid);
+  userref.set(user).then(function () {
+    loaderOff();
+    payNow(user, courseCode, course['amt']);
   });
 }
 function uploadEntry(user, courseCode){
   let uid = user.whatsapp;
+
+  //Checking whether given contact is already registered or not?
   db_instance.ref("root/"+uid).get().then(function(snapshot){
     if(snapshot.exists()){
       let reglist = snapshot.val();
-      console.log(courseCode+" : -- : "+ reglist[courseCode]);
       if(reglist[courseCode] !== undefined){
-        alreadyRegistered(courseCode);
+        alreadyRegistered(courseCode, reglist[courseCode]);
         return;
       }
     }
-    let root = db_instance.ref("root/"+uid+"/"+courseCode);
-    newEntry(root, user, uid, courseCode);
+    newEntry(user, uid, courseCode);
 
   }).catch(function(error){
     let errorMessage = error.message;
@@ -227,9 +240,8 @@ function uploadEntry(user, courseCode){
 }
 function updateCount(courseCode, link){
   let countref = db_instance.ref(courseCode+"wlink/count");
+  //Updating count, THIS BLOCK WILL NEVER CHANGE... You can add things after completion of this promise
   countref.transaction(function(count){
-    // let result = 0;
-    // console.log("Count Updated");
     if(count === null){
       return 1;
     }
@@ -244,8 +256,101 @@ function updateCount(courseCode, link){
     wlinktitle.innerHTML = "You have successfully registered.";
     let wlinknote = document.getElementById("wlinknote");
     wlinknote.innerHTML = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
-    instance.open();   
+    instance.open();
   }).catch(function(error){
     console.log("error- "+error.errorMessage);
   });
 }
+function showModal(user, courseCode){
+  //Again turning on loader
+  loaderOn();
+  let root = db_instance.ref("root/"+user.whatsapp+"/"+courseCode);
+  db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
+    let courseDetail = snapshot.val();
+    let i = parseInt(courseDetail['count']);
+    i = (Math.floor(i / 240)) + 1;
+    i = "wlink" + i.toString();
+    root.set(i).then(function(){
+      updateCount(courseCode, courseDetail[i]);
+    });
+  }).catch(function(error){
+
+    // IF SOMETHING WENTS WRONG THEN TRY LATER............
+    let errorMessage = error.message;
+    let errorCode = error.code;
+    console.log(errorCode+" : "+errorMessage);
+    alert("Please try again later.........");
+  });
+}
+function getRazorpayTransaction(user, courseCode, amt){
+  var options = {
+    "key": "rzp_test_hJzg5hre7m0Y6h",
+    "amount": amt,
+    "currency": "INR",
+    "name": "The Aryans Club",
+    "image": "https://thearyansclub.com/assets/images/a_logo_small.jpg",
+    "handler": function (response){
+      pstatus = {
+        "status": "Successful",
+        "pid": response.razorpay_payment_id
+      }
+      db_instance.ref(courseCode+"/"+user.whatsapp+"/pstatus").set(pstatus).then(
+        function(){
+          showModal(user, courseCode);
+        }
+      );
+    },
+    "prefill": {
+      "name": user.fullname,
+      "contact": user.whatsapp
+    },
+    "notes": {
+      "courseCode": courseCode
+    },
+    "theme": {
+      "color": "#c5331c"
+    },
+    "modal": {
+      "backdropclose": false,
+      "escape": false,
+    }
+  };
+  return options;
+}
+
+
+// function foo(){
+//   //Reading and deciding the whatsappgroup
+//   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
+//     let courseDetail = snapshot.val();
+//     let i = parseInt(courseDetail['count']);
+//     i = (Math.floor(i / 240)) + 1;
+//     i = "wlink" + i.toString();
+//     root.set(i).then(
+//       function(){
+//         updateCount();
+//       }
+//     );
+//     // console.log("Reading "+ i);
+//     // console.log("link == " + courseDetail[i]);
+
+//     //Allocated Whatsapp Group,
+//     //Whatsapp Group is --> link = courseDetail[i]
+//     //Now adding user's entry in database
+//     //.then(function(){
+      
+//     //   //After entry is added, we're updating count, and from there we'll also show the Whatsapp Group Modal
+//     //   // let userref = db_instance.ref(courseCode+"/"+uid);
+//     //   // userref.set(user).then(function(){
+//     //   //   updateCount(user, courseCode, courseDetail[i]);
+//     //   // });
+//     // });
+//   }).catch(function(error){
+
+//     // IF SOMETHING WENTS WRONG THEN TRY LATER............
+//     let errorMessage = error.message;
+//     let errorCode = error.code;
+//     console.log(errorCode+" : "+errorMessage);
+//     alert("Please try again later.........");
+//   });
+// }

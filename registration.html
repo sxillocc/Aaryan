@@ -3,16 +3,16 @@
 
 <head>
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178399454-1"></script> -->
-  <script>
+  <!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-178399454-1');
-  </script>
+  </script> -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Learn Gita</title>
+  <title>Registration</title>
 
   <meta property="description"
     content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.">
@@ -48,12 +48,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    .hide{
-      display: none;
-    }
-    .show{
-      display: block;
-    }
   </style>
 </head>
 
@@ -112,6 +106,7 @@
     </ul>
   </div>
   <!-- Navbar Ended -->
+  <!-- Modal Started -->
   <div id="registered1" class="modal">
     <div class="modal-content">
       <center><i class="material-icons large green-text"></i></center>
@@ -123,47 +118,37 @@
       <center><h6><a href="./index.html" style="text-decoration: underline;">Back to home</a></h6></center>
     </div>
   </div>
-  <div class="section">
-    <div class="container">
-      <h5><b>Starts from 1st May | 1st मई से शुरू</b></h5></br>
-      <h6><b>Please fill this form. &nbsp;|&nbsp; कृपया इस फॉर्म को भरें।</b></h6></br>
-      <div>
-        <!-- Form Section -->
-        <div class="row">
-          <div class="input-field col s12">
-            <input placeholder="First Name / नाम" id="fname" type="text" class="validate" required="" aria-required="true">
-            <label for="fname"><b>First Name / नाम <span style="color:#c5331c;">*</span></b></label>
-            <span class="helper-text" data-error="Required"></span>
-          </div>
-          <div class="input-field col s12">
-            <input placeholder="Last Name / उपनाम" id="lname" type="text" class="validate" required="" aria-required="true">
-            <label for="lname"><b>Last Name / उपनाम <span style="color:#c5331c;">*</span></b></label>
-            <span class="helper-text" data-error="Required"></span>
-          </div>
+  <!-- Modal Ended -->
+  <div class="container">
+    <div class="section">
+      <h4 class="heading-2">
+        Registration Form | <span id="courseField"></span>
+      </h4>
+      <div class="small-line" style="margin-bottom: 15px;"></div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="First Name / नाम" id="fname" type="text" class="validate" required="" aria-required="true">
+          <label for="fname"><b>First Name / नाम <span style="color:#c5331c;">*</span></b></label>
+          <span class="helper-text" data-error="Required"></span>
         </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <span><b>Age / उम्र <span style="color:#c5331c;">*</span></b></span>
-            <input id="age" placeholder="Age / उम्र" type="number" class="validate" required="" aria-required="true">
-          </div>
-          <div class="input-field col s6">
-            <span><b>Gender<span style="color:#c5331c;">*</span></b></span>
-            <select id="gender" class="browser-default">
-              <option value="Male">Male / पुरुष</option>
-              <option value="Female">Female / स्त्री</option>
-            </select>
-          </div>
+        <div class="input-field col s6">
+          <input placeholder="Last Name / उपनाम" id="lname" type="text" class="validate" required="" aria-required="true">
+          <label for="lname"><b>Last Name / उपनाम <span style="color:#c5331c;">*</span></b></label>
+          <span class="helper-text" data-error="Required"></span>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <span><b>In which language do you want to attend the program? / आप किस भाषा में कार्यक्रम में भाग लेना चाहते हैं?<span style="color:#c5331c;">*</span></b></span>
-            <select id="language" class="browser-default">
-              <option value="Hindi">Hindi / हिन्दी</option>
-              <option value="English">English / अंग्रेज़ी</option>
-            </select>
-          </div>
+        <div class="input-field col s6">
+          <span><b>Age / उम्र <span style="color:#c5331c;">*</span></b></span>
+          <input id="age" placeholder="Age / उम्र" type="number" class="validate" required="" aria-required="true">
         </div>
-        <div class="divider"></div>
+        <div class="input-field col s6">
+          <span><b>Gender<span style="color:#c5331c;">*</span></b></span>
+          <select id="gender" class="browser-default">
+            <option value="Male">Male / पुरुष</option>
+            <option value="Female">Female / स्त्री</option>
+          </select>
+        </div>
+      </div>
+      <div class="divider"></div>
         <div class="row">
           <div class="col s12">
             <h6 style="margin-top: 15px;"><b>Whatsapp Number<span style="color:#c5331c;">*</span></b></h6>
@@ -470,83 +455,82 @@
             </div>
           </div>
         </div>
-        <button id="submitbttn" class="pb-color btn waves-effect waves-light" onclick="join('LBG1')">Submit
-        </button>
-      </div>
+        <button id="joinbttn" class="pb-color btn waves-effect waves-light" onclick="register()">Register</button>
     </div>
   </div>
-  <!-- Footer Started-->
-  <footer class="page-footer" style="background-color: #c5331c;">
-    <div class="container">
-      <div class="section">
-        <div class="row center-align">
-          <div class="footer-column col s12 l4">
-            <h4 class="footer-heading">Address</h4>
-            <div class="divider"></div>
-            <h5 class="thin-font footer-subheading">ISKCON Juhu, Hare Krishna Land </br>
-              Mumbai - 400049,</br>
-              Maharashtra, India</h5>
+<!-- Footer Started-->
+<footer class="page-footer" style="background-color: #c5331c;">
+  <div class="container">
+    <div class="section">
+      <div class="row center-align">
+        <div class="footer-column col s12 l4">
+          <h4 class="footer-heading">Address</h4>
+          <div class="divider"></div>
+          <h5 class="thin-font footer-subheading">ISKCON Juhu, Hare Krishna Land </br>
+            Mumbai - 400049,</br>
+            Maharashtra, India</h5>
+        </div>
+        <div class="footer-column col s12 l4">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="divider"></div>
+          <h5 class="thin-font footer-subheading">
+            Contact: 8433631858, 9074230903
+          </h5>
+          <h5 class="thin-font footer-subheading">
+            Email: thearyansclub@gmail.com
+          </h5>
+          <div class="footer-social-icon">
+            <ul>
+              <li><a class="white-text" href="https://www.instagram.com/thearyansclub/?igshid=1i5xvwjzugpw7"><i
+                    class="instagram fa fa-instagram"></i></a></li>
+              <li><a class="white-text" href="https://www.youtube.com/chakravartidas"><i
+                    class="youtube fa fa-youtube"></i></a></li>
+              <li><a class="white-text" href="https://www.facebook.com/thearyansclub/"><i
+                    class="facebook fa fa-facebook"></i></a></li>
+              <li><a class="white-text" href="https://wa.me/918433631858"><i class="whatsapp fa fa-whatsapp"></i></a>
+              </li>
+            </ul>
           </div>
-          <div class="footer-column col s12 l4">
-            <h4 class="footer-heading">Contact Us</h4>
-            <div class="divider"></div>
-            <h5 class="thin-font footer-subheading">
-              Contact: 8433631858, 9074230903
-            </h5>
-            <h5 class="thin-font footer-subheading">
-              Email: thearyansclub@gmail.com
-            </h5>
-            <div class="footer-social-icon">
-              <ul>
-                <li><a class="white-text" href="https://www.instagram.com/thearyansclub/?igshid=1i5xvwjzugpw7"><i
-                      class="instagram fa fa-instagram"></i></a></li>
-                <li><a class="white-text" href="https://www.youtube.com/chakravartidas"><i
-                      class="youtube fa fa-youtube"></i></a></li>
-                <li><a class="white-text" href="https://www.facebook.com/thearyansclub/"><i
-                      class="facebook fa fa-facebook"></i></a></li>
-                <li><a class="white-text" href="https://wa.me/918433631858"><i class="whatsapp fa fa-whatsapp"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col s12 l4">
-            <h4 class="footer-heading">Useful Links</h4>
-            <div class="divider"></div>
-            <a href="./" class="white-text">
-              <h5 class="thin-font footer-link">Home</h5>
-            </a>
-            <a href="./lets-make-it-better.html" class="white-text">
-              <h5 class="thin-font footer-link">Latest Events</h5>
-            </a>
-            <a href="./appreciation.html" class="white-text">
-              <h5 class="thin-font footer-link">Appreciation</h5>
-            </a>
-            <a href="./aboutus.html" class="white-text">
-              <h5 class="thin-font footer-link">About Us</h5>
-            </a>
-          </div>
+        </div>
+        <div class="col s12 l4">
+          <h4 class="footer-heading">Useful Links</h4>
+          <div class="divider"></div>
+          <a href="./" class="white-text">
+            <h5 class="thin-font footer-link">Home</h5>
+          </a>
+          <a href="./lets-make-it-better.html" class="white-text">
+            <h5 class="thin-font footer-link">Latest Events</h5>
+          </a>
+          <a href="./appreciation.html" class="white-text">
+            <h5 class="thin-font footer-link">Appreciation</h5>
+          </a>
+          <a href="./aboutus.html" class="white-text">
+            <h5 class="thin-font footer-link">About Us</h5>
+          </a>
         </div>
       </div>
     </div>
-    <div class="row center-align" style=" margin: 0px; padding: 5px 0px;">
-      <div class="col s12 m6">
-        <span style="color: white; font-size: 18px;">© The Aryans Club | ISKCON Juhu 
-      </div>
-      <div class="col s12 m6">
-        <a style="color: white; font-size: 18px; font-weight: bold;" href="terms_and_condition.html">Terms & Conditions</a>
-      </div>
+  </div>
+  <div class="row center-align" style=" margin: 0px; padding: 5px 0px;">
+    <div class="col s12 m6">
+      <span style="color: white; font-size: 18px;">© The Aryans Club | ISKCON Juhu 
     </div>
-  </footer>
-  <!-- Footer Ended -->
+    <div class="col s12 m6">
+      <a style="color: white; font-size: 18px; font-weight: bold;" href="terms_and_condition.html">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+<!-- Footer Ended -->
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/join.js"></script>
+<!--  Scripts-->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/registration.js"></script>
 </body>
 
 </html>

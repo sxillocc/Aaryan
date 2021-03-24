@@ -39,8 +39,6 @@ function save_info(){
   //Step 4: Store Payment Id in Database
   var m_user = getTestUser();
   var amt = "1000";
-  var key_id = 'rzp_test_NO41aZV6wcQ7Yo';
-  var key_secret = 'PXwXA5TXFZUT5fVYCg3fTFkE';
   console.log("We're going to add details in database");
   console.log(auth_instance);
   auth_instance.signInAnonymously()
@@ -48,6 +46,7 @@ function save_info(){
     console.log(m_user);
     // writeInDatabase("user", "amt");
     var transaction = getRazorpayTransaction(m_user, course, amt);
+    console.log(transaction);
     var payment_gateway = new Razorpay(transaction);
     payment_gateway.open();
   })
@@ -74,25 +73,26 @@ function writeInDatabase(user, amt){
 
 function getRazorpayTransaction(user, event, amt){
   var options = {
-    "key": "rzp_live_vcHyFdH171kDbO",
+    "key": "rzp_test_NO41aZV6wcQ7Yo",
     "amount": amt,
     "currency": "INR",
     "name": "The Aryans Club",
     "image": "https://thearyansclub.com/assets/images/a_logo_small.jpg",
     "handler": function (response){
-      transaction_ref.push({
-        payment_id: response.razorpay_payment_id//,
-        // email: user.email,
-        // phone: user.phone,
-        // name: user.fname+" "+user.lname
-      }, (error)=>{
-        if(error){
-          console.log(error);
-        } else {
-          alert("You have successfully Registered!");
-          location.reload();
-        }
-      });
+      // transaction_ref.push({
+      //   payment_id: response.razorpay_payment_id,
+      //   email: user.email,
+      //   phone: user.phone,
+      //   name: user.fname+" "+user.lname
+      // }, (error)=>{
+      //   if(error){
+      //     console.log(error);
+      //   } else {
+      //     alert("You have successfully Registered!");
+      //     location.reload();
+      //   }
+      // });
+      console.log(response);
     },
     "prefill": {
       "name": user.fname+" "+user.lname,
@@ -119,8 +119,8 @@ function getTestUser(){
   var test_fname_field = document.getElementById("first_name");
   var test_lname_field = document.getElementById("last_name");
   var test_user = {
-    fname: test_fname_field.value,
-    lname: test_lname_field.value,
+    fname: "Shaktiraj",
+    lname: "Daudra",
     phone: "7359802004",
     email: "shaktirajdaudra@gmail.com"
   };
