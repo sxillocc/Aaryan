@@ -254,6 +254,7 @@ function uploadEntry(user, courseCode){
     let errorMessage = error.message;
     loaderOff();
     alert("Something wrong, please try again later. (Error Code: 3)");
+    db_instance.ref("error/ramayan").push(errorMessage);
     console.log(errorMessage);
   })
 }
