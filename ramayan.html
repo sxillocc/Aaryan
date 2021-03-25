@@ -12,7 +12,7 @@
   </script> -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Custom Title</title>
+  <title>Ramayan</title>
 
   <meta property="description"
     content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.">
@@ -142,7 +142,7 @@
             <div class="divider"></div>
             <div class="valign-wrapper">
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
-              <p class="items green-text"><b>With Visual Presentation and <a href="#prizes" class="green-text" style="text-decoration: underline;">exciting prizes</a></b></p>
+              <p class="items green-text"><b>With Visual Presentation and <a href="#gifts" class="green-text" style="text-decoration: underline;">exciting gifts</a></b></p>
             </div>
             <div class="divider"></div>
             <div class="valign-wrapper">
@@ -158,28 +158,28 @@
   <div class="sb-color">
     <div class="container">
       <div class="section">
-        <div id="prizes">
-          <h5 class="heading-2">Prizes based on Performance in Quiz</h5>
+        <div id="gifts" class="scrollspy">
+          <h5 class="heading-2">Gifts on the basis of Performance in Quiz</h5>
           <div class="small-line"></div>
           <div style="font-size: 20px;" class="event-box">
             <div class="valign-wrapper">
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
-              <p class="items"><b>1st Prize worth ₹2500</b></p>
+              <p class="items"><b>1st Rank - Gift worth ₹2500</b></p>
             </div>
             <div class="divider"></div>
             <div class="valign-wrapper">
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
-              <p class="items"><b>2nd Prize worth ₹2000</b></p>
+              <p class="items"><b>2nd Rank - Gift worth ₹2000</b></p>
             </div>
             <div class="divider"></div>
             <div class="valign-wrapper">
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
-              <p class="items"><b>3rd Prize worth ₹1500</b></p>
+              <p class="items"><b>3rd Rank - Gift worth ₹1500</b></p>
             </div>
             <div class="divider"></div>
             <div class="valign-wrapper">
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
-              <p class="items"><b>Top five runner up prizes worth ₹500</b></p>
+              <p class="items"><b>Five runner up - Gift worth ₹500</b></p>
             </div>
           </div>
         </div>
@@ -270,12 +270,15 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script>
+    $(document).ready(function(){
+      $('.scrollspy').scrollSpy();
+    });
     function goToRegisterPage(courseCode){
       let courseDetail = {
         "courseName": "Ramayan",
         "courseCode": courseCode,
         "courseLang": "Hindi",
-        "amt": "19900"
+        "amt": "100"
       }
       courseDetail = JSON.stringify(courseDetail);
       localStorage.setItem("course", courseDetail);

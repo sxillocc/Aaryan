@@ -67,26 +67,31 @@ function toggle(element){
 //Pay now function
 function payNow(user, courseCode, amt){
   let transaction = getRazorpayTransaction(user, courseCode, amt);
-  let payment_gateway = new Razorpay(transaction);
-  
-  //Update database if payment successfull
-  payment_gateway.open();
+  try{
+    let payment_gateway = new Razorpay(transaction)
+    //Update database if payment successfull
+    payment_gateway.open();
+    
+    //Update database if payment failed
+    payment_gateway.on('payment.failed', function (response){
+        let errormsg = response.error.code + ": "+response.error.description+", "+response.error.reason;  
+        pstatus = {
+          "status": "Failed",
+          "pid": response.error.metadata.payment_id,
+          "description": errormsg
+        }
 
-  //Update database if payment failed
-  payment_gateway.on('payment.failed', function (response){
-      let errormsg = response.error.code + ": "+response.error.description+", "+response.error.reason;  
-      pstatus = {
-        "status": "Failed",
-        "pid": response.error.metadata.payment_id,
-        "description": errormsg
-      }
-
-      //location--> coursecode/whatsapp/pstatus = pstatus
-      db_instance.ref(courseCode+"/"+user.whatsapp+"/pstatus").set(pstatus);
-  });
+        //location--> coursecode/whatsapp/pstatus = pstatus
+        db_instance.ref(courseCode+"/"+user.whatsapp+"/pstatus").set(pstatus);
+    });
+  }catch(error){
+    console.log(error.message);
+    alert("Payment Gateway not working, Please try again later.");
+  }
 }
 //register page
 function register(){
+  courseCode = course['courseCode'];
   var criticalAge = 35;
   
   var fnamefield = document.getElementById("fname");
@@ -144,17 +149,22 @@ function register(){
     isYouth: isYouth,
     courseCode: courseCode
   }
-  // console.log(user);
+  if (!navigator.onLine){
+    alert("Please check your internet connection");
+    return;
+  }
+  
   loaderOn();
   auth_instance.signInAnonymously()
   .then(() => {
-    // console.log("Signed In");
+    if (!navigator.onLine){
+      alert("Please check your internet connection");
+      return;
+    }
     uploadEntry(user, courseCode);
   })
   .catch((error) => {
-    var errorCode = error.code;
     var errorMessage = error.message;
-    // console.log(errorCode);
     console.log(errorMessage);
     loaderOff();
   })
@@ -187,6 +197,10 @@ function checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cna
 
 //Invoke when given contact is already registered in the event
 function alreadyRegistered(courseCode, group_num){
+  if (!navigator.onLine){
+    alert("Please check your internet connection");
+    return;
+  }
   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
     let courseDetail = snapshot.val();
     let link = courseDetail[group_num];
@@ -198,12 +212,10 @@ function alreadyRegistered(courseCode, group_num){
     wlinknote.innerHTML = "You have already Registered, Incase you have not yet joined the Whatsapp group then please join.";
     instance.open();
   }).catch(function(error){
-    //IF SOMETHING WENTS WRONG THEN TRY LATER ALERT
     let errorMessage = error.message;
-    let errorCode = error.code;
     loaderOff();
-    alert("Something wrong, please try again later...");
-    console.log(errorCode+" : "+errorMessage);
+    alert("You're already Registered");
+    console.log(errorMessage);
   })
 }
 
@@ -213,6 +225,10 @@ function newEntry(user, uid, courseCode){
   let userref = db_instance.ref(courseCode + "/" + uid);
   userref.set(user).then(function () {
     loaderOff();
+    if (!navigator.onLine){
+      alert("Please check your internet connection");
+      return;
+    }
     payNow(user, courseCode, course['amt']);
   });
 }
@@ -228,14 +244,17 @@ function uploadEntry(user, courseCode){
         return;
       }
     }
+    if (!navigator.onLine){
+      alert("Please check your internet connection");
+      return;
+    }
     newEntry(user, uid, courseCode);
 
   }).catch(function(error){
     let errorMessage = error.message;
-    let errorCode = error.code;
     loaderOff();
-    alert("Something wrong, please try again later....");
-    console.log(errorCode+" : "+errorMessage);
+    alert("Something wrong, please try again later. (Error Code: 3)");
+    console.log(errorMessage);
   })
 }
 function updateCount(courseCode, link){
@@ -258,7 +277,7 @@ function updateCount(courseCode, link){
     wlinknote.innerHTML = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
     instance.open();
   }).catch(function(error){
-    console.log("error- "+error.errorMessage);
+    console.log("Count not updated:- "+error.errorMessage);
   });
 }
 function showModal(user, courseCode){
@@ -274,17 +293,17 @@ function showModal(user, courseCode){
       updateCount(courseCode, courseDetail[i]);
     });
   }).catch(function(error){
-
+    loaderOff();
+    window.location.href="./courses.html";
     // IF SOMETHING WENTS WRONG THEN TRY LATER............
     let errorMessage = error.message;
-    let errorCode = error.code;
-    console.log(errorCode+" : "+errorMessage);
-    alert("Please try again later.........");
+    console.log("Whatsapp Link not generated due to reason:- "+ errorMessage);
+    alert("You have successfully Registered. Our volunteer will communicate with you soon. Thank-you");
   });
 }
 function getRazorpayTransaction(user, courseCode, amt){
   var options = {
-    "key": "rzp_test_hJzg5hre7m0Y6h",
+    "key": "rzp_live_qLeEwleT8UJmOH",
     "amount": amt,
     "currency": "INR",
     "name": "The Aryans Club",
@@ -296,6 +315,10 @@ function getRazorpayTransaction(user, courseCode, amt){
       }
       db_instance.ref(courseCode+"/"+user.whatsapp+"/pstatus").set(pstatus).then(
         function(){
+          if (!navigator.onLine){
+            alert("Please check your internet connection");
+            return;
+          }
           showModal(user, courseCode);
         }
       );
@@ -317,40 +340,3 @@ function getRazorpayTransaction(user, courseCode, amt){
   };
   return options;
 }
-
-
-// function foo(){
-//   //Reading and deciding the whatsappgroup
-//   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
-//     let courseDetail = snapshot.val();
-//     let i = parseInt(courseDetail['count']);
-//     i = (Math.floor(i / 240)) + 1;
-//     i = "wlink" + i.toString();
-//     root.set(i).then(
-//       function(){
-//         updateCount();
-//       }
-//     );
-//     // console.log("Reading "+ i);
-//     // console.log("link == " + courseDetail[i]);
-
-//     //Allocated Whatsapp Group,
-//     //Whatsapp Group is --> link = courseDetail[i]
-//     //Now adding user's entry in database
-//     //.then(function(){
-      
-//     //   //After entry is added, we're updating count, and from there we'll also show the Whatsapp Group Modal
-//     //   // let userref = db_instance.ref(courseCode+"/"+uid);
-//     //   // userref.set(user).then(function(){
-//     //   //   updateCount(user, courseCode, courseDetail[i]);
-//     //   // });
-//     // });
-//   }).catch(function(error){
-
-//     // IF SOMETHING WENTS WRONG THEN TRY LATER............
-//     let errorMessage = error.message;
-//     let errorCode = error.code;
-//     console.log(errorCode+" : "+errorMessage);
-//     alert("Please try again later.........");
-//   });
-// }
