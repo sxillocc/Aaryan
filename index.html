@@ -318,38 +318,58 @@
   </div>
 
   <!--Upcoming Events Section Start-->
-  <div class="section sbg-color">
-    <div class="container">
-      <h2 class="heading-1">Online Course</h2>
-      <div class="small-line"></div>
+  <div class="sbg-color">
+  <div class="container">
+    <div class="section">
       <div class="row">
-        <div class="col s12 no-padding-mob">
-          <h4 class="heading-2">
-            Life Lessons from Bhagavad Gita
-          </h4>
+        <div class="col s12">
+          <h2 class="heading-1">रामायण चरित्र</h2>
+          <div class="small-line"></div>
+          <br />
         </div>
+        <div class="col s12 flow-text">प्रमुख व्यक्तित्वों के जीवन से शिक्षा</div>
+  
         <div class="col s12 l8 no-padding-mob">
-          <a href="./bg-life-lessons.html">
-            <picture>
-              <source media="(min-width:993px)" srcset="./assets/images/bhagavad-gita-event_w840.jpg">
-              <source media="(min-width:601px)" srcset="./assets/images/bhagavad-gita-event_w650.jpg">
-              <img src="./assets/images/bhagavad-gita-event_w600.jpg" style="width: 100%;" alt="">
-            </picture>
-          </a>
+          <picture>
+            <img src="./assets/images/ram.jpg" style="width: 100%;" alt="">
+          </picture>
         </div>
+  
         <div class="col s12 l4">
-          <p class="content">
-            "When doubts haunt me, when disappointments stare me in the face, and I see not one ray of hope on the horizon, I turn to Bhagavad-Gita and find a verse to comfort me; and I immediately begin to smile in the midst of overwhelming sorrow. Those who meditate on the Gita will derive fresh joy and new meanings from it every day." <br/> <b>– Mahatma Gandhi</b>
-          </p>
-          <h5 class="heading-3">
-            Register now to get videos
-          </h5>
-          <a class="waves-effect pb-color waves-light btn" href="./bg-life-lessons.html">Know More</a>
-          <br/><br/>
-          <a class="waves-effect waves-purple sb-color btn modal-trigger" href="./courses.html">See all courses</a>
+  
+          <div style="font-size: 20px;" class="event-box">
+            <div class="valign-wrapper">
+              <i class="material-icons" style="margin-right: 5px;">language</i>
+              <p class="items"><b>Language: Hindi</b></p>
+            </div>
+            <div class="divider" style="margin-bottom: 10px; margin-top: -10px;"></div>
+            <div class="valign-wrapper">
+              <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
+              <div class="items green-text"><b>With Visual Presentation and exciting gifts:-</b></div>
+            </div>
+            <div class="valign-wrapper">
+              <div class="items"><b>1st Rank - Gift worth ₹2500</b></div>
+            </div>
+            <div class="valign-wrapper">
+              <div class="items"><b>2nd Rank - Gift worth ₹2000</b></div>
+            </div>
+            <div class="valign-wrapper">
+              <div class="items"><b>3rd Rank - Gift worth ₹1500</b></div>
+            </div>
+            <div class="valign-wrapper">
+              <div class="items"><b>Five runner up - Gift worth ₹500</b></div>
+            </div>
+            <div class="divider" style="margin-top: 10px;"></div>
+            <div class="valign-wrapper">
+              <i class="material-icons p-color">account_balance_wallet</i>
+              <p class="items p-color"><b>Registration Fees : ₹199</b></p>
+            </div>
+          </div>
+          <button class="pb-color waves-effect waves-purple btn" onclick="goToRegisterPage('RAM')">Register Now</button>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="section">
     <div class="container">
@@ -478,5 +498,18 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    function goToRegisterPage(courseCode){
+      let courseDetail = {
+        "courseName": "Ramayan",
+        "courseCode": courseCode,
+        "courseLang": "Hindi",
+        "amt": "100"
+      }
+      courseDetail = JSON.stringify(courseDetail);
+      localStorage.setItem("course", courseDetail);
+      window.location.href = "./registration.html";
+    }
+  </script>
 </body>
 </html>

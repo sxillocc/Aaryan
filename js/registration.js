@@ -253,7 +253,8 @@ function uploadEntry(user, courseCode){
   }).catch(function(error){
     let errorMessage = error.message;
     loaderOff();
-    alert("Something wrong, please try again later. (Error Code: 3)");
+    window.location.href = "./registration.html";
+    alert("Something wrong, please try again. (Error Code: 3)");
     db_instance.ref("error/ramayan").push(errorMessage);
     console.log(errorMessage);
   })
