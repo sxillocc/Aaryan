@@ -40,6 +40,7 @@ function init(){
   courseField.innerHTML = course['courseName'];
 }
 init();
+var k=0;
 
 //Asking Location, If user is from India
 function togglecountry(element){
@@ -162,12 +163,11 @@ function register(){
       return;
     }
     uploadEntry(user, courseCode);
-    // setTimeout(function(){ 
-    // }, 400);
   })
   .catch((error) => {
     var errorMessage = error.message;
     console.log(errorMessage);
+    alert("Please try again.. ");
     loaderOff();
   })
   // TODO LIST--------------------------
@@ -254,11 +254,18 @@ function uploadEntry(user, courseCode){
 
   }).catch(function(error){
     let errorMessage = error.message;
-    loaderOff();
-    window.location.href = "./registration.html";
-    alert("Something wrong, please try again. (Error Code: 3)");
-    db_instance.ref("error/ramayan").push(errorMessage);
-    console.log(errorMessage);
+    k = k + 1;
+    if(k < 2){
+      console.log(errorMessage + ": "+k );
+      register();
+      return;
+    }else{
+      loaderOff();
+      // window.location.href = "./registration.html";
+      alert("Something wrong, please try again. (3)");
+      db_instance.ref("error/ramayan").push(errorMessage);
+      console.log(errorMessage);
+    }
   })
 }
 function updateCount(courseCode, link){
