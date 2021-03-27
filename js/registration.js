@@ -161,7 +161,9 @@ function register(){
       alert("Please check your internet connection");
       return;
     }
-    uploadEntry(user, courseCode);
+    setTimeout(function(){ 
+      uploadEntry(user, courseCode);
+    }, 400);
   })
   .catch((error) => {
     var errorMessage = error.message;
