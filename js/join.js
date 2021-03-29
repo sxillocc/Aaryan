@@ -63,6 +63,7 @@ function join(batch){
   var cnamefield = document.getElementById("cname");
   var statefield = document.getElementById("state");
   var cityfield = document.getElementById("city");
+  var camefromfield = document.getElementById("camefrom");
 
   var fname = fnamefield.value;
   var lname = lnamefield.value;
@@ -77,6 +78,7 @@ function join(batch){
   var city = cityfield.value;
   var location = countrycodefield.options[countrycodefield.selectedIndex].text;
   var isYouth = false;
+  var camefrom = camefromfield.value;
   
   var courseCode = batch;
 
@@ -116,7 +118,8 @@ function join(batch){
     cname: cname,
     location: location,
     isYouth: isYouth,
-    courseCode: courseCode
+    courseCode: courseCode,
+    cameFrom: camefrom
   }
   // console.log(user);
   loaderOn();
