@@ -377,8 +377,10 @@
               <i class="material-icons p-color">account_balance_wallet</i>
               <p class="items p-color"><b>Registration Fees : ₹199</b></p>
             </div>
+            <div class="divider"></div>
+            <div class="flow-text red-text">REGISTRATION HAS BEEN CLOSED</div>
           </div>
-          <button class="pb-color waves-effect waves-purple btn-large" onclick="goToRegisterPage('RAM')">Join Now</button>
+          <button class="pb-color waves-effect waves-purple btn-large" id="regbttn">Join Now</button>
         </div>
       </div>
     </div>
@@ -512,17 +514,7 @@
   <script src="js/init.js"></script>
   <script src="js/main.js"></script>
   <script>
-    function goToRegisterPage(courseCode){
-      let courseDetail = {
-        "courseName": "Ramayan",
-        "courseCode": courseCode,
-        "courseLang": "Hindi",
-        "amt": "19900"
-      }
-      courseDetail = JSON.stringify(courseDetail);
-      localStorage.setItem("course", courseDetail);
-      window.location.href = "./registration.html";
-    }
+    document.getElementById("regbttn").disabled = true;
   </script>
 </body>
 </html>

@@ -155,13 +155,10 @@
               <i class="material-icons green-text" style="margin-right: 5px;">check_circle</i>
               <p class="items green-text"><b>With Visual Presentation and <a href="#gifts" class="green-text" style="text-decoration: underline;">exciting gifts</a></b></p>
             </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-              <i class="material-icons p-color">account_balance_wallet</i>
-              <p class="items p-color"><b>Registration Fees : ₹199</b></p>
-            </div>
           </div>
-          <button class="pb-color waves-effect waves-purple btn-large" onclick="goToRegisterPage('RAM')">Join Now</button>
+          <div class="divider"></div>
+          <div class="flow-text red-text">REGISTRATION HAS BEEN CLOSED</div>
+          <button class="pb-color waves-effect waves-purple btn-large" id="regbttn">Join Now</button>
         </div>
       </div>
     </div>
@@ -207,7 +204,9 @@
           <i class="material-icons small  ">account_balance_wallet</i>
           <h5 class="heading-3" style="margin-left: 20px;">Registration Fees : ₹199</h5>
         </div>
-        <button class="pb-color waves-effect waves-purple btn-large" onclick="goToRegisterPage('RAM')">Join Now</button>
+        <div class="divider"></div>
+        <div class="flow-text red-text" style="margin-bottom: 10px;">REGISTRATION HAS BEEN CLOSED</div>
+        <button class="pb-color waves-effect waves-purple btn-large" id="regbttn2">Join Now</button>
         <br/>
         <br/>
     </div>
@@ -284,17 +283,8 @@
     $(document).ready(function(){
       $('.scrollspy').scrollSpy();
     });
-    function goToRegisterPage(courseCode){
-      let courseDetail = {
-        "courseName": "Ramayan",
-        "courseCode": courseCode,
-        "courseLang": "Hindi",
-        "amt": "19900"
-      }
-      courseDetail = JSON.stringify(courseDetail);
-      localStorage.setItem("course", courseDetail);
-      window.location.href = "./registration.html";
-    }
+    document.getElementById("regbttn").disabled = true;
+    document.getElementById("regbttn2").disabled = true;
   </script>
 </body>
 
