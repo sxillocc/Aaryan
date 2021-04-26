@@ -107,6 +107,19 @@ function join(batch){
     isYouth = true;
     courseCode = courseCode + "Y";
   }
+  //getting timestamp
+  var currentTime = new Date();
+  var currentOffset = currentTime.getTimezoneOffset();
+  var ISTOffset = 330;   // IST offset UTC +5:30 
+  var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
+  // ISTTime now represents the time in IST coordinates
+  var hoursIST = ISTTime.getHours()
+  var minutesIST = ISTTime.getMinutes()
+  var dd = ISTTime.getDate()
+  var mm = ISTTime.getMonth()
+  var yyyy = ISTTime.getFullYear()
+  var timestamp = dd+"/"+mm+"/"+yyyy+"-"+hoursIST+":"+minutesIST
+
   var user = {
     name: fullname,
     age: age,
@@ -119,7 +132,8 @@ function join(batch){
     location: location,
     isYouth: isYouth,
     courseCode: courseCode,
-    cameFrom: camefrom
+    cameFrom: camefrom,
+    timestamp: timestamp
   }
   // console.log(user);
   loaderOn();
