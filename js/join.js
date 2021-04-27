@@ -81,6 +81,7 @@ function join(batch){
   var camefrom = camefromfield.value;
   
   var courseCode = batch;
+  var whatsappCode = batch;
 
   let isValid = checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cname, state, city);
   if(!isValid)
@@ -97,8 +98,10 @@ function join(batch){
   var fullname = fname+" "+lname;
   if(language == "Hindi"){
     courseCode = courseCode + "H";
+    whatsappCode = courseCode;
   }else if(language == "English"){
     courseCode = courseCode + "E";
+    whatsappCode = courseCode;
   }else{
     alert("Something wrong, Please try again later!");
     return;
@@ -140,7 +143,7 @@ function join(batch){
   auth_instance.signInAnonymously()
   .then(() => {
     // console.log("Signed In");
-    uploadEntry(user, courseCode);
+    uploadEntry(user, courseCode, whatsappCode);
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -175,8 +178,8 @@ function checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cna
   }
   return true;
 }
-function alreadyRegistered(courseCode){
-  db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
+function alreadyRegistered(courseCode, whatsappCode){
+  db_instance.ref(whatsappCode+"wlink").get().then(function(snapshot){
     // console.log("You're already registered, Reading your whatsapp link");
     let courseDetail = snapshot.val();
     let i = parseInt(courseDetail['count']);
@@ -198,8 +201,8 @@ function alreadyRegistered(courseCode){
     console.log(errorCode+" : "+errorMessage);
   })
 }
-function newEntry(root, user, uid, courseCode){
-  db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
+function newEntry(root, user, uid, courseCode, whatsappCode){
+  db_instance.ref(whatsappCode+"wlink").get().then(function(snapshot){
     // console.log("Registering new user");
     let courseDetail = snapshot.val();
     let i = parseInt(courseDetail['count']);
@@ -211,7 +214,7 @@ function newEntry(root, user, uid, courseCode){
       let userref = db_instance.ref(courseCode+"/"+uid);
       userref.set(user).then(function(){
         // console.log("Registered");
-        updateCount(courseCode, courseDetail[i]);
+        updateCount(whatsappCode, courseDetail[i]);
       });
     });
   }).catch(function(error){
@@ -220,19 +223,19 @@ function newEntry(root, user, uid, courseCode){
     console.log(errorCode+" : "+errorMessage);
   });
 }
-function uploadEntry(user, courseCode){
+function uploadEntry(user, courseCode, whatsappCode){
   let uid = user.whatsapp;
   db_instance.ref("root/"+uid).get().then(function(snapshot){
     if(snapshot.exists()){
       let reglist = snapshot.val();
       console.log(courseCode+" : -- : "+ reglist[courseCode]);
       if(reglist[courseCode] !== undefined){
-        alreadyRegistered(courseCode);
+        alreadyRegistered(courseCode, whatsappCode);
         return;
       }
     }
     let root = db_instance.ref("root/"+uid+"/"+courseCode);
-    newEntry(root, user, uid, courseCode);
+    newEntry(root, user, uid, courseCode, whatsappCode);
 
   }).catch(function(error){
     let errorMessage = error.message;
@@ -242,8 +245,8 @@ function uploadEntry(user, courseCode){
     console.log(errorCode+" : "+errorMessage);
   })
 }
-function updateCount(courseCode, link){
-  let countref = db_instance.ref(courseCode+"wlink/count");
+function updateCount(whatsappCode, link){
+  let countref = db_instance.ref(whatsappCode+"wlink/count");
   countref.transaction(function(count){
     // let result = 0;
     // console.log("Count Updated");
