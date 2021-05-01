@@ -209,7 +209,8 @@
               <i class="material-icons">account_balance_wallet</i>
               <h6 class="heading-3">Registration Fees : ₹299</h6>
             </div>
-            <a target="_blank" class="pb-color waves-effect waves-purple btn" href="https://forms.gle/N8WTp8mbpdzhN9rS8">Register</a>
+            <div class="flow-text red-text">REGISTRATION HAS BEEN CLOSED</div>
+            <button class="pb-color waves-effect waves-purple btn" id="regbttn">Register</button>
             <br/>
         </div>
       </div>
@@ -335,7 +336,8 @@
             <i class="material-icons small  ">account_balance_wallet</i>
             <h5 class="heading-3" style="margin-left: 20px;">Registration Fees : ₹299</h5>
           </div>
-          <a target="_blank" class="pb-color waves-effect waves-purple btn" href="https://forms.gle/N8WTp8mbpdzhN9rS8">Register</a>
+          <div class="flow-text red-text">REGISTRATION HAS BEEN CLOSED</div>
+          <button class="pb-color waves-effect waves-purple btn" id="regbttn2">Register</button>
           <br/>
           <br/>
       </div>
@@ -408,6 +410,10 @@
   <!-- Footer Ended -->
 
   <!--  Scripts-->
+  <script>
+    document.getElementById("regbttn").disabled = true;
+    document.getElementById("regbttn2").disabled = true;
+  </script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
