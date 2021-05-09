@@ -48,6 +48,9 @@ function toggle(element){
   let cnamefield = document.getElementById("colledgename");
   cnamefield.style.display = "none";
 }
+function n(n){
+  return n > 9 ? "" + n: "0" + n;
+}
 function join(batch){
   // population greater than age 35 will be non-youth
   var criticalAge = 35;
@@ -116,10 +119,10 @@ function join(batch){
   var ISTOffset = 330;   // IST offset UTC +5:30 
   var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
   // ISTTime now represents the time in IST coordinates
-  var hoursIST = ISTTime.getHours()
-  var minutesIST = ISTTime.getMinutes()
-  var dd = ISTTime.getDate()
-  var mm = ISTTime.getMonth()
+  var hoursIST = n(ISTTime.getHours())
+  var minutesIST = n(ISTTime.getMinutes())
+  var dd = n(ISTTime.getDate())
+  var mm = n(ISTTime.getMonth()+1)
   var yyyy = ISTTime.getFullYear()
   var timestamp = dd+"/"+mm+"/"+yyyy+"-"+hoursIST+":"+minutesIST
 

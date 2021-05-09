@@ -1,5 +1,6 @@
 //courseInitialzation
 let course = JSON.parse(localStorage.getItem("course"));
+console.log(course);
 if(course === null){
   alert("Please select some course");
   window.location.href = "./courses.html"
@@ -90,6 +91,9 @@ function payNow(user, courseCode, amt){
     alert("Payment Gateway not working, Please try again later.");
   }
 }
+function n(n){
+  return n > 9 ? "" + n: "0" + n;
+}
 //register page
 function register(){
   courseCode = course['courseCode'];
@@ -132,13 +136,24 @@ function register(){
     state = "N/A";
     city = "N/A";
   }else{
-    location = city +", "+state;
+    location = state+", "+city;
   }
   var fullname = fname+" "+lname;
   if(gender == "Male" && age<=criticalAge){
     isYouth = true;
-    courseCode = courseCode + "Y";
   }
+  //getting timestamp
+  var currentTime = new Date();
+  var currentOffset = currentTime.getTimezoneOffset();
+  var ISTOffset = 330;   // IST offset UTC +5:30 
+  var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
+  // ISTTime now represents the time in IST coordinates
+  var hoursIST = n(ISTTime.getHours())
+  var minutesIST = n(ISTTime.getMinutes())
+  var dd = n(ISTTime.getDate())
+  var mm = n(ISTTime.getMonth()+1)
+  var yyyy = ISTTime.getFullYear()
+  var timestamp = dd+"/"+mm+"/"+yyyy+"-"+hoursIST+":"+minutesIST
   var user = {
     name: fullname,
     age: age,
@@ -151,6 +166,7 @@ function register(){
     location: location,
     isYouth: isYouth,
     courseCode: courseCode,
+    timestamp: timestamp,
     cameFrom: camefrom
   }
   if (!navigator.onLine){
@@ -301,7 +317,7 @@ function showModal(user, courseCode){
   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
     let courseDetail = snapshot.val();
     let i = parseInt(courseDetail['count']);
-    i = (Math.floor(i / 240)) + 1;
+    i = (Math.floor(i / 246)) + 1;
     i = "wlink" + i.toString();
     root.set(i).then(function(){
       updateCount(courseCode, courseDetail[i]);
