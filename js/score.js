@@ -16,14 +16,18 @@ auth_instance.signInAnonymously()
 .then(() => {
   var eng = document.getElementById("eng");
   var hin = document.getElementById("hin");
+  var tar = document.getElementById("tar");
   db_instance.ref("LBG1Ewlink").get().then(function(snapshot){
     let x = snapshot.val();
     eng.innerHTML = x['count'];
-    console.log(x);
-    db_instance.ref("LBG1Hwlink").get().then(function(snapshot){
-      let y = snapshot.val();
-      hin.innerHTML = y['count'];
-    })
+  });
+  db_instance.ref("LBG1Hwlink").get().then(function(snapshot){
+    let y = snapshot.val();
+    hin.innerHTML = y['count']; 
+  })
+  db_instance.ref("SWSCwlink").get().then(function(snapshot){
+    let z = snapshot.val();
+    tar.innerHTML = z['count'];
   });
 })
 .catch((error) => {
