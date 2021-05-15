@@ -99,10 +99,13 @@ function join(batch){
     location = city +", "+state;
   }
   var fullname = fname+" "+lname;
-  if(language == "Hindi"){
-    courseCode = courseCode + "H";
+  if(language == "HindiMorning"){
+    courseCode = courseCode + "HM";
     whatsappCode = courseCode;
-  }else if(language == "English"){
+  }else if(language == "HindiEvening"){
+    courseCode = courseCode + "HE";
+    whatsappCode = courseCode;
+  }else if(language == "EnglishEvening"){
     courseCode = courseCode + "E";
     whatsappCode = courseCode;
   }else{
@@ -111,7 +114,7 @@ function join(batch){
   }
   if(gender == "Male" && age<=criticalAge){
     isYouth = true;
-    courseCode = courseCode + "Y";
+    // courseCode = courseCode + "Y";
   }
   //getting timestamp
   var currentTime = new Date();
