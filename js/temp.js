@@ -333,7 +333,7 @@ function showModal(user, courseCode){
 }
 function getRazorpayTransaction(user, courseCode, amt){
   var options = {
-    "key": "rzp_test_NO41aZV6wcQ7Yo",
+    "key": "rzp_live_qLeEwleT8UJmOH",
     "amount": amt,
     "currency": "INR",
     "name": "The Aryans Club",
