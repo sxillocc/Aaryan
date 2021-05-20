@@ -96,12 +96,6 @@ function n(n){
 }
 //register page
 function register(){
-  // var checkbox = document.getElementById("readNote");
-  // if(checkbox.checked == false){
-  //   alert("Please submit after reading the Important Note. / कृपया महत्वपूर्ण सुचना पढ़ने के बाद सबमिट करें।")
-  //   return;
-  // }
-
   courseCode = course['courseCode'];
   var criticalAge = 35;
   
@@ -160,6 +154,7 @@ function register(){
   var mm = n(ISTTime.getMonth()+1)
   var yyyy = ISTTime.getFullYear()
   var timestamp = dd+"/"+mm+"/"+yyyy+"-"+hoursIST+":"+minutesIST
+
   var user = {
     name: fullname,
     age: age,
@@ -262,21 +257,20 @@ function newEntry(user, uid, courseCode){
 function uploadEntry(user, courseCode){
   let uid = user.whatsapp;
 
-  //Checking whether given contact is already registered or not?
-  db_instance.ref("root/"+uid).get().then(function(snapshot){
+  db_instance.ref(courseCode+"/"+uid).get().then(function(snapshot){
     if(snapshot.exists()){
-      let reglist = snapshot.val();
-      if(reglist[courseCode] !== undefined){
-        alreadyRegistered(courseCode, reglist[courseCode]);
-        return;
+      let mUser = snapshot.val();
+      if(mUser['group'] == undefined){
+        //register him
+       newEntry(user, uid, courseCode);
+      }else{
+        alreadyRegistered(courseCode, mUser['group'])
+        //show him whatsapp link
       }
+    }else{
+      //register him
+      newEntry(user, uid, courseCode);
     }
-    if (!navigator.onLine){
-      alert("Please check your internet connection");
-      return;
-    }
-    newEntry(user, uid, courseCode);
-
   }).catch(function(error){
     let errorMessage = error.message;
     k = k + 1;
@@ -288,7 +282,7 @@ function uploadEntry(user, courseCode){
       loaderOff();
       // window.location.href = "./registration.html";
       alert("Something wrong, please try again. (3)");
-      db_instance.ref("error/ramayan").push(errorMessage);
+      db_instance.ref("error/swsc").push(errorMessage);
       console.log(errorMessage);
     }
   })
@@ -319,7 +313,7 @@ function updateCount(courseCode, link){
 function showModal(user, courseCode){
   //Again turning on loader
   loaderOn();
-  let root = db_instance.ref("root/"+user.whatsapp+"/"+courseCode);
+  let root = db_instance.ref(courseCode+"/"+user.whatsapp+"/group");
   db_instance.ref(courseCode+"wlink").get().then(function(snapshot){
     let courseDetail = snapshot.val();
     let i = parseInt(courseDetail['count']);
@@ -339,7 +333,7 @@ function showModal(user, courseCode){
 }
 function getRazorpayTransaction(user, courseCode, amt){
   var options = {
-    "key": "rzp_live_qLeEwleT8UJmOH",
+    "key": "rzp_test_NO41aZV6wcQ7Yo",
     "amount": amt,
     "currency": "INR",
     "name": "The Aryans Club",
