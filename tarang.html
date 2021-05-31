@@ -173,11 +173,11 @@
             <div class="divider" style="margin-top: 15px;"></div>
             <div class="valign-wrapper">
               <i class="material-icons red-text" style="margin-right: 5px;">account_balance_wallet</i>
-              <p class="items red-text"><b>Ticket: ₹ 99</b></p>
+              <p class="items red-text"><b>Ticket: ₹ 99  {REGISTRATION CLOSED}</b></p>
             </div>
           </div>
           
-          <button onclick="next()" class="pb-color waves-effect waves-purple btn-large">Book Now</button>
+          <button onclick="next()" id="book" class="pb-color waves-effect waves-purple btn-large">Book Now</button>
           
         </div>
       </div>
@@ -256,9 +256,9 @@
         <div class="small-line" style="margin-bottom: 20px;"></div>
           <div class="valign-wrapper">
             <i class="material-icons small">account_balance_wallet</i>
-            <h5 class="heading-3" style="margin-left: 10px;">Ticket : ₹ 99</h5>
+            <h5 class="heading-3" style="margin-left: 10px;">Ticket : ₹ 99 {REGISTRATION CLOSED}</h5>
           </div>
-          <button onclick="next()" class="pb-color waves-effect waves-purple btn-large">Book Now</button>
+          <button onclick="next()" id = "book2" class="pb-color waves-effect waves-purple btn-large">Book Now</button>
           <br/>
           <br/>
       </div>
@@ -360,6 +360,8 @@
   </footer>
   <!-- Footer Ended -->
   <script>
+    document.getElementById("book").disabled = true;
+    document.getElementById("book2").disabled = true;
     function next(){
       var x = {
         "courseName" : "Second Wave or Second Chance",

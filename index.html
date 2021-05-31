@@ -345,10 +345,10 @@
             <div class="divider"></div>
             <div class="valign-wrapper">
               <i class="material-icons red-text" style="margin-right: 5px;">account_balance_wallet</i>
-              <p class="items red-text"><b>Ticket: ₹ 99</b></p>
+              <p class="items red-text"><b>Ticket: ₹ 99 {REGISTRATION CLOSED}</b></p>
             </div>
           </div>
-          <button class="pb-color waves-effect waves-purple btn-large" onclick="next()">Book Now</button>
+          <button class="pb-color waves-effect waves-purple btn-large" id="book" onclick="next()">Book Now</button>
           <a class="right black-text waves-effect white waves-light btn-large" href="./tarang.html">Know More</a>
         </div>
       </div>
@@ -543,6 +543,8 @@
   <script src="js/init.js"></script>
   <script src="js/main.js"></script>
   <script>
+    var bookNow = document.getElementById("book");
+    bookNow.disabled = true;
     function next(){
       var x = {
         "courseName" : "Second Wave or Second Chance",
