@@ -10,27 +10,15 @@ module.exports = function(grunt) {
           rename: false,
           sizes: [{
             name: '',
-            width: '400px',
+            width: '100%',
             suffix: '_50w400',
-            quality: 50
-          },
-          {
-            name: '',
-            width: '650px',
-            suffix: '_50w650',
-            quality: 50
-          },
-          {
-            name: '',
-            width: '840px',
-            suffix: '_50w840',
             quality: 50
           }
         ]
         },
         files: [{
           expand: true,
-          src: ['2W2C.jpg'],
+          src: ['complete_bg.jpg'],
           cwd: './buffer',
           dest: './'
         }]
