@@ -99,13 +99,10 @@ function join(batch){
     location = city +", "+state;
   }
   var fullname = fname+" "+lname;
-  if(language == "HindiMorning"){
-    courseCode = courseCode + "HM";
+  if(language == "Hindi"){
+    courseCode = courseCode + "H";
     whatsappCode = courseCode;
-  }else if(language == "HindiEvening"){
-    courseCode = courseCode + "HE";
-    whatsappCode = courseCode;
-  }else if(language == "EnglishEvening"){
+  }else if(language == "English"){
     courseCode = courseCode + "E";
     whatsappCode = courseCode;
   }else{
