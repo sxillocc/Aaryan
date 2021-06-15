@@ -24,12 +24,18 @@ module.exports = function(grunt) {
             width: '840px',
             suffix: '_50w840',
             quality: 50
+          },
+          {
+            name: '',
+            width: '100%',
+            suffix: '_50',
+            quality: 50
           }
         ]
         },
         files: [{
           expand: true,
-          src: ['kids.jpg'],
+          src: ['vrindavan_camp.jpg'],
           cwd: './buffer',
           dest: './'
         }]
