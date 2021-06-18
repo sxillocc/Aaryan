@@ -60,6 +60,7 @@ function join(batch){
   var agefield = document.getElementById("age");
   var genderfield = document.getElementById("gender");
   var languagefield = document.getElementById("language");
+  var martialfield = document.getElementById("martial");
   var countrycodefield = document.getElementById("countrycode");
   var whatsappfield = document.getElementById("whatsapp");
   var professionfield = document.getElementById("profession");
@@ -82,6 +83,7 @@ function join(batch){
   var location = countrycodefield.options[countrycodefield.selectedIndex].text;
   var isYouth = false;
   var camefrom = camefromfield.value;
+  var martial = martialfield.value;
   
   var courseCode = batch;
   var whatsappCode = batch;
@@ -99,11 +101,14 @@ function join(batch){
     location = city +", "+state;
   }
   var fullname = fname+" "+lname;
-  if(language == "Hindi"){
-    courseCode = courseCode + "H";
+  if(language == "HindiMorning"){
+    courseCode = courseCode + "HM";
     whatsappCode = courseCode;
-  }else if(language == "English"){
-    courseCode = courseCode + "E";
+  }else if(language == "EnglishEvening"){
+    courseCode = courseCode + "EE";
+    whatsappCode = courseCode;
+  }else if(language == "HindiEvening"){
+    courseCode = courseCode + "HE";
     whatsappCode = courseCode;
   }else{
     alert("Something wrong, Please try again later!");
@@ -131,6 +136,7 @@ function join(batch){
     age: age,
     gender: gender,
     language: language,
+    martial: martial,
     countrycode: countrycode,
     whatsapp: whatsapp,
     profession: profession,
