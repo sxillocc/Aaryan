@@ -109,7 +109,7 @@
     
     <!-- Heading of Camp -->
 
-    <div style="position: relative; height: 500px; width: 100%; background-image: linear-gradient(90deg, rgba(0,0,51,0.7) 0%, rgba(9,7,54,0.65) 19%, rgba(98,84,84,0.6) 50%, rgba(9,7,54,0.65) 81%, rgba(0,0,51,0.7) 100%),url(./assets/images/banner1.jpeg);
+    <div style="position: relative; height: 500px; width: 100%; background-image: linear-gradient(90deg, rgba(0,0,51,0.7) 0%, rgba(9,7,54,0.65) 19%, rgba(98,84,84,0.6) 50%, rgba(9,7,54,0.65) 81%, rgba(0,0,51,0.7) 100%),url(./assets/images/banner1_m.jpeg);
         background-size: cover; background-position: center;
         background-repeat: no-repeat; ">
         <div id="banner0" class="noselect section white-text center" style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -127,7 +127,9 @@
             <div class="row">
                 <div class="col center s12 l4 no-padding-mob">
                     <picture>
-                        <img src="./assets/images/bg.jpg" style="width: 70%;" alt="Bhagavad Gita">
+                        <source media="(min-width:993px)" srcset="./assets/images/bg_m.jpg">
+                        <source media="(min-width:601px)" srcset="./assets/images/bg_l.jpg">
+                        <img src="./assets/images/bg_m.jpg" style="width: 70%;" alt="">
                     </picture>
                 </div>
 
@@ -182,15 +184,11 @@
                     <br/>
                     <div class="flow-text">How to control mind?</div>
                     <br/>
-                    <img src="./assets/images/bgA.jpg" style="width: 100%; height: auto;"/>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
-                </div>
-
-                <div class="col s12 offset-l2 l8">
-                    <br/>
-                    <div class="flow-text">Know the Science of Soul</div>
-                    <br/>
-                    <img src="./assets/images/bgB.jpg" style="width: 100%; height: auto;"/>
+                    
+                    <picture>
+                        <source media="(min-width:601px)" srcset="./assets/images/bgA_l.jpg">
+                        <img src="./assets/images/bgA_m.jpg" style="width: 100%;" alt="How to control mind?">
+                    </picture>
                     <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
                 </div>
 
@@ -198,15 +196,21 @@
                     <br/>
                     <div class="flow-text">Manage the Lifestyle</div>
                     <br/>
-                    <img src="./assets/images/bgC.jpg" style="width: 100%; height: auto;"/>
+                    <picture>
+                        <source media="(min-width:601px)" srcset="./assets/images/bgB_l.jpg">
+                        <img src="./assets/images/bgB_m.jpg" style="width: 100%;" alt="Manage the Lifestyle">
+                    </picture>
                     <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
                 </div>
 
                 <div class="col s12 offset-l2 l8">
                     <br/>
-                    <div class="flow-text">How to see God?</div>
+                    <div class="flow-text">Know the Science of Soul</div>
                     <br/>
-                    <img src="./assets/images/bgD.jpg" style="width: 100%; height: auto;"/>
+                    <picture>
+                        <source media="(min-width:601px)" srcset="./assets/images/bgC_l.jpg">
+                        <img src="./assets/images/bgC_m.jpg" style="width: 100%;" alt="Know the Science of Soul">
+                    </picture>
                     <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
                 </div>
 
@@ -214,7 +218,22 @@
                     <br/>
                     <div class="flow-text">Why bad things happen to good people</div>
                     <br/>
-                    <img src="./assets/images/bgE.jpg" style="width: 100%; height: auto;"/>
+                    <picture>
+                        <source media="(min-width:601px)" srcset="./assets/images/bgD_l.jpg">
+                        <img src="./assets/images/bgD_m.jpg" style="width: 100%;" alt="Why bad things happen to good people">
+                    </picture>
+                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                </div>
+
+                <div class="col s12 offset-l2 l8">
+                    <br/>
+                    <div class="flow-text">How to see God?</div>
+                    <br/>
+
+                    <picture>
+                        <source media="(min-width:601px)" srcset="./assets/images/bgE_l.jpg">
+                        <img src="./assets/images/bgE_m.jpg" style="width: 100%;" alt="How to see God?">
+                    </picture>
                     <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
                 </div>
             </div>
@@ -228,7 +247,7 @@
                 <div class="col s12 l6">
                     <center>
                         <div style="width: 250px; height: 250px; overflow: hidden;">
-                            <img src="./assets/images/cvpg design photo.png" alt="Chakravarti Prabhuji" style="height: 100%; transform: translateX(-50%); margin-left: 50%;" >
+                            <img src="./assets/images/cvp_m.png" alt="Chakravarti Prabhuji" style="height: 100%; transform: translateX(-50%); margin-left: 50%;" >
                         </div>
                         <h5>H.G. Chakravarti Das</h5>
                         <span style="font-size: 14px;"><b>Life Coach | M.B.A.</b></span></br>
@@ -238,7 +257,7 @@
                 <div class="col s12 l6">
                     <center>
                         <div style="width: 250px; height: 250px;overflow: hidden;">
-                            <img src="./assets/images/AKP png-80.png" alt="Adhokshaja Krishna Prabhuji" style="height: 100%; transform: translateX(-50%); margin-left: 50%;" >
+                            <img src="./assets/images/akp_m.png" alt="Adhokshaja Krishna Prabhuji" style="height: 100%; transform: translateX(-50%); margin-left: 50%;" >
                         </div>
                         <h5>H.G. Adhokshaja Krishna Das</h5>
                         <span style="font-size: 14px;"><b>Spiritual Mentor | B. Tech.</b></span></br>

@@ -9,35 +9,17 @@ module.exports = function(grunt) {
           rename: false,
           sizes: [{
             name: '',
-            width: '400px',
-            suffix: '_50w400',
-            quality: 50
-          },
-          {
-            name: '',
-            width: '650px',
-            suffix: '_50w650',
-            quality: 50
-          },
-          {
-            name: '',
-            width: '840px',
-            suffix: '_50w840',
-            quality: 50
-          },
-          {
-            name: '',
-            width: '100%',
-            suffix: '_50',
+            width: '1080px',
+            suffix: '_m',
             quality: 50
           }
         ]
         },
         files: [{
           expand: true,
-          src: ['vrindavan_camp.jpg'],
-          cwd: './buffer',
-          dest: './'
+          src: ['*.jpeg'],
+          cwd: './buffer/x',
+          dest: './buffer'
         }]
       }
     },
