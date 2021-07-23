@@ -197,11 +197,15 @@ function alreadyRegistered(courseCode, whatsappCode){
     // console.log("Reading "+ i);
     // console.log("link == " + courseDetail[i]);
     loaderOff();
-    let wlink1 = document.getElementById("wlink1");
-    wlink1.href = courseDetail[i];
-    let wlinknote = document.getElementById("wlinknote");
-    wlinknote.innerHTML = "You have already Registered, Incase you have not yet joined the Whatsapp group then please join.";
-    instance.open();
+    let title="You have already Registered";
+    let note="Incase you have not yet joined the Whatsapp group then please join..."
+    let link=courseDetail[i];
+    nextPage(title, note, link);
+    // let wlink1 = document.getElementById("wlink1");
+    // wlink1.href = courseDetail[i];
+    // let wlinknote = document.getElementById("wlinknote");
+    // wlinknote.innerHTML = "You have already Registered, Incase you have not yet joined the Whatsapp group then please join.";
+    // instance.open();
   }).catch(function(error){
     let errorMessage = error.message;
     let errorCode = error.code;
@@ -267,14 +271,26 @@ function updateCount(whatsappCode, link){
     }
   }).then(function(){
     loaderOff();
-    let wlink1 = document.getElementById("wlink1");
-    wlink1.href = link;
-    let wlinktitle = document.getElementById("wlinktitle");
-    wlinktitle.innerHTML = "You have successfully registered.";
-    let wlinknote = document.getElementById("wlinknote");
-    wlinknote.innerHTML = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
-    instance.open();   
+    let title = "You have successfully registered.";
+    let note = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
+    nextPage(title, note, link);
+    // let wlink1 = document.getElementById("wlink1");
+    // wlink1.href = link;
+    // let wlinktitle = document.getElementById("wlinktitle");
+    // wlinktitle.innerHTML = "You have successfully registered.";
+    // let wlinknote = document.getElementById("wlinknote");
+    // wlinknote.innerHTML = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
+    // instance.open();   
   }).catch(function(error){
     console.log("error- "+error.errorMessage);
   });
+}
+function nextPage(title, note, link){
+  var x = {
+    "title" : title,
+    "note" : note,
+    "link" : link
+  }
+  localStorage.setItem("linkdetails",JSON.stringify(x));
+  window.location.href = "./thankyou.html";
 }
