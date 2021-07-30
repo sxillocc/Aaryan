@@ -199,8 +199,8 @@
           <div class="divider white"></div>
           <br/>
           <div class="teal-text text-accent-1 subtitle"><i><b>More than 5000+ participants so far...</b></i></div>
-          <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn-large" href="./gita.html">Join Free</a>
-          <br/>
+          <!-- <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn-large" href="./gita.html">Join Free</a> -->
+          <!-- <br/> -->
           <a style="margin-top: 10px;" class="sb-color waves-effect waves-light btn" href="./learngita.html">Know More</a>
           
         </div>
@@ -345,8 +345,11 @@
                 <p class="items"><b>Study material in ebook format will be provided</b></p>
             </div>
         </div>
+          <div class="flow-text red-text">Registration Closed</div>
+          <button id="joinbttn" class="pb-color left waves-effect waves-purple btn-large">Join Now</button>
           <a class="sb-color right waves-effect waves-purple btn-large" href="./learngita.html">Know more</a>
-          <a class="pb-color left waves-effect waves-purple btn-large" href="./gita.html">Join Now</a>
+          <!-- <a class="pb-color left waves-effect waves-purple btn-large" href="./gita.html">Join Now</a> -->
+          
         </div>
       </div>
     </div>
@@ -482,8 +485,10 @@
   <script src="js/init.js"></script>
   <script src="js/main.js"></script>
   <script>
-    var bookNow = document.getElementById("book");
-    bookNow.disabled = true;
+    // var bookNow = document.getElementById("book");
+    // bookNow.disabled = true;
+    var joinNow = document.getElementById("joinbttn");
+    joinNow.disabled = true;
     function next(){
       var x = {
         "courseName" : "Second Wave or Second Chance",

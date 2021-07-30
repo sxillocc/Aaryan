@@ -142,8 +142,9 @@
   </div>
   <div class="section">
     <div class="container">
-      <h5><b>New Batches starts from 24th July</b></h5></br>
-      <h6><b>Please fill this form. &nbsp;|&nbsp; कृपया इस फॉर्म को भरें।</b></h6></br>
+      <h5><b>New Batches starting soon....</b></h5></br>
+      <!-- <div class="flow-text red-text">Registration Closed</div> -->
+      <!-- <h6><b>Please fill this form. &nbsp;|&nbsp; कृपया इस फॉर्म को भरें।</b></h6></br> -->
       <div>
         <!-- Form Section -->
         <div class="row">
@@ -512,6 +513,8 @@
             </select>
           </div>
         </div>
+
+        <div class="flow-text red-text">Registration Closed</div>
         <button id="submitbttn" class="pb-color btn waves-effect waves-light" onclick="join('LBG4')">Submit
         </button>
       </div>
@@ -582,6 +585,10 @@
   <!-- Footer Ended -->
 
   <!--  Scripts-->
+  <script>
+    var submitbttn = document.getElementById("submitbttn");
+    submitbttn.disabled = true;
+  </script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>

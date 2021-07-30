@@ -136,7 +136,7 @@
             <div class="divider white"></div>
             <br/>
             <div class="teal-text text-accent-1 subtitle"><i><b>More than 5000+ participants so far...</b></i></div>
-            <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn-large" href="./gita.html">Join Now</a>
+            <!-- <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn-large" href="./gita.html">Join Now</a> -->
         </div>
     </div>
     <div class="container">
@@ -185,7 +185,9 @@
                 </div>
                 </div>
                 <div class="col s12 center">
-                    <a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a>
+                    <div class="flow-text red-text">Registration Closed</div>
+                    <button id="joinbttn" class="btn-large pb-color waves-effect waves-purple" >Join Now</button>
+                    <!-- <a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a> -->
                 </div>
             </div>
 
@@ -206,7 +208,7 @@
                         <source media="(min-width:601px)" srcset="./assets/images/bgA_l.jpg">
                         <img src="./assets/images/bgA_m.jpg" style="width: 100%;" alt="How to control mind?">
                     </picture>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                    <!-- <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center> -->
                 </div>
 
                 <div class="col s12 offset-l2 l8">
@@ -217,7 +219,7 @@
                         <source media="(min-width:601px)" srcset="./assets/images/bgB_l.jpg">
                         <img src="./assets/images/bgB_m.jpg" style="width: 100%;" alt="Manage the Lifestyle">
                     </picture>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                    <!-- <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center> -->
                 </div>
 
                 <div class="col s12 offset-l2 l8">
@@ -228,7 +230,7 @@
                         <source media="(min-width:601px)" srcset="./assets/images/bgC_l.jpg">
                         <img src="./assets/images/bgC_m.jpg" style="width: 100%;" alt="Know the Science of Soul">
                     </picture>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                    <!-- <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center> -->
                 </div>
 
                 <div class="col s12 offset-l2 l8">
@@ -239,7 +241,7 @@
                         <source media="(min-width:601px)" srcset="./assets/images/bgD_l.jpg">
                         <img src="./assets/images/bgD_m.jpg" style="width: 100%;" alt="Why bad things happen to good people">
                     </picture>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                    <!-- <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center> -->
                 </div>
 
                 <div class="col s12 offset-l2 l8">
@@ -251,7 +253,7 @@
                         <source media="(min-width:601px)" srcset="./assets/images/bgE_l.jpg">
                         <img src="./assets/images/bgE_m.jpg" style="width: 100%;" alt="How to see God?">
                     </picture>
-                    <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center>
+                    <!-- <center><a id="join" href="./gita.html" class="btn-large pb-color waves-effect waves-purple">Join Now</a></center> -->
                 </div>
             </div>
         </div>
@@ -321,6 +323,10 @@
     </footer>
     <!-- Footer Ended -->
     <!--  Scripts-->
+    <script>
+        var joinbttn = document.getElementById("joinbttn");
+        joinbttn.disabled = true;
+    </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
