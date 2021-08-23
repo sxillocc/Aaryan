@@ -1,14 +1,17 @@
-var empty_error = "Please fill all the fields";
-var fname_error = "Invalid First Name";
-var lname_error = "Invalid Last Name";
-var email_error = "Invalid Email";
-var date_error = "Invalid Date";
-var phone_error = "Invalid Phone Number";
-var course = {
-  name: "Life Lessons from Bhagavad gita",
-  month: "December 2020"
-};
-init();
+//Loader initialized
+var loader = document.getElementById("loader");
+function loaderOn(){
+  document.getElementById("submitbttn").disabled = true;
+  loader.style.display = "block";
+}
+function loaderOff(){
+  document.getElementById("submitbttn").disabled = false;
+  loader.style.display = "none";
+}
+
+// Modal initiation
+const elem = document.getElementById('registered1');
+const instance = M.Modal.init(elem, {dismissible: false});
 
 //firebase intialization
 var firebaseConfig = {
@@ -24,226 +27,217 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db_instance = firebase.database();
 var auth_instance = firebase.auth();
-var entries_ref = db_instance.ref('bgll_entries');
-var transaction_ref = db_instance.ref('bgll_transaction');
 
-function init(){
-  document.getElementById("ph_code").value = String("+91");
-  document.getElementById("birth_date").addEventListener("keyup", date_keyup); 
+function togglecountry(element){
+  let value = element.options[element.selectedIndex].value;
+  let locationbox = document.getElementById("locationbox");
+  if(value == "91"){
+    locationbox.style.display = "block";
+    return;
+  }
+  locationbox.style.display = "none";
 }
 
-function save_info(){
-  //Step 1: Get User from input fields
-  //Step 2: Sign-in and Write User into Database
-  //Step 3: Open Payment Gateway after successfully writing data
-  //Step 4: Store Payment Id in Database
-  var m_user = getTestUser();
-  var amt = "1000";
-  console.log("We're going to add details in database");
-  console.log(auth_instance);
+function toggle(element){
+  let value = element.options[element.selectedIndex].value;
+  if(value == "Student"){
+    let cnamefield = document.getElementById("colledgename");
+    cnamefield.style.display = "block";
+    return;
+  }
+  let cnamefield = document.getElementById("colledgename");
+  cnamefield.style.display = "none";
+}
+function n(n){
+  return n > 9 ? "" + n: "0" + n;
+}
+function join(batch){
+  var fnamefield = document.getElementById("fname");
+  var genderfield = document.getElementById("gender");
+  var countrycodefield = document.getElementById("countrycode");
+  var whatsappfield = document.getElementById("whatsapp");
+  var statefield = document.getElementById("state");
+  var cityfield = document.getElementById("city");
+
+  var fname = fnamefield.value;
+  var gender = genderfield.value;
+  var countrycode = countrycodefield.value;
+  var whatsapp = whatsappfield.value;
+  var state = statefield.value;
+  var city = cityfield.value;
+  var location = countrycodefield.options[countrycodefield.selectedIndex].text;
+  
+  var courseCode = batch;
+  var whatsappCode = batch;
+
+  let isValid = checkvalidity(fname, countrycode, whatsapp, state, city);
+  if(!isValid)
+    return;
+  if(countrycode != "91"){
+    state = "N/A";
+    city = "N/A";
+  }else{
+    location = city +", "+state;
+  }
+  var fullname = fname;
+  
+  //getting timestamp
+  var currentTime = new Date();
+  var currentOffset = currentTime.getTimezoneOffset();
+  var ISTOffset = 330;   // IST offset UTC +5:30 
+  var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
+  // ISTTime now represents the time in IST coordinates
+  var hoursIST = n(ISTTime.getHours())
+  var minutesIST = n(ISTTime.getMinutes())
+  var dd = n(ISTTime.getDate())
+  var mm = n(ISTTime.getMonth()+1)
+  var yyyy = ISTTime.getFullYear()
+  var timestamp = dd+"/"+mm+"/"+yyyy+"-"+hoursIST+":"+minutesIST
+
+  var user = {
+    name: fullname,
+    gender: gender,
+    countrycode: countrycode,
+    whatsapp: whatsapp,
+    location: location,
+    courseCode: courseCode,
+    timestamp: timestamp
+  }
+  console.log(user);
+  loaderOn();
   auth_instance.signInAnonymously()
   .then(() => {
-    console.log(m_user);
-    // writeInDatabase("user", "amt");
-    var transaction = getRazorpayTransaction(m_user, course, amt);
-    console.log(transaction);
-    var payment_gateway = new Razorpay(transaction);
-    payment_gateway.open();
+    // console.log("Signed In");
+    uploadEntry(user, courseCode, whatsappCode);
   })
   .catch((error) => {
-    var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode);
+    // console.log(errorCode);
     console.log(errorMessage);
+    loaderOff();
   })
-}
+  // TODO LIST--------------------------
+  // Push "user" in firebase at location "courseCode"
+  // Give them link of whatsapp group (First read link from firebase then give)
+  // -------------------------------------------------------------------------- 
 
-function writeInDatabase(user, amt){
-  entries_ref.push(user, (error)=>{
-    if(error){
-      console.log(error);
-    } else {
-      console.log("Registered");
-      // var transaction = getRazorpayTransaction(user, course, amt);
-      // var payment_gateway = new Razorpay(transaction);
-      // payment_gateway.open();
-    }
-  });
+  // alert("Entry taken");
 }
-
-function getRazorpayTransaction(user, event, amt){
-  var options = {
-    "key": "rzp_test_NO41aZV6wcQ7Yo",
-    "amount": amt,
-    "currency": "INR",
-    "name": "The Aryans Club",
-    "image": "https://thearyansclub.com/assets/images/a_logo_small.jpg",
-    "handler": function (response){
-      // transaction_ref.push({
-      //   payment_id: response.razorpay_payment_id,
-      //   email: user.email,
-      //   phone: user.phone,
-      //   name: user.fname+" "+user.lname
-      // }, (error)=>{
-      //   if(error){
-      //     console.log(error);
-      //   } else {
-      //     alert("You have successfully Registered!");
-      //     location.reload();
-      //   }
-      // });
-      console.log(response);
-    },
-    "prefill": {
-      "name": user.fname+" "+user.lname,
-      "email": user.email,
-      "contact": user.phone
-    },
-    "notes": {
-      "event": event.name,
-      "month": event.month
-    },
-    "theme": {
-      "color": "#c5331c"
-    },
-    "modal": {
-      "backdropclose": false,
-      "escape": false,
-    }
-  };
-  return options;
-}
-
-function getTestUser(){
-  console.log("We're in Test User Function");
-  var test_fname_field = document.getElementById("first_name");
-  var test_lname_field = document.getElementById("last_name");
-  var test_user = {
-    fname: "Shaktiraj",
-    lname: "Daudra",
-    phone: "7359802004",
-    email: "shaktirajdaudra@gmail.com"
-  };
-  console.log("User has been created Successfully");
-  console.log(test_user);
-  return test_user;
-}
-
-function getUser(){
-  var fname_field = document.getElementById("first_name");
-  var lname_field = document.getElementById("last_name");
-  var email_field = document.getElementById("email");
-  var date_field = document.getElementById("birth_date");
-  var phone_field = document.getElementById("ph_no");
-  var phone_codef = document.getElementById("ph_code");
-  var male_rbttn = document.getElementById("male_bttn");
-  var female_rbttn = document.getElementById("female_bttn");
-  var location_field = document.getElementById("location");
-  var isgood = validation(fname_field, lname_field, email_field, date_field, phone_field, phone_codef, location_field);
-  if(!isgood)
-    return null;
-  var first_name = fname_field.value;
-  var last_name = lname_field.value;
-  var email = email_field.value;
-  var birth_date = date_field.value;
-  var phone = phone_field.value;
-  var phone_code = phone_codef.value;
-  var location = location_field.value;
-  var gender = "Male";
-  if(male_rbttn.checked){
-    gender = male_rbttn.value;
-  }else{
-    gender = female_rbttn.value;
-  }
-  var user = {
-    fname: first_name,
-    lname: last_name,
-    email: email,
-    bdate: birth_date,
-    phone_code: phone_code,
-    phone: phone,
-    location: location,
-    gender: gender
-  }
-  return user;
-}
-
-function validation(fname, lname, email, date, phone, phone_code, location){
-  var isgood = true;
-  //empty_field validation
-  if(fname.value == "" || lname.value == "" || email.value == "" || phone.value == "" || phone_code.value == "" || location.value == ""){
-    alert(empty_error);
-    isgood = false;
-    return isgood;
-  }
-  //name validation
-  if(fname.value.length <= 1){
-    alert(fname_error)
-    isgood = false
-    return isgood
-  }
-  if(lname.value.length <= 1){
-    alert(lname_error)
-    isgood = false
-    return isgood
-  }
-  //email validation
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if(!re.test(email.value.toLowerCase())){
-    alert(email_error)
-    isgood = false
-    return isgood
-  }
-  //date validation
-  isgood = validate_date(date.value)
-  if(!isgood){
-    alert(date_error)
-    return false
-  }
-  //phone validation
-  if(phone.value.length < 7){
-    isgood = false
-    alert(phone_error)
-    return isgood
-  }
-  return isgood
-}
-
-function validate_date(bdate){
-  if(bdate.length < 10)
+function checkvalidity(fname, countrycode, whatsapp, state, city){
+  if(fname == "" || whatsapp == "" ){
+    alert("Please fill all the required fields");
     return false;
-  var dd = parseInt(bdate.substring(0,2));
-  var mm = parseInt(bdate.substring(3,5));
-  var yyyy = parseInt(bdate.substring(6));
-  
-  if(isNaN(dd) || dd < 1 || dd > 31)
+  }
+  if(countrycode == "91" && (state == "" || city == "")){
+    alert("Please fill location");
     return false;
-  if(isNaN(mm) || mm < 1 || mm > 12)
-    return false;
-  if(isNaN(yyyy) || yyyy < 1800 || yyyy > 2020)
-    return false;
+  }
   return true;
 }
+function alreadyRegistered(courseCode, whatsappCode){
+  db_instance.ref(whatsappCode+"wlink").get().then(function(snapshot){
+    // console.log("You're already registered, Reading your whatsapp link");
+    let courseDetail = snapshot.val();
+    let i = parseInt(courseDetail['count']);
+    i = (Math.floor(i / 240)) + 1;
+    i = "wlink" + i.toString();
+    // console.log("Reading "+ i);
+    // console.log("link == " + courseDetail[i]);
+    loaderOff();
+    let title="You have already Registered";
+    let note="Incase you have not yet joined the Whatsapp group then please join..."
+    let link=courseDetail[i];
+    nextPage(title, note, link);
+    // let wlink1 = document.getElementById("wlink1");
+    // wlink1.href = courseDetail[i];
+    // let wlinknote = document.getElementById("wlinknote");
+    // wlinknote.innerHTML = "You have already Registered, Incase you have not yet joined the Whatsapp group then please join.";
+    // instance.open();
+  }).catch(function(error){
+    let errorMessage = error.message;
+    let errorCode = error.code;
+    loaderOff();
+    alert("Something wrong, please try again later...");
+    console.log(errorCode+" : "+errorMessage);
+  })
+}
+function newEntry(root, user, uid, courseCode, whatsappCode){
+  db_instance.ref(whatsappCode+"wlink").get().then(function(snapshot){
+    // console.log("Registering new user");
+    let courseDetail = snapshot.val();
+    let i = parseInt(courseDetail['count']);
+    i = (Math.floor(i / 240)) + 1;
+    i = "wlink" + i.toString();
+    // console.log("Reading "+ i);
+    // console.log("link == " + courseDetail[i]);
+    root.set(i).then(function(){
+      let userref = db_instance.ref(courseCode+"/"+uid);
+      userref.set(user).then(function(){
+        // console.log("Registered");
+        updateCount(whatsappCode, courseDetail[i]);
+      });
+    });
+  }).catch(function(error){
+    let errorMessage = error.message;
+    let errorCode = error.code;
+    console.log(errorCode+" : "+errorMessage);
+  });
+}
+function uploadEntry(user, courseCode, whatsappCode){
+  let uid = user.whatsapp;
+  db_instance.ref("root/"+uid).get().then(function(snapshot){
+    if(snapshot.exists()){
+      let reglist = snapshot.val();
+      // console.log(courseCode+" : -- : "+ reglist[courseCode]);
+      if(reglist[courseCode] !== undefined){
+        alreadyRegistered(courseCode, whatsappCode);
+        return;
+      }
+    }
+    let root = db_instance.ref("root/"+uid+"/"+courseCode);
+    newEntry(root, user, uid, courseCode, whatsappCode);
 
-function date_keyup(event){
-  var key = event.keyCode || event.charCode;
-  var date_field = document.getElementById("birth_date");
-  if(date_field.value == " "){
-    date_field.value = "";
+  }).catch(function(error){
+    let errorMessage = error.message;
+    let errorCode = error.code;
+    loaderOff();
+    alert("Something wrong, please try again later....");
+    console.log(errorCode+" : "+errorMessage);
+  })
+}
+function updateCount(whatsappCode, link){
+  let countref = db_instance.ref(whatsappCode+"wlink/count");
+  countref.transaction(function(count){
+    // let result = 0;
+    // console.log("Count Updated");
+    if(count === null){
+      return 1;
+    }
+    else{
+      return count+1;
+    }
+  }).then(function(){
+    loaderOff();
+    let title = "You have successfully registered.";
+    let note = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
+    nextPage(title, note, link);
+    // let wlink1 = document.getElementById("wlink1");
+    // wlink1.href = link;
+    // let wlinktitle = document.getElementById("wlinktitle");
+    // wlinktitle.innerHTML = "You have successfully registered.";
+    // let wlinknote = document.getElementById("wlinknote");
+    // wlinknote.innerHTML = "Important Note:- Whatsapp group में जुड़ना आवश्यक हैं | Must join in Whatsapp Group.";
+    // instance.open();   
+  }).catch(function(error){
+    console.log("error- "+error.errorMessage);
+  });
+}
+function nextPage(title, note, link){
+  var x = {
+    "title" : title,
+    "note" : note,
+    "link" : link
   }
-  else if(date_field.value.length == 2 && key == 8){
-    date_field.value = date_field.value.substring(0,1);
-  }
-  else if(date_field.value.length == 2){
-    date_field.value += "/";
-  }
-  else if(date_field.value.length == 5 && key == 8){
-    date_field.value = date_field.value.substring(0,4);
-  } 
-  else if(date_field.value.length == 5){
-    date_field.value += "/";
-  }
-  else if(date_field.value.length >= 10){
-    date_field.value = date_field.value.substring(0,10);
-  }
-};
+  localStorage.setItem("linkdetails",JSON.stringify(x));
+  window.location.href = "./thankyou.html";
+}
