@@ -9,7 +9,13 @@ module.exports = function(grunt) {
           rename: false,
           sizes: [{
             name: '',
-            width: '1080px',
+            width: '850px',
+            suffix: '_l',
+            quality: 50
+          },
+          {
+            name: '',
+            width: '350px',
             suffix: '_m',
             quality: 50
           }
@@ -17,7 +23,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['*.jpeg'],
+          src: ['*.jpg'],
           cwd: './buffer/x',
           dest: './buffer'
         }]

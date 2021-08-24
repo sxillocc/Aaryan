@@ -58,6 +58,7 @@ function join(batch){
   var whatsappfield = document.getElementById("whatsapp");
   var statefield = document.getElementById("state");
   var cityfield = document.getElementById("city");
+  var agefield = document.getElementById("age");
 
   var fname = fnamefield.value;
   var gender = genderfield.value;
@@ -66,11 +67,12 @@ function join(batch){
   var state = statefield.value;
   var city = cityfield.value;
   var location = countrycodefield.options[countrycodefield.selectedIndex].text;
-  
+  var age = agefield.value;
+
   var courseCode = batch;
   var whatsappCode = batch;
 
-  let isValid = checkvalidity(fname, countrycode, whatsapp, state, city);
+  let isValid = checkvalidity(fname, countrycode, whatsapp, state, city, age);
   if(!isValid)
     return;
   if(countrycode != "91"){
@@ -101,7 +103,8 @@ function join(batch){
     whatsapp: whatsapp,
     location: location,
     courseCode: courseCode,
-    timestamp: timestamp
+    timestamp: timestamp,
+    age: age
   }
   console.log(user);
   loaderOn();
@@ -123,8 +126,8 @@ function join(batch){
 
   // alert("Entry taken");
 }
-function checkvalidity(fname, countrycode, whatsapp, state, city){
-  if(fname == "" || whatsapp == "" ){
+function checkvalidity(fname, countrycode, whatsapp, state, city, age){
+  if(fname == "" || whatsapp == "" || age == ""){
     alert("Please fill all the required fields");
     return false;
   }
