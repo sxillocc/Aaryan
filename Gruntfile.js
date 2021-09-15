@@ -9,21 +9,27 @@ module.exports = function(grunt) {
           rename: false,
           sizes: [{
             name: '',
-            width: '850px',
-            suffix: '_l',
+            width: '840px',
+            suffix: '_w840',
             quality: 50
           },
           {
             name: '',
-            width: '350px',
-            suffix: '_m',
+            width: '650px',
+            suffix: '_w650',
+            quality: 50
+          },
+          {
+            name: '',
+            width: '400px',
+            suffix: '_w400',
             quality: 50
           }
         ]
         },
         files: [{
           expand: true,
-          src: ['*.jpg'],
+          src: ['happiness_within.jpg'],
           cwd: './buffer/x',
           dest: './buffer'
         }]
