@@ -102,10 +102,10 @@ function join(batch){
   }
   var fullname = fname+" "+lname;
   if(language == "EnglishEvening"){
-    courseCode = courseCode + "E";
+    courseCode = "E" + courseCode;
     whatsappCode = courseCode;
   }else if(language == "HindiEvening"){
-    courseCode = courseCode + "H";
+    courseCode = "H" + courseCode;
     whatsappCode = courseCode;
   }else{
     alert("Something wrong, Please try again later!");
