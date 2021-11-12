@@ -101,14 +101,11 @@ function join(batch){
     location = city +", "+state;
   }
   var fullname = fname+" "+lname;
-  if(language == "HindiMorning"){
-    courseCode = courseCode + "HM";
-    whatsappCode = courseCode;
-  }else if(language == "EnglishEvening"){
-    courseCode = courseCode + "EE";
+  if(language == "EnglishEvening"){
+    courseCode = courseCode + "E";
     whatsappCode = courseCode;
   }else if(language == "HindiEvening"){
-    courseCode = courseCode + "HE";
+    courseCode = courseCode + "H";
     whatsappCode = courseCode;
   }else{
     alert("Something wrong, Please try again later!");
