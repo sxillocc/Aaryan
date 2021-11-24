@@ -28,26 +28,26 @@ firebase.initializeApp(firebaseConfig);
 var db_instance = firebase.database();
 var auth_instance = firebase.auth();
 
-// function togglecountry(element){
-//   let value = element.options[element.selectedIndex].value;
-//   let locationbox = document.getElementById("locationbox");
-//   if(value == "91"){
-//     locationbox.style.display = "block";
-//     return;
-//   }
-//   locationbox.style.display = "none";
-// }
+function togglecountry(element){
+  let value = element.options[element.selectedIndex].value;
+  let locationbox = document.getElementById("locationbox");
+  if(value == "91"){
+    locationbox.style.display = "block";
+    return;
+  }
+  locationbox.style.display = "none";
+}
 
-// function toggle(element){
-//   let value = element.options[element.selectedIndex].value;
-//   if(value == "Student"){
-//     let cnamefield = document.getElementById("colledgename");
-//     cnamefield.style.display = "block";
-//     return;
-//   }
-//   let cnamefield = document.getElementById("colledgename");
-//   cnamefield.style.display = "none";
-// }
+function toggle(element){
+  let value = element.options[element.selectedIndex].value;
+  if(value == "Student"){
+    let cnamefield = document.getElementById("colledgename");
+    cnamefield.style.display = "block";
+    return;
+  }
+  let cnamefield = document.getElementById("colledgename");
+  cnamefield.style.display = "none";
+}
 function n(n){
   return n > 9 ? "" + n: "0" + n;
 }
@@ -56,42 +56,51 @@ function join(batch){
   var criticalAge = 35;
   
   var fnamefield = document.getElementById("fname");
-  // var lnamefield = document.getElementById("lname");
+  var lnamefield = document.getElementById("lname");
   var agefield = document.getElementById("age");
-  // var genderfield = document.getElementById("gender");
+  var genderfield = document.getElementById("gender");
   // var languagefield = document.getElementById("language");
-  // var martialfield = document.getElementById("martial");
+  var martialfield = document.getElementById("martial");
   var countrycodefield = document.getElementById("countrycode");
   var whatsappfield = document.getElementById("whatsapp");
-  // var professionfield = document.getElementById("profession");
-  // var cnamefield = document.getElementById("cname");
-  // var statefield = document.getElementById("state");
+  var professionfield = document.getElementById("profession");
+  var cnamefield = document.getElementById("cname");
+  var statefield = document.getElementById("state");
   var cityfield = document.getElementById("city");
-  // var camefromfield = document.getElementById("camefrom");
+  var camefromfield = document.getElementById("camefrom");
 
   var fname = fnamefield.value;
-  //var lname = lnamefield.value;
+  var lname = lnamefield.value;
   var age = agefield.value;
-  //var gender = genderfield.value;
+  var gender = genderfield.value;
   var language =  "HindiEvening" ; //languagefield.value;
   var countrycode = countrycodefield.value;
   var whatsapp = whatsappfield.value;
-  //var profession = professionfield.value;
-  //var cname = cnamefield.value;
-  //var state = statefield.value;
+  var profession = professionfield.value;
+  var cname = cnamefield.value;
+  var state = statefield.value;
   var city = cityfield.value;
-  //var location = countrycodefield.options[countrycodefield.selectedIndex].text;
-  // var isYouth = false;
-  //var camefrom = camefromfield.value;
-  //var martial = martialfield.value;
+  var location = countrycodefield.options[countrycodefield.selectedIndex].text;
+  var isYouth = false;
+  var camefrom = camefromfield.value;
+  var martial = martialfield.value;
   
   var courseCode = batch;
   var whatsappCode = batch;
 
-  let isValid = checkvalidity(fname, age, countrycode, whatsapp, city);
+  let isValid = checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cname, state, city);
   if(!isValid)
     return;
-  var fullname = fname;
+  if( profession !="Student"){
+    cname = "N/A";
+  }
+  if(countrycode != "91"){
+    state = "N/A";
+    city = "N/A";
+  }else{
+    location = city +", "+state;
+  }
+  var fullname = fname+" "+lname;
   if(language == "EnglishEvening"){
     courseCode = "E" + courseCode;
     whatsappCode = courseCode;
@@ -101,6 +110,10 @@ function join(batch){
   }else{
     alert("Something wrong, Please try again later!");
     return;
+  }
+  if(gender == "Male" && age<=criticalAge){
+    isYouth = true;
+    // courseCode = courseCode + "Y";
   }
   //getting timestamp
   var currentTime = new Date();
@@ -118,11 +131,17 @@ function join(batch){
   var user = {
     name: fullname,
     age: age,
+    gender: gender,
     language: language,
+    martial: martial,
     countrycode: countrycode,
     whatsapp: whatsapp,
-    location: city,
+    profession: profession,
+    cname: cname,
+    location: location,
+    isYouth: isYouth,
     courseCode: courseCode,
+    cameFrom: camefrom,
     timestamp: timestamp
   }
   // console.log(user);
@@ -146,12 +165,16 @@ function join(batch){
 
   // alert("Entry taken");
 }
-function checkvalidity(fname, age, countrycode, whatsapp, city){
-  if(fname == "" || age == "" || whatsapp == ""){
+function checkvalidity(fname, lname, age, countrycode, whatsapp, profession, cname, state, city){
+  if(fname == "" || lname == "" || age == "" || whatsapp == "" || profession == ""){
     alert("Please fill all the required fields");
     return false;
   }
-  if(countrycode == "91" && ( city == "")){
+  if(profession == "Student" && cname == ""){
+    alert("Please fill Colledge name");
+    return false;
+  }
+  if(countrycode == "91" && (state == "" || city == "")){
     alert("Please fill location");
     return false;
   }

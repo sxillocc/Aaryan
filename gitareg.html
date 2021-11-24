@@ -96,15 +96,27 @@
         <!-- Form Section -->
         <div class="row">
           <div class="input-field col s12">
-            <input placeholder="Full Name / नाम" id="fname" type="text" class="validate" required="" aria-required="true">
-            <label for="fname"><b>Full Name / नाम <span style="color:#c5331c;">*</span></b></label>
+            <input placeholder="First Name / नाम" id="fname" type="text" class="validate" required="" aria-required="true">
+            <label for="fname"><b>First Name / नाम <span style="color:#c5331c;">*</span></b></label>
+            <span class="helper-text" data-error="Required"></span>
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="Last Name / उपनाम" id="lname" type="text" class="validate" required="" aria-required="true">
+            <label for="lname"><b>Last Name / उपनाम <span style="color:#c5331c;">*</span></b></label>
             <span class="helper-text" data-error="Required"></span>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s6">
             <span><b>Age / उम्र <span style="color:#c5331c;">*</span></b></span>
             <input id="age" placeholder="Age / उम्र" type="number" class="validate" required="" aria-required="true">
+          </div>
+          <div class="input-field col s6">
+            <span><b>Gender<span style="color:#c5331c;">*</span></b></span>
+            <select id="gender" class="browser-default">
+              <option value="Male">Male / पुरुष</option>
+              <option value="Female">Female / स्त्री</option>
+            </select>
           </div>
         </div>
         <!-- <div class="row"> -->
@@ -122,6 +134,15 @@
             <div class="flow-text">Note:- Hindi batch will start from 15th December and English batch will start from 16th January. / हिंदी बैच 15 दिसंबर से और अंग्रेजी बैच 16 जनवरी से शुरू होगा।</div>
           </div>
         </div> -->
+        <div class="row">
+          <div class="input-field col s12">
+            <span><b>Marital Status<span style="color:#c5331c;">*</span></b></span>
+            <select id="martial" class="browser-default">
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+            </select>
+          </div>
+        </div>
         <div class="row">
           <div class="col s12">
             <h6 style="margin-top: 15px;"><b>Whatsapp Number<span style="color:#c5331c;">*</span></b></h6>
@@ -355,23 +376,95 @@
             <span class="helper-text" data-error="Required"></span>
           </div>
         </div>
-        <!-- <div class="divider"></div> -->
+        <div class="divider"></div>
         <div id="locationbox">
           <div class="row">
-            <!-- <div class="col s12">
+            <div class="col s12">
               <h6 style="margin-top: 15px;"><b>Location<span style="color:#c5331c;">*</span></b></h6>
-            </div> -->
-            
-            <div class="input-field col s12">
+            </div>
+            <div class="input-field col s6">
+              <span>State / राज्य<span style="color:#c5331c;"> *</span></span>
+              <select id="state" class="browser-default">
+                <option value="" disabled selected>Choose your option / अपना विकल्प चुनें</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+            </div>
+            <div class="input-field col s6">
               <span><b>City / शहर<span style="color:#c5331c;">*</span></b></span>
               <input placeholder="City / शहर" id="city" type="text" class="validate" required="" aria-required="true">
               <span class="helper-text" data-error="Required"></span>
             </div>
           </div>
         </div>
-        
-        
-        
+        <div style="margin-top: 15px;" class="row">
+          <div class="input-field col s12">
+            <span><b>Profession / व्यवसाय<span style="color:#c5331c;">*</span></b></span>
+            <select id="profession" onchange="toggle(this)" class="browser-default">
+              <option value="" disabled selected>Choose your option / अपना विकल्प चुनें</option>
+              <option value="Student">Student / छात्र</option>
+              <option value="Employee">Employee / कर्मचारी</option>
+              <option value="Business">Business / व्यापार </option>
+              <option value="Other">Other / अन्य</option>
+            </select>
+          </div>
+        </div>
+        <div id="colledgename" style="display: none;">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="cname" placeholder="Colledge Name /कॉलेज का नाम" type="text" class="validate" required="" aria-required="true">
+              <label for="cname"><b>Colledge Name /कॉलेज का नाम<span style="color:#c5331c;">*</span></b></label>
+              <span class="helper-text" data-error="Required"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <span><b>How did you came to know about this program? / आपको इस कार्यक्रम के बारे में कैसे पता चला ?<span style="color:#c5331c;">*</span></b></span>
+            <select id="camefrom" class="browser-default">
+              <option value="Whatsapp">Whatsapp</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Youtube">Youtube</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Website">Website</option>
+            </select>
+          </div>
+        </div>
 
         <!-- <div class="flow-text red-text">Registration Closed</div>
         <button  class="pb-color btn waves-effect waves-light" onclick="join('LBG4')">Submit
@@ -456,7 +549,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/join.js"></script>
+  <script src="js/joinfb.js"></script>
 </body>
 
 </html>
