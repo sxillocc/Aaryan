@@ -59,7 +59,7 @@ function join(batch){
   var lnamefield = document.getElementById("lname");
   var agefield = document.getElementById("age");
   var genderfield = document.getElementById("gender");
-  var languagefield = document.getElementById("language");
+  // var languagefield = document.getElementById("language");
   var martialfield = document.getElementById("martial");
   var countrycodefield = document.getElementById("countrycode");
   var whatsappfield = document.getElementById("whatsapp");
@@ -73,7 +73,7 @@ function join(batch){
   var lname = lnamefield.value;
   var age = agefield.value;
   var gender = genderfield.value;
-  var language = languagefield.value;
+  var language =  "HindiEvening" ; //languagefield.value;
   var countrycode = countrycodefield.value;
   var whatsapp = whatsappfield.value;
   var profession = professionfield.value;
