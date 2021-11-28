@@ -93,10 +93,10 @@ function join(batch){
     return;
   var fullname = fname;
   if(language == "EnglishEvening"){
-    courseCode = "E" + courseCode;
+    courseCode = "EE" + courseCode;
     whatsappCode = courseCode;
   }else if(language == "HindiEvening"){
-    courseCode = "H" + courseCode;
+    courseCode = "HH" + courseCode;
     whatsappCode = courseCode;
   }else{
     alert("Something wrong, Please try again later!");
