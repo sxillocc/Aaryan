@@ -133,7 +133,7 @@
           <h5 class="center-align"><b id="wlinknote"></b></h5></br>
           <center><img src="./assets/images/whatsapp.png" style="width: 300px;"/></center>
           <center><a target="_blank" id="wlink1" class="modal-close waves-effect green white-text waves-green btn-large">Join Whatsapp Group</a></center>  
-          <center><h6 class="flow-text" style="word-break: break-all;">Not able to join Whatsapp group ? <br/>Contact:- 9926506383 (Pradyumna Chandra Das)</h6></center>
+          <center><h6 class="flow-text" style="word-break: break-all;">Not able to join Whatsapp group ? <br/>Join through this link:- <a id="whatsapplink" href=""></a><br/>or write us a mail on thearyansclub@gmail.com</h6></center>
           <center><h6><a href="./index.html" style="text-decoration: underline;">Back to home</a></h6></center>
       </div>
     </div>
@@ -210,6 +210,9 @@
     let linkdetails = JSON.parse(localStorage.getItem("linkdetails"));
     let wlink1 = document.getElementById("wlink1");
     wlink1.href = linkdetails['link'];
+    let whatsapplink = document.getElementById("whatsapplink");
+    whatsapplink.href = linkdetails['link'];
+    whatsapplink.innerHTML = linkdetails['link'];
     let wlinktitle = document.getElementById("wlinktitle");
     wlinktitle.innerHTML = linkdetails['title'];
     let wlinknote = document.getElementById("wlinknote");
