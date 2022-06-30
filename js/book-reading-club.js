@@ -33,7 +33,8 @@ var langArray = [
   {val:'Malayalam', name:'മലയാളം (Malayalam)'},
   {val:'Kannada', name:'ಕನ್ನಡ (Kannada)'},
   {val:'Bengali', name:'বাংলা (Bengali)'},
-  {val:'Punjabi', name:'ਪੰਜਾਬੀ (Punjabi)'}
+  {val:'Punjabi', name:'ਪੰਜਾਬੀ (Punjabi)'},
+  {val:'Tamil', name:'தமிழ் (Tamil)'}
 ];
 
 for (let i = 0; i < langArray.length; i++) {
@@ -63,6 +64,7 @@ var configureDropDownLists = (field1, field2) => {
   var kannada = ['09:00 PM'];
   var bengali = ['07:30 PM'];
   var punjabi = ['06:00 PM'];
+  var tamil = ['07:00 PM'];
 
   field2.options.length = 0;
 
@@ -104,6 +106,11 @@ var configureDropDownLists = (field1, field2) => {
       break;
     case 'Punjabi':
       for (var time of punjabi) {
+        createOption(field2, time, time);
+      }
+      break;
+    case 'Tamil':
+      for (var time of tamil) {
         createOption(field2, time, time);
       }
       break;
