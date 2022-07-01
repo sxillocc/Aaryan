@@ -173,9 +173,9 @@ function join(){
 
   var courseCode = getCourseCode(language, time);
 
-  // let isValid = checkvalidity(fname, age, state, city, whatsapp);
-  // if(!isValid)
-  //   return;
+  let isValid = checkvalidity(fname, age, state, city, whatsapp);
+  if(!isValid)
+    return;
   
   var location = city +", "+state;
   
