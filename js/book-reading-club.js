@@ -64,7 +64,7 @@ var configureDropDownLists = (field1, field2) => {
   var kannada = ['09:00 PM'];
   var bengali = ['07:30 PM'];
   var punjabi = ['06:00 PM'];
-  var tamil = ['07:00 PM'];
+  var tamil = ['09:00 PM'];
 
   field2.options.length = 0;
 
