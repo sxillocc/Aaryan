@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TODO">
+    <meta name="author" content="Shaktiraj Daudra">
+    
+    <title>Successfully Registered</title>
+    <link rel="icon" href="./assets/images/logo-small.png" type="image/png" sizes="16x16">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bs-css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Lora&display=swap" rel="stylesheet">
+    <link href="./assets/css/header.css" rel="stylesheet">
+
+    <!-- Add your CSS Here -->
+</head>
+
+<body>
+    <!-- Navbar Started -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-white" aria-label="Sixth navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./assets/images/logo-big.png" style="height: 60px;" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06"
+                aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample06">
+                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#upcoming-programs">Upcoming Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#ongoing-programs">Ongoing Programs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-bs-toggle="dropdown"
+                            aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown06">
+                            <li><a class="dropdown-item" href="./about-us.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="./srila-prabhupada.html">Srila Prabhupada</a></li>
+                            <li><a class="dropdown-item" href="./iskcon-juhu.html">ISKCON</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Ended -->
+    <!-- Content Started -->
+    <div class="section">
+        <div class="container col-xxl-9 px-2 py-5">
+            <center><p class="lead" style="font-style: italic;" id="wlinktitle" ></p>
+            <h2 class="section-title fw-bold" id="wlinknote">Important Note:- Whatsapp group में जुड़ना आवश्यक हैं, Must join in Whatsapp Group.</h2>
+            
+                <img src="./assets/images/whatsapp.png" alt="Whatsapp Visuals" style="width: 300px;"/>
+            <br/>
+            <a target="_blank" id="wlink1" class="btn btn-primary btn-lg " style="border-color: #4caf50; background-color: #4caf50;" type="submit">Join Whatsapp Group</a>
+            <br/><br/>
+            <p class="lead px-2"><span class="fw-bold">Not able to join Whatsapp group ?</span><br/>Join through this link:- <a id="whatsapplink" style="word-break: break-all;" href=""></a><br/>or write us a mail on thearyansclub@gmail.com</p>
+            </center>
+        </div>
+    </div>
+    <!-- Content Ended -->
+    <!-- Footer Started -->
+    <div data-include="footer.html"></div>
+
+    <!-- Footer Ended -->
+
+
+    <script src="./assets/bs-js/bootstrap.bundle.min.js"></script>
+    <script>
+    window.onload=function(){function a(a,b){var c=/^(?:file):/,d=new XMLHttpRequest,e=0;d.onreadystatechange=function(){4==d.readyState&&(e=d.status),c.test(location.href)&&d.responseText&&(e=200),4==d.readyState&&200==e&&(a.outerHTML=d.responseText)};try{d.open("GET",b,!0),d.send()}catch(f){}}var b,c=document.getElementsByTagName("*");for(b in c)c[b].hasAttribute&&c[b].hasAttribute("data-include")&&a(c[b],c[b].getAttribute("data-include"))};
+    </script>
+
+
+    <!-- Firebase Script -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="./assets/js/registration.js"></script>
+    <script>
+        let linkdetails = JSON.parse(localStorage.getItem("linkdetails"));
+        let wlink1 = document.getElementById("wlink1");
+        wlink1.href = linkdetails['link'];
+        let whatsapplink = document.getElementById("whatsapplink");
+        whatsapplink.href = linkdetails['link'];
+        whatsapplink.innerHTML = linkdetails['link'];
+        let wlinktitle = document.getElementById("wlinktitle");
+        wlinktitle.innerHTML = linkdetails['title'];
+        let wlinknote = document.getElementById("wlinknote");
+        wlinknote.innerHTML = linkdetails['note'];
+      </script>
+</body>
+
+</html>
