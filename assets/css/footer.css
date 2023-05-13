@@ -1,0 +1,111 @@
+
+a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+.content {
+    height: 70vh;
+}
+
+.footer-20192 {
+    position: relative;
+    background-color: #231C1A;
+}
+
+.footer-20192-for-text{
+    color: white;
+}
+
+.footer-20192 .container {
+    position: relative;
+}
+
+.footer-20192 h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.footer-20192 .links li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: block;
+}
+
+.footer-20192 .links a {
+    color: white;
+}
+
+.footer-20192 .links a:hover {
+    color: #fff;
+}
+
+
+
+.footer-20192 .social li {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5em;
+}
+
+.footer-20192 .social li a {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+    color: #fff;
+}
+
+.footer-20192 .social li a>i {
+    position: absolute;
+    top: 22%;
+    left: 21%;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.footer-20192 .social li a:hover{
+    background-color: #c5331c;
+}
+.wp:hover {
+    background-color: #25D366;
+    color: #141d2a;
+}
+
+.footer-20192 .footer-logo {
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.footer-20192 .copyright {
+    color: #9194a3;
+}
+
+.footer-20192 .cta {
+    -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    box-shadow: -20px -20px 0 0 rgba(52, 58, 64, 0.2);
+    padding: 20px;
+    background-color: #c5331c;
+    top: -150px;
+    position: relative;
+}
+
+.footer-20192 .cta h2,
+.footer-20192 .cta h3 {
+    line-height: 1.5;
+}
+
+.footer-20192 .cta h3 {
+    font-size: 20px;
+}

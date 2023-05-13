@@ -12,6 +12,11 @@
 .p-color{
     background-color: #c5331c;
 }
+.btn-secondary {
+    color: black;
+    background-color: #fff;
+    border-color: black;
+}
 .s-color-text{
     color: #fff9c4;
 }

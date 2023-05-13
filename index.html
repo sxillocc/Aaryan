@@ -1,569 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178399454-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TODO">
+    <meta name="author" content="Shaktiraj Daudra">
+    
+    <title>The Aryans Club | ISKCON Juhu</title>
+    <link rel="icon" href="./assets/images/logo-small.png" type="image/png" sizes="16x16">
 
-    gtag('config', 'UA-178399454-1');
-  </script>
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bs-css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Lora&display=swap" rel="stylesheet">
+    <link href="./assets/css/header.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>The Aryans Club | ISKCON Juhu</title>
+    <!-- Add your CSS Here -->
+    <link href="./assets/css/index.css" rel="stylesheet">
+    <script>
+        window.onload=function(){function a(a,b){var c=/^(?:file):/,d=new XMLHttpRequest,e=0;d.onreadystatechange=function(){4==d.readyState&&(e=d.status),c.test(location.href)&&d.responseText&&(e=200),4==d.readyState&&200==e&&(a.outerHTML=d.responseText)};try{d.open("GET",b,!0),d.send()}catch(f){}}var b,c=document.getElementsByTagName("*");for(b in c)c[b].hasAttribute&&c[b].hasAttribute("data-include")&&a(c[b],c[b].getAttribute("data-include"))};
+    </script>
 
-  <meta property="description"
-    content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.">
-  <meta property="keywords"
-    content="The Aryans Club, The Aryans Club ISKCON Mumbai, The Aryans Club ISKCON Juhu, Youth Wing of ISKCON Juhu, Youth Wing of ISKCON Mumbai, ISKCON Youth Forum Juhu, IYF Juhu,The Aryans Club Juhu, The Aryans, Aryans, Vedic Education, Bhagavad Gita Classes, Scripture Learning, Bhagavad Gita, Bhagavatam, Srimad Bhagavatam Learning, Srimad Bhagavatam" />
-  <meta property="image" content="https://thearyansclub.com/assets/images/logo-big.png">
-
-  <meta property="og:title" content="The Aryans Club | ISKCON Juhu" />
-  <meta property="og:headline" content="The Aryans Club: Official Website" />
-  <meta property="og:description"
-    content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world." />
-  <meta property="og:image" content="https://thearyansclub.com/assets/images/logo-big.png">
-  <meta property="og:site_name" content="The Aryans Club: Official Website" />
-  <meta property="og:url" content="https://thearyansclub.com" />
-  <meta property="fb:app_id" content="@thearyansclub" />
-  <meta name="twitter:image" property="twitter:image" content="https://thearyansclub.com/assets/images/logo-big.png">
-  <meta name="twitter:title" property="twitter:title" content="The Aryans Club | ISKCON Juhu">
-  <meta name="twitter:description" property="twitter:description"
-    content="The Aryans Club is the youth wing of Sri Sri Radha Rasabihari Temple, ISKCON Juhu. The club aims at educating and empowering today's youth  on the foundation of the rich spiritual wisdom of Vedic India to overcome the obstacles of their progressive lives and make it a blissful journey in today's tough and competitive world.">
-  <meta property="category" content="Youth Cultural Club, Educational Group">
-  <meta property="author" content="ISKCON®">
-  <link rel="canonical" href="https://www.thearyansclub.com">
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
-  <!-- Fa Fa Icons CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Main-Css -->
-  <link href="css/main.css" type="text/css" rel="stylesheet" />
-  <link rel="icon" href="./assets/images/logo-small.png" type="image/png" sizes="16x16">
-
-  <!-- Font Style -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    .zoom {
-      position: relative;
-      transition: transform .2s;
-      cursor: pointer;
-      overflow: hidden;
-    }
-    .zoom:hover {
-      transform: scale(1.03);
-    }
-    #banner0 .title{
-      font-size: 20px;
-      font-weight: bolder;
-    }
-    #banner0 .subtitle{
-      font-size: 14px;
-    }
-    #banner0date{
-      font-size: 16px;
-    }
-    #tarang-logo{
-      width: 300px;
-      height: auto;
-      /* background-color: rgba(255, 255, 255, 0.9); */
-      /* background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(241,255,100,0.3) 100%); */
-    }
-    @media only screen and (min-width: 1211px){
-      #tarang-logo{
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-    }
-    @media only screen and (min-width: 993px){
-      #banner0 .title{
-        font-size: 40px;
-      }
-      #banner0 .subtitle{
-        font-size: 28px;
-      }
-      #banner0date{
-        font-size: 26px;
-      }#tarang-logo{
-        width: 400px;
-        height: auto;
-      }
-    }
-  </style>
-  <!-- Facebook Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1206818113099300');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1206818113099300&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Facebook Pixel Code -->
 </head>
 
 <body>
+    <!-- Navbar Started -->
+    <div data-include="header.html"></div>
+    <!-- Navbar Ended -->
 
-  <!-- Navbar-started -->
-  <ul id="nav-mobile" class="sidenav">
-    <li><a href="./">Home</a></li>
-    <li><a href="./courses.html">Courses</a></li>
-    <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
-    <li><a href="./children_camp.html">Children Programs</a></li>
-    <li><a href="contact.html" class="sidenav-close">Contact</a></li>
-    <!-- <li>
-      <div class="divider"></div>
-    </li> -->
-    <!-- <li><a class="subheader">Activities</a></li> -->
-    <li><a href="./courses.html" class="sidenav-close">Youth Programs</a></li>
-    <!-- <li><a href="./camps.html" class="sidenav-close">Camps</a></li> -->
-    <li>
-      <div class="divider"></div>
-    </li>
-    <li><a class="subheader">About</a></li>
-    <li><a href="./aboutus.html" class="sidenav-close">The Aryans Club</a></li>
-    <li><a href="./srila-prabhupada.html" class="sidenav-close">Srila Prabhupada</a></li>
-    <li><a href="./iskcon.html" class="sidenav-close">ISKCON</a></li>
-
-  </ul>
-  <div class="navbar-fixed">
-    <nav style="background-color: white;" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="./index.html" class="brand-logo" style="font-size: 1.6rem">
-          <img src="./assets/images/logo-big.png" />
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="on" href="./index.html">Home</a></li>
-          <!-- <li><a href="./article.html" class="sidenav-close">Articles</a></li> -->
-          <!-- <li><a class="dropdown-trigger" href="#" data-target="activity">Activities<i
-            class="material-icons right">arrow_drop_down</i></a></li> -->
-          <li><a href="./courses.html">Youth Programs</a></li>
-          <li><a href="./children_camp.html">Children Programs</a></li>
-          <li><a class="dropdown-trigger" href="./aboutus.html" data-target="aboutus">About Us<i
-                class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-        <ul id="aboutus" class="dropdown-content">
-          <li><a href="./aboutus.html">About Us</a></li>
-          <li><a href="./srila-prabhupada.html">Srila Prabhupada</a></li>
-          <li><a href="./iskcon.html">ISKCON</a></li>
-          <ul id="activity" class="dropdown-content">
-        </ul>
-        <!-- <ul>
-          <li><a href="./courses.html">Online Courses</a></li>
-          <li><a href="./camps.html">Camps</a></li>
-        </ul> -->
-      </div>
-    </nav>
-  </div>
-  <!-- Navbar Ended -->
-
-  <!-- Banner-Section-Started -->
-  <div id="introCarousel" class="bigger-height carousel carousel-slider center scrollspy">
-    <!-- Next & Prev Button -->
-    <div class="carousel-fixed-item " style="position: absolute; bottom: 50%; transform: translateY(50%);">
-      <div id="movePrevCarousel" class="left valign-wrapper"
-        style="cursor: pointer;border-radius:200px;">
-        <i class="module-buttons white-text material-icons">keyboard_arrow_left</i>
-      </div>
-      <div id="moveNextCarousel" class="right valign-wrapper"
-        style="cursor: pointer;border-radius:200px;">
-        <i class="module-buttons white-text material-icons">keyboard_arrow_right</i>
-      </div>
-    </div>
-    <!-- Banner-(-1) -->
-    <!-- <div class="carousel-item bigger-height black" style="padding-left: 5%; padding-right: 5%;">
-      <br/>
-      <div class="flow-text white-text left-align" style="height: 50px;">Current/Upcoming Events</div>
-      <div class="valign-wrapper" style="height: calc(500px - 50px - 62px - 19px); ">
-        <div class="row" style="width: 100%; padding-left: 5%; padding-right: 5%;">
-          <div class="col s6 green m4">
-            <center>
-              <div style="width: 120px; height: 120px; background-color: red;overflow: hidden; border-radius: 125px;">
-                <img src="./assets/images/interactivetalk.jpeg" alt="Interactive Talk" style="height: 100%; transform: translateX(-50%); margin-left: 45%;" >
-              </div>
-              <h5>Interactive Talk</h5>
-            </center>
-          </div>
-          <div class="col s6 red m4">
-            <center>
-              <div style="width: 120px; height: 120px; background-color: red;overflow: hidden; border-radius: 125px;">
-                <img src="./assets/images/kirtan.jpeg" alt="Blissful Kirtan" style="height: 100%; transform: translateX(-50%); margin-left: 45%;" >
-              </div>
-              <h5>Blissful Kirtan</h5>
-            </center>
-          </div>
-          <div class="col s6 blue offset-s3 m4">
-            <center>
-              <div style="width: 120px; height: 120px; background-color: red;overflow: hidden; border-radius: 125px;">
-                <img src="./assets/images/quiz.jpg" alt="Quiz" style="height: 100%; transform: translateX(-50%); margin-left: 45%;" >
-              </div>
-              <h5>Quiz</h5>
-            </center>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- Banner 0 --->
-    <!-- <div class="carousel-item bigger-height">
-      <div
-        style="height: 500px;background-image: linear-gradient(90deg, rgba(0,0,51,0.7) 0%, rgba(9,7,54,0.65) 19%, rgba(98,84,84,0.6) 50%, rgba(9,7,54,0.65) 81%, rgba(0,0,51,0.7) 100%),url(./assets/images/bjag-cover.jpg);
-                background-size: cover; background-position: center;
-                background-repeat: no-repeat; ">
-        <div id="banner0" class="noselect section white-text" style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-          <div class="title">Bhaktivedanta Jet Age Gurukul</div> 
-          <div class="subtitle" style="font-style: italic;">“A Two Months Residential Course to Rediscover Yourself.”</div>
-          <br/>
-          <div class="divider white"></div>
-          <br/> -->
-          <!-- <div class="teal-text text-accent/-1 subtitle"><i><b>More than 5000+ participants so far...</b></i></div> -->
-          <!-- <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn-large" href="./gita.html">Join Free</a> -->
-          <!-- <br/> -->
-          <!-- <a style="margin-top: 10px;" class="sb-color waves-effect waves-light btn" href="./learngita.html">Know More</a> -->
-          <!-- <a style="margin-top: 10px;" class="pb-color waves-effect waves-light btn" href="./residentialcourse.html">Know More</a>
-          
-        </div>
-      </div>
-    </div> -->
-    <!-- Banner 1 -->
-    <div class="carousel-item bigger-height">
-      <div class="i1" style="width: 100%; position: relative;">
-        <div class="img-center">
-          <picture>
-            <source media="(max-width:600px)" srcset="assets/images/banner-600.jpg">
-            <source media="(max-width:992px)" srcset="assets/images/banner-992.jpg">
-            <source media="(max-width:1200px)" srcset="assets/images/banner-1200.jpg">
-            <source media="(max-width:1920px)" srcset="assets/images/banner-1920.jpg">
-            <img src="assets/images/banner-1920.jpg" alt="">
-          </picture>
-          <div class="gradient-bottom"></div>
-        </div>
-        <div class="noselect tagline-container visible" 
-              style="background-color: rgba(0,0,0,0.6);">
-          <div style="height: 5px; width: 60%; background-color: red;"></div>
-          <div class="line1">MODERN YOUTH</div><!--1:1.210263158-->
-          <div class="line2">VEDIC ROOTS</div>
-          <div style="height: 5px; margin-left:40%; width: 60%; background-color: red;"></div>
-        </div>
-        <div class="noselect welcome-container">
-          Welcome to <br/>
-          YOUTH WING OF ISKCON JUHU
-        </div>
-      </div>
-    </div>
-    <!-- Banner 1 Ended -->
-    <!-- Banner 2 Started -->
-    <div class="carousel-item bigger-height">
-      <div class="row">
-        <div class="padding-0 col s12 l6">
-          <div style="background-image: url(./assets/images/educate.jpg);
-                        background-size: cover; background-position-x: right;" class="card-container">
-            <div class="card-content">
-              <div class="myCard">
-                <div class="card-heading white-text">EDUCATE</div>
-                <div class="card-writeup white-text">Systematic presentation of the ancient vedic wisdom
-                  as the practical solution of life's problems.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="padding-0 col s12 l6">
-          <div style="background-image: url(./assets/images/empower.jpg);
-                        background-size: cover;" class="card-container">
-            <div class="card-content">
-              <div class="myCard"
-                    style="background-color: rgb(48,118,200,0.2);">
-                <div class="card-heading white-text">EMPOWER</div>
-                <div class="card-writeup white-text">Personal training and guidance to enrich the overall personality.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Banner 2 Ended -->
-    <!-- Banner 3 Started -->
-    <div class="carousel-item bigger-height">
-      <div class="row">
-        <div class="padding-0 col s12 l6">
-          <div style="background-image: url(./assets/images/environment.jpg);
-                        background-size: cover; background-position: center;" class="card-container">
-            <div class="card-content">
-              <div class="myCard"
-                    style="background-color: rgba(214,224,88,0.5);">
-                <div class="card-heading">ENVIRONMENT</div>
-                <div class="card-writeup">Provide spiritual and cultural environment to transform wisdom into
-                  application</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="padding-0 col s12 l6">
-          <div style="background-image: url(./assets/images/excursion.jpg);
-                        background-size: cover;" class="card-container">
-            <div class="card-content">
-              <div class="myCard"
-                    style="background-color: rgba(84,110,122,0.5);">
-                <div class="card-heading white-text">EXCURSION</div>
-                <div class="card-writeup white-text">To cultural and spiritual places of India to experience
-                  the divinity.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Banner 3 Ended -->
-  </div>
-  <!-- Banner Section Ended -->
-
-  <div class="section">
-    <div class="container">
-      <h2 class="heading-1">Parivartan</h2>
-      <div class="small-line"></div><br/>
-      <div class="row">
-        <div class="col center s12 l4 no-padding-mob">
-          <picture>
-            <!-- <source media="(min-width:993px)" srcset="./assets/images/bg_m.jpg">
-                  <source media="(min-width:601px)" srcset="./assets/images/bg_l.jpg"> -->
-            <img src="./assets/images/parivartan.jpeg" style="width: 100%;" alt="">
-          </picture>
-        </div>
-        <div class="col s12 l8">
-          <br/>
-          <div class="flow-text"></div>
-          <div class="flow-text" style="font-style:italic;">“Bring the change in you...”</div>
-          <!-- <div class="divider"></div> -->
-          <div class="flow-text" style="margin-top: 15px;">Every Saturday - <b>07:30PM onwards</b></div>
-          <!-- <div class="divider"></div> -->
-          <div class="flow-text" style="margin-top: 15px;">Every Sunday - <b>11:00AM onwards</b></div>
-          <!-- <br/>
-            <div class="flow-text"><b>This Program is ONLY for Boys.</b></div> -->
-          <div class="flow-text" style="margin-top: 15px;">Feel free contact us if you have any queries.</div>
-          
-          <br/>
-          <a class="pb-color left waves-effect waves-purple btn" href="https://wa.me/919074230903">Contact Us</a>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- 
-  <div class="sbg-color section">
-    <div class="container">
-      <h2 class="heading-1">LEARN POWERFUL LIFE LESSONS FROM GITA IN 18 DAYS (Free)</h2>
-      <div class="small-line"></div><br/>
-      <div class="row">
-        <div class="col s12 l8 no-padding-mob">
-          <a href="./learngita.html">
-            <picture>
-              <source media="(min-width:993px)" srcset="./assets/images/complete_bg_50w840.jpg">
-              <source media="(min-width:601px)" srcset="./assets/images/complete_bg_50w650.jpg">
-              <img src="./assets/images/complete_bg_50w400.jpg" style="width: 100%;" alt="">
-            </picture>
-          </a>
-        </div>
-        <div class="col s12 l4">
+    <!-- Content Started -->
+    <div class="section"
+        style="background-image: linear-gradient(90deg, rgba(255,255,255,0.50) 0%, rgba(213,223,240,0.5) 58%, rgba(255,255,203,0.5) 100%), url('./assets/images/color-bg.jpg'); background-size: cover;">
         
-          <div style="font-size: 20px;" class="event-box">
-            <div class="valign-wrapper">
-                <i class="material-icons" style="margin-right: 5px;">check_circle</i>
-                <p class="items"><b>Free</b></p>
-            </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-                <i class="material-icons" style="margin-right: 5px;">calendar_today</i>
-                <p class="items"><b>New Batch Starts at 24th July | Duration - 18 Days</b></p>
-            </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-                <i class="material-icons" style="margin-right: 5px;">live_tv</i>
-                <p class="items"><b>1 Hour daily - Online Live Session + Q&A</b></p>
-            </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-              <i class="material-icons" style="margin-right: 5px;">schedule</i>
-              <p class="items"><b>07:30PM to 08:30PM(Hindi and English Batch) |<br/> 07:00AM to 08:00AM(Hindi Batch)</b></p>
-          </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-                <i class="material-icons" style="margin-right: 5px;">language</i>
-                <p class="items"><b>In two Languages - English and Hindi</b></p>
-            </div>
-            <div class="divider"></div>
-            <div class="valign-wrapper">
-                <i class="material-icons" style="margin-right: 5px;">check_circle</i>
-                <p class="items"><b>Study material in ebook format will be provided</b></p>
+        <div class="container col-xxl-7 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center justify-content-center g-0 py-5">
+                <div class="col-10 col-sm-8 col-lg-6 hero-img" style="overflow: hidden; border-radius: 50%;">
+                    <img src="./assets/images/hero.gif" class="d-block mx-lg-auto img-fluid" style="max-width:100%;" alt="Bootstrap Themes"
+                         loading="lazy">
+                </div>
+                <div class="py-3 col-lg-6">
+                    <h2 class="hero-title display-5 fw-bold lh-1 mb-3">
+                        <span class="bg-white" style="color: #00e676;">&nbsp;MODERN </span> 
+                        <span class="bg-white" style="color: #3d5afe;">YOUTH&nbsp;</span> 
+                        <br />
+                        <span class="bg-white" style="color: #ff5252;">&nbsp;VEDIC </span>
+                        <span class="bg-white" style="color: #ff9100;">ROOTS&nbsp;</span>
+                    </h2>
+                    <p class="lead">Welcome to Youth Wing of ISKCON Juhu!</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <div><a href="https://forms.gle/ayZdtCtrZ4iYw2Fh8" class="btn btn-primary btn-lg px-4 me-md-2">Join Us</a></div>
+                    </div>
+                </div>
             </div>
         </div>
-          <div class="flow-text red-text">Registration Closed</div>
-          <button id="joinbttn" class="pb-color left waves-effect waves-purple btn-large">Join Now</button>
-          <a class="sb-color right waves-effect waves-purple btn-large" href="./learngita.html">Know more</a>
-          <!-- <a class="pb-color left waves-effect waves-purple btn-large" href="./gita.html">Join Now</a> -->
-          
-        </div>
-      </div>
     </div>
-  </div> -->
+    <!-- <div class="section">
+        <div class="container col-xxl-9 px-4 py-5">
+            <h1 id="upcoming-programs" class="display-4 blue-grey700-text title-font text-uppercase"><span class="p-color-text title-font display-1 " >F</span>eatured Program</h1>
+            
+            <div class="row py-5 flex-row justify-content-center">
+                <div class="col-12 col-sm-7 col-lg-6">
+                    <center>
+                        <video style="width: 100%; pointer-events: none;"  muted loop controls autoplay>
+                            <source src="./assets/images/prog-management-hero.mp4" type="video/mp4">
+                        </video>
+                </center>    
+                </div>
+                <div class="col-12 col-sm-7 col-lg-6 py-4">
+                    <p class="pre-title-style ">ᐅ Course Duration: 1 Semester</p>
+                    <h2 class=" title-font text-uppercase">
+                        Discovering <span class="title-font" style="color: #b71c1c">Management Skills</span> using <span class="title-font"
+                            style="color: #3d5afe">Bhagavad Gita </span>
+                    </h2>
+                    <p class="">
+                        <span class="highlight-detail">Systematic presentation of Management skills using Bhagavad Gita, designed for Management institutes</span>
+                        <br/><hr/><br/>
+                        
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
+                            <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                        </svg> 
+                        Specially designed for Management Institutes (MBA, MMS, MBS, EVM, MPhil etc.) to demonstrate paradigms of management from the knowledge of Ancient Indian wisdom such as Gita.
+                        
+                        <br/><br/>
+                        <span style="font-style: italic;">Enquire now or know more for your college</span>
+                        
+                    </p>
 
-  <!--Upcoming Events Section Start-->
-  
-  <!-- <div class="section">
-    <div class="container">
-      <h2 class="heading-1">Happiness Within...</h2>
-      <div class="small-line"></div><br/>
-      <div class="row">
-        <div class="col s12 l8 no-padding-mob">
-          <picture>
-            <source media="(min-width:993px)" srcset="./assets/images/happiness_within_w840.jpg">
-            <source media="(min-width:601px)" srcset="./assets/images/happiness_within_w650.jpg">
-            <img src="./assets/images/happiness_within_w400.jpg" style="width: 100%;" alt="">
-          </picture>
-        </div>
-        <div class="col s12 l4">
+                    <div class="text-center">
+                        <a type="button" class="btn btn-secondary btn-md px-4 me-md-2 mt-2" href="./management-program.html">Know More</a>
+                        <a type="button" class="btn btn-primary btn-md px-4 me-md-2 mt-2" href="https://forms.gle/8vXiafdA7A3J4V7D8">Enroll Now</a>
+                    <div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
 
-          <p class="content">You can join our free weekly seminars...</p>
-      <a target="_blank" class="waves-effect pb-color waves-light btn" href="https://forms.gle/AMdx27bBWHMtab7HA">Register now for free</a><br/><br/>
         </div>
+    </div> -->
+
+    <div class="section">
+      <div class="container col-xxl-9 px-4 py-5">
+          <h1 id="upcoming-programs" class="display-4 blue-grey700-text title-font text-uppercase"><span class="p-color-text title-font display-1 " >F</span>eatured Program</h1>
+          <!-- Row Started -->
+          <div class="row py-5 flex-row justify-content-center">
+              <div class="col-12 col-sm-7 col-lg-6">
+                  <center>
+                      <video style="width: 100%; pointer-events: none;"  muted loop controls autoplay>
+                          <source src="./assets/images/prog-vrindavan.mp4" type="video/mp4">
+                      </video>
+              </center>    
+              </div>
+              <div class="col-12 col-sm-7 col-lg-6 py-4">
+                  <p class="pre-title-style ">ᐅ October 28, 2023 to November 1, 2023</p>
+                  <h2 class=" title-font text-uppercase">
+                      Kartik <span class="title-font" style="color: #b71c1c">Vrindavan</span> Yatra
+                  </h2>
+                  <p class="">
+                      <span class="highlight-detail">Join us for a spiritual journey to Vrindavan this Kartik season</span>
+                      <br/><hr/><br/>
+                      
+                      
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
+                          <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                      </svg> 
+                      This season we are travelling to Nandagaon, Govardhan, Madhuvan, Talvan, Gokul, Raval-dham and many many more divine places where Krishna personally performed enchanting pastimes. 
+                      
+                      <br/><br/>
+                      
+                  </p>
+
+                  <div class="text-center">
+                      <a type="button" class="btn btn-secondary btn-md px-4 me-md-2 mt-2" href="https://bit.ly/m/braj">Join Vrindavan Community</a>
+                      <a type="button" class="btn btn-primary btn-md px-4 me-md-2 mt-2" href="./chalo-vrindavan.html">Know More</a>
+                  <div>
+                      
+                      
+                  </div>
+              </div>
+          </div>
+          <!-- Row Ended -->
       </div>
-    </div>
-  </div> -->
-  <!--Upcoming Events Section End-->
-  
-  <!-- Activities Started -->
-  <div id="activities"  class="sbg-color scrollspy">
-    <div class=" activity-container">
-      <div class=" section">
-        <h2 class="heading-1 scrollspy" style="margin-left: 10px;">Activities</h2>
-        <div class="small-line" style="margin-left: 10px;"></div>
-        <br/>
-        <!-- Row 1 started -->
-        <div class="row">
-          <div class="full-size col s12 m6 l4 zoom" onclick="window.location.href = './courses.html';" >
-            <div class="hidder">
-              <img height="100%" width="auto" src="./assets/images/online-event.png"/>
-            </div>
-            <h5 class="center thin-font">Online Courses</h5>
-            <br>
-          </div>
-          <div class="full-size col s12 m6 l4 zoom" onclick="window.location.href = './camps.html';">
-            <div class="hidder">
-              <img height="100%" width="auto" src="./assets/images/camp.jpeg" />
-            </div>
-            <h5 class="center thin-font">Camps</h5>
-            <br>
-          </div>
-          <div class="full-size col s12 m6 l4 zoom">
-            <div class="hidder">
-              <img height="100%" width="auto" src="./assets/images/meditation.jpg" />
-            </div>
-            <h5 class="center thin-font">My Meditation Circle</h5>
-            </br>
-          </div>
-        </div>
-        <!-- Row 1 ended -->
-      </div>
-      <br id="contacts" class="scrollspy"><br>
-    </div>
   </div>
-  <!-- Activities Ended -->
-  <!-- Footer Started-->
-  <footer class="page-footer" style="background-color: #c5331c;">
-    <div class="container">
-      <div class="section">
-        <div class="row center-align">
-          <div class="footer-column col s12 l4">
-            <h4 class="footer-heading">Address</h4>
-            <div class="divider"></div>
-            <h5 class="thin-font footer-subheading">ISKCON Juhu, Hare Krishna Land </br>
-              Mumbai - 400049,</br>
-              Maharashtra, India</h5>
-          </div>
-          <div class="footer-column col s12 l4">
-            <h4 class="footer-heading">Contact Us</h4>
-            <div class="divider"></div>
-            <h5 class="thin-font footer-subheading">
-              Contact: 8433631858, 9074230903
-            </h5>
-            <h5 class="thin-font footer-subheading">
-              Email: thearyansclub@gmail.com
-            </h5>
-            <div class="footer-social-icon">
-              <ul>
-                <li><a class="white-text" href="https://www.instagram.com/thearyansclub/?igshid=1i5xvwjzugpw7"><i
-                      class="instagram fa fa-instagram"></i></a></li>
-                <li><a class="white-text" href="https://www.youtube.com/chakravartidas"><i
-                      class="youtube fa fa-youtube"></i></a></li>
-                <li><a class="white-text" href="https://www.facebook.com/thearyansclub/"><i
-                      class="facebook fa fa-facebook"></i></a></li>
-                <li><a class="white-text" href="https://wa.me/918433631858"><i class="whatsapp fa fa-whatsapp"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col s12 l4">
-            <h4 class="footer-heading">Useful Links</h4>
-            <div class="divider"></div>
-            <a href="./" class="white-text">
-              <h5 class="thin-font footer-link">Home</h5>
-            </a>
-            <a href="./lets-make-it-better.html" class="white-text">
-              <h5 class="thin-font footer-link">Latest Events</h5>
-            </a>
-            <a href="./appreciation.html" class="white-text">
-              <h5 class="thin-font footer-link">Appreciation</h5>
-            </a>
-            <a href="./aboutus.html" class="white-text">
-              <h5 class="thin-font footer-link">About Us</h5>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row center-align" style=" margin: 0px; padding: 5px 0px;">
-      <div class="col s12 m6">
-        <span style="color: white; font-size: 18px;">© The Aryans Club | ISKCON Juhu 
-      </div>
-      <div class="col s12 m6">
-        <a style="color: white; font-size: 18px; font-weight: bold;" href="terms_and_condition.html">Terms & Conditions</a>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer Ended -->
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    // var bookNow = document.getElementById("book");
-    // bookNow.disabled = true;
-    var joinNow = document.getElementById("joinbttn");
-    joinNow.disabled = true;
-    function next(){
-      var x = {
-        "courseName" : "Second Wave or Second Chance",
-        "courseCode" : "SWSC",
-        "courseLang" : "Hindi",
-        "amt": "9900"
-      }
-      localStorage.setItem("course",JSON.stringify(x));
-      window.location.href = "./registration.html";
-    }
-  </script>
+    <div class="section">
+        <div class="container col-xxl-9 px-4 pb-5">
+            <h1 id="ongoing-programs" class="display-4 blue-grey700-text title-font text-uppercase"><span class="p-color-text title-font display-1 " >O</span>ngoing Programs</h1>
+            <!-- Row Started -->
+            <div class="row py-5 flex-row justify-content-center">
+                <div class="col-12 col-sm-7 col-lg-6">
+                    <img src="./assets/images/prog-ssd.png" alt="Science of Self Discovery visual" style="width: 100%;"/>
+                </div>
+                <div class="col-12 col-sm-7 col-lg-6 py-4">
+                    <p class="pre-title-style ">ᐅ Every Sunday | 07:30PM</p>
+                    <h2 class=" title-font text-uppercase">Science of <span class="title-font" style="color: #3d5afe">Self Discovery </span></h2>
+                    <p class="">
+                        <span class="highlight-detail">Next Session: Do you know your self ?</span>
+                        <br/><hr/><br/>
+                        
+                        <b>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
+                            <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                        </svg> 
+                        Venue:</b> Sankha Hall, Heaven on Earth Building, ISKCON Juhu, <br/>Juhu, Mumbai - 400049<br/>
+                        (Alternatively, you can also attend online).
+                        <br/><br/>
+                        <b style="font-style: italic;">Important Note:</b> Only for Boys (Age Group- 15 Years to 30 Years)
+                    </p>
+                    <div><a type="button" class="btn btn-primary btn-md px-4 me-md-2" href="https://forms.gle/XTVxnrbhzZgw9eDbA">Enroll Now</a></div>
+                </div>
+            </div>
+            <!-- Row Ended -->
+            <!-- Row Started -->
+            <div class="row py-5 flex-row justify-content-center">
+                <div class="col-12 col-sm-7 col-lg-6">
+                    <img src="./assets/images/prog-etemple.png" alt="E-temple visual" style="width: 100%;"/>
+                </div>
+                <div class="col-12 col-sm-7 col-lg-6 py-4">
+                    <p class="pre-title-style ">ᐅ Everyday | 05:00AM to 08:00AM</p>
+                    <h2 class=" title-font text-uppercase"><span class="title-font" style="color: #2e7d32">E-Temple </span>Program</h2>
+                    <p class="">
+                        <span class="highlight-detail">5AM to 7AM: Mantra Meditation<br/> 7AM to 8AM: Discourse on Bhagavatam (Verse by Verse)</span>
+                        <br/><hr/><br/>
+                        
+                        <b>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg> 
+                        How to attend ?</b> <br/>You'll get zoom link after registering and joining our whatsapp group.
+                        <br/><br/>
+                    </p>
+                    <div><a href="https://forms.gle/RxykoekKrU84uPGm8" class="btn btn-primary btn-md px-4 me-md-2">Enroll Now</a></div>
+                </div>
+            </div>
+            <!-- Row Ended -->
+        </div>
+    </div>
+    <!-- Content Ended -->
+
+    <!-- Footer Started -->
+    <div data-include="footer.html"></div>
+    
+    <!-- Footer Ended -->
+
+
+    <script src="./assets/bs-js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
